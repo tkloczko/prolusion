@@ -1,0 +1,80 @@
+### .prolusionrc ---
+##
+## Author: Julien Wintz
+## Created: Wed Feb 19 09:18:20 2014 (+0100)
+## Version:
+## Last-Updated:
+##           By:
+##     Update #: 101
+######################################################################
+##
+### Change Log:
+##
+######################################################################
+
+[general]
+accounts = Inria, iCloud, Gmail
+maxsyncaccounts = 3
+pythonfile = ~/.prolusion.py
+
+## #################################################################
+##
+## #################################################################
+
+[Account Inria]
+localrepository = InriaLocal
+remoterepository = InriaRemote
+maxage = 30
+
+[Account iCloud]
+localrepository = iCloudLocal
+remoterepository = iCloudRemote
+maxage = 30
+
+[Account Gmail]
+localrepository = GmailLocal
+remoterepository = GmailRemote
+maxage = 30
+
+## #################################################################
+##
+## #################################################################
+
+[Repository InriaLocal]
+type = Maildir
+localfolders = ~/.prolusion.d/prolusioneries/inria
+
+[Repository iCloudLocal]
+type = Maildir
+localfolders = ~/.prolusion.d/prolusioneries/icloud
+
+[Repository GmailLocal]
+type = Maildir
+localfolders = ~/.prolusion.d/prolusioneries/gmail
+
+## #################################################################
+##
+## #################################################################
+
+[Repository InriaRemote]
+type = IMAP
+remotehost = zimbra.inria.fr
+remoteuser = julien.wintz@inria.fr
+remotepasseval = passwd("zimbra.inria.fr", "julien.wintz@inria.fr", "993")
+cert_fingerprint = d2e49575d5387eb1a7830521a836174dd4eea907
+ssl = true
+
+[Repository iCloudRemote]
+type = IMAP
+remotehost = imap.mail.me.com
+remoteuser = julien.wintz
+remotepasseval = passwd("imap.mail.me.com", "julien.wintz", "993")
+cert_fingerprint = 13db1ba7073b75443c52a14c3bae0cc9d478567c
+ssl = true
+
+[Repository GmailRemote]
+type = Gmail
+remoteuser = jwintz@gmail.com
+remotepasseval = passwd("imap.gmail.com", "jwintz@gmail.com", "993")
+cert_fingerprint = 89091347184d41768bfc0da9fad94bfe882dd358
+ssl = true
