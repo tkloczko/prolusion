@@ -7,7 +7,7 @@
 # Version:
 # Last-Updated:
 #           By:
-#     Update #: 24
+#     Update #: 25
 #
 
 # Change Log:
@@ -19,5 +19,5 @@ import re, os
 def passwd(machine, login, port):
     s = "machine %s login %s port %s password ([^ ]*)\n" % (machine, login, port)
     p = re.compile(s)
-    authinfo = os.popen("gpg -q --no-tty -d ~/.prolusion.gpg").read()
+    authinfo = os.popen("gpg2 -q --no-tty -d ~/.prolusion.gpg").read()
     return p.search(authinfo).group(1)

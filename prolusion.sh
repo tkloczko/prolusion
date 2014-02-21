@@ -5,7 +5,7 @@
 # Version:
 # Last-Updated:
 #           By:
-#     Update #: 80
+#     Update #: 88
 #
 
 # Change Log:
@@ -18,21 +18,21 @@
 
 prolusion_colors () {
 
-      RESET = '\e[0m'
-        RED = '\e[0;31m' # Red
-      GREEN = '\e[0;32m' # Green
-     YELLOW = '\e[0;33m' # Yellow
-       BLUE = '\e[0;34m' # Blue
-     PURPLE = '\e[0;35m' # Purple
-       CYAN = '\e[0;36m' # Cyan
-      WHITE = '\e[0;37m' # White
-       BRED = '\e[1;31m' # Bold Red
-     BGREEN = '\e[1;32m' # Bold Green
-    BYELLOW = '\e[1;33m' # Bold Yellow
-      BBLUE = '\e[1;34m' # Bold Blue
-    BPURPLE = '\e[1;35m' # Bold Purple
-      BCYAN = '\e[1;36m' # Bold Cyan
-     BWHITE = '\e[1;37m' # Bold White
+      RESET='\e[0m'
+        RED='\e[0;31m' # Red
+      GREEN='\e[0;32m' # Green
+     YELLOW='\e[0;33m' # Yellow
+       BLUE='\e[0;34m' # Blue
+     PURPLE='\e[0;35m' # Purple
+       CYAN='\e[0;36m' # Cyan
+      WHITE='\e[0;37m' # White
+       BRED='\e[1;31m' # Bold Red
+     BGREEN='\e[1;32m' # Bold Green
+    BYELLOW='\e[1;33m' # Bold Yellow
+      BBLUE='\e[1;34m' # Bold Blue
+    BPURPLE='\e[1;35m' # Bold Purple
+      BCYAN='\e[1;36m' # Bold Cyan
+     BWHITE='\e[1;37m' # Bold White
 }
 
 prolusion_install () {
@@ -43,13 +43,17 @@ prolusion_install () {
 
     printf "$YELLOW Setting up links ...\n$RESET"
 
-    ln -s prolusionrc   $HOME/.prolusionrc
-    ln -s prolusion.py  $HOME/.prolusion.py
-    ln -s prolusion.gpg $HOME/.prolusion.gpg
+    ln -s $PROLUSION_INSTALL_DIR/prolusionrc   $HOME/.prolusionrc
+    ln -s $PROLUSION_INSTALL_DIR/prolusion.py  $HOME/.prolusion.py
+    ln -s $PROLUSION_INSTALL_DIR/prolusion.gpg $HOME/.prolusion.gpg
 
     printf "$YELLOW Fetching mail ...\n$RESET"
 
     offlineimap -c $HOME/.prolusionrc
+
+    printf "$YELLOW Indexing mail ...\n$RESET"
+
+    mu index --maildir=$HOME/.prolusion.d/prolusioneries
 
     if ! [ $? -eq 0 ]
     then
