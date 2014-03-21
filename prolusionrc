@@ -5,7 +5,7 @@
 ## Version:
 ## Last-Updated:
 ##           By:
-##     Update #: 101
+##     Update #: 108
 ######################################################################
 ##
 ### Change Log:
@@ -60,7 +60,7 @@ localfolders = ~/.prolusion.d/prolusioneries/gmail
 type = IMAP
 remotehost = zimbra.inria.fr
 remoteuser = julien.wintz@inria.fr
-remotepasseval = passwd("zimbra.inria.fr", "julien.wintz@inria.fr", "993")
+remotepasseval = passwd("inria/imap")
 cert_fingerprint = d2e49575d5387eb1a7830521a836174dd4eea907
 ssl = true
 
@@ -68,13 +68,13 @@ ssl = true
 type = IMAP
 remotehost = imap.mail.me.com
 remoteuser = julien.wintz
-remotepasseval = passwd("imap.mail.me.com", "julien.wintz", "993")
+remotepasseval = passwd("icloud/imap")
 cert_fingerprint = 13db1ba7073b75443c52a14c3bae0cc9d478567c
 ssl = true
 
 [Repository GmailRemote]
 type = Gmail
 remoteuser = jwintz@gmail.com
-remotepasseval = passwd("imap.gmail.com", "jwintz@gmail.com", "993")
+remotepasseval = passwd("gmail/imap)
 cert_fingerprint = 89091347184d41768bfc0da9fad94bfe882dd358
 ssl = true
