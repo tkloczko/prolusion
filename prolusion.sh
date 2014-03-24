@@ -5,7 +5,7 @@
 # Version:
 # Last-Updated:
 #           By:
-#     Update #: 88
+#     Update #: 107
 #
 
 # Change Log:
@@ -16,7 +16,7 @@
 ## Helper functions
 ## #################################################################
 
-prolusion_colors () {
+# prolusion_colors () {
 
       RESET='\e[0m'
         RED='\e[0;31m' # Red
@@ -33,9 +33,13 @@ prolusion_colors () {
     BPURPLE='\e[1;35m' # Bold Purple
       BCYAN='\e[1;36m' # Bold Cyan
      BWHITE='\e[1;37m' # Bold White
-}
+# }
 
 prolusion_install () {
+
+    printf "$YELLOW Cloning the Protection's GitHub repository...\n$RESET"
+
+    /usr/bin/env git clone $PROTECTION_URL "$PROTECTION_INSTALL_DIR" > /dev/null
 
     printf "$YELLOW Cloning the Prolusion's GitHub repository...\n$RESET"
 
@@ -45,7 +49,6 @@ prolusion_install () {
 
     ln -s $PROLUSION_INSTALL_DIR/prolusionrc   $HOME/.prolusionrc
     ln -s $PROLUSION_INSTALL_DIR/prolusion.py  $HOME/.prolusion.py
-    ln -s $PROLUSION_INSTALL_DIR/prolusion.gpg $HOME/.prolusion.gpg
 
     printf "$YELLOW Fetching mail ...\n$RESET"
 
@@ -63,7 +66,6 @@ prolusion_install () {
 }
 
 prolusion_usage() {
-
     printf "Usage: $0 [OPTION]\n"
     printf "  -h, --help \t \t \t Display this help and exit\n"
     printf "\n"
@@ -91,14 +93,19 @@ done
 ## Behavior
 ## #################################################################
 
-prolusion_colors
+# prolusion_colors
+
+PROTECTION_URL="https://github.com/jwintz/protection.git"
+PROTECTION_INSTALL_DIR="$HOME/.password-store"
 
 PROLUSION_URL="https://github.com/jwintz/prolusion.git"
 PROLUSION_INSTALL_DIR="$HOME/.prolusion.d"
 
 printf "$BYELLOW"
-printf "PROLUSION_INSTALL_DIR = $PROLUSION_INSTALL_DIR\n"
-printf "PROLUSION_SOURCE_URL  = $PROLUSION_URL\n"
+printf "PROTECTION_INSTALL_DIR = $PROTECTION_INSTALL_DIR\n"
+printf "PROTECTION_SOURCE_URL  = $PROTECTION_URL\n"
+printf "PROLUSION_INSTALL_DIR  = $PROLUSION_INSTALL_DIR\n"
+printf "PROLUSION_SOURCE_URL   = $PROLUSION_URL\n"
 printf "$RESET"
 
 if [ -d "$PROLUSION_INSTALL_DIR" ]

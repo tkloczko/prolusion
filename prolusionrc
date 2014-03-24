@@ -5,7 +5,7 @@
 ## Version:
 ## Last-Updated:
 ##           By:
-##     Update #: 108
+##     Update #: 110
 ######################################################################
 ##
 ### Change Log:
@@ -75,6 +75,6 @@ ssl = true
 [Repository GmailRemote]
 type = Gmail
 remoteuser = jwintz@gmail.com
-remotepasseval = passwd("gmail/imap)
+remotepasseval = passwd("google/imap")
 cert_fingerprint = 89091347184d41768bfc0da9fad94bfe882dd358
 ssl = true
