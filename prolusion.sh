@@ -5,7 +5,7 @@
 # Version:
 # Last-Updated:
 #           By:
-#     Update #: 107
+#     Update #: 172
 #
 
 # Change Log:
@@ -16,59 +16,82 @@
 ## Helper functions
 ## #################################################################
 
-# prolusion_colors () {
+__PROLUSIONPALETTE="1"
 
-      RESET='\e[0m'
-        RED='\e[0;31m' # Red
-      GREEN='\e[0;32m' # Green
-     YELLOW='\e[0;33m' # Yellow
-       BLUE='\e[0;34m' # Blue
-     PURPLE='\e[0;35m' # Purple
-       CYAN='\e[0;36m' # Cyan
-      WHITE='\e[0;37m' # White
-       BRED='\e[1;31m' # Bold Red
-     BGREEN='\e[1;32m' # Bold Green
-    BYELLOW='\e[1;33m' # Bold Yellow
-      BBLUE='\e[1;34m' # Bold Blue
-    BPURPLE='\e[1;35m' # Bold Purple
-      BCYAN='\e[1;36m' # Bold Cyan
-     BWHITE='\e[1;37m' # Bold White
-# }
+function prolusion_colortext()
+{
+    echo -e " \e[$__PROLUSIONPALETTE;$2m$1\e[0m"
+}
+
+function prolusion_green()
+{
+    echo $(prolusion_colortext "$1" "32")
+}
+
+function prolusion_red()
+{
+    echo $(prolusion_colortext "$1" "31")
+}
+
+function prolusion_blue()
+{
+    echo $(prolusion_colortext "$1" "34")
+}
+
+function prolusion_purple()
+{
+    echo $(prolusion_colortext "$1" "35")
+}
+
+function prolusion_yellow()
+{
+    echo $(prolusion_colortext "$1" "33")
+}
+
+function prolusion_cyan()
+{
+    echo $(prolusion_colortext "$1" "36")
+}
+
+function prolusion_clear()
+{
+    echo -e "$1"
+}
 
 prolusion_install () {
 
-    printf "$YELLOW Cloning the Protection's GitHub repository...\n$RESET"
+    prolusion_yellow("Cloning the Protection's GitHub repository...")
 
     /usr/bin/env git clone $PROTECTION_URL "$PROTECTION_INSTALL_DIR" > /dev/null
 
-    printf "$YELLOW Cloning the Prolusion's GitHub repository...\n$RESET"
+    prolusion_yellow("Cloning the Prolusion's GitHub repository...")
 
     /usr/bin/env git clone $PROLUSION_URL "$PROLUSION_INSTALL_DIR" > /dev/null
 
-    printf "$YELLOW Setting up links ...\n$RESET"
+    prolusion_yellow"Setting up links ..."
 
     ln -s $PROLUSION_INSTALL_DIR/prolusionrc   $HOME/.prolusionrc
     ln -s $PROLUSION_INSTALL_DIR/prolusion.py  $HOME/.prolusion.py
 
-    printf "$YELLOW Fetching mail ...\n$RESET"
+    prolusion_yellow("Fetching mail ...")
 
     offlineimap -c $HOME/.prolusionrc
 
-    printf "$YELLOW Indexing mail ...\n$RESET"
+    prolusion_yellow("Indexing mail ...")
 
     mu index --maildir=$HOME/.prolusion.d/prolusioneries
 
     if ! [ $? -eq 0 ]
     then
-        printf "$RED A fatal error occurred during Prolusion's installation. Aborting..."
+        prolusion_red("A fatal error occurred during Prolusion's installation. Aborting...")
         exit 1
     fi
 }
 
 prolusion_usage() {
-    printf "Usage: $0 [OPTION]\n"
-    printf "  -h, --help \t \t \t Display this help and exit\n"
-    printf "\n"
+    prolusion_clear("Usage: $0 [OPTION]")
+    prolusion_clear("  -h, --help \t \t \t Display this help and exit")
+    prolusion_clear("")
 }
 
 ## #################################################################
@@ -101,45 +124,45 @@ PROTECTION_INSTALL_DIR="$HOME/.password-store"
 PROLUSION_URL="https://github.com/jwintz/prolusion.git"
 PROLUSION_INSTALL_DIR="$HOME/.prolusion.d"
 
-printf "$BYELLOW"
-printf "PROTECTION_INSTALL_DIR = $PROTECTION_INSTALL_DIR\n"
-printf "PROTECTION_SOURCE_URL  = $PROTECTION_URL\n"
-printf "PROLUSION_INSTALL_DIR  = $PROLUSION_INSTALL_DIR\n"
-printf "PROLUSION_SOURCE_URL   = $PROLUSION_URL\n"
-printf "$RESET"
+prolusion_yellow("PROTECTION_INSTALL_DIR = $PROTECTION_INSTALL_DIR")
+prolusion_yellow("PROTECTION_SOURCE_URL  = $PROTECTION_URL")
+prolusion_yellow("PROLUSION_INSTALL_DIR  = $PROLUSION_INSTALL_DIR")
+prolusion_yellow("PROLUSION_SOURCE_URL   = $PROLUSION_URL")
 
 if [ -d "$PROLUSION_INSTALL_DIR" ]
 then
-    printf "\n\n$BRED"
-    printf "You already have Prolusion installed.$RESET\nYou'll need to remove $PROLUSION_INSTALL_DIR/prolusion if you want to install Prolusion again.\n"
-    printf "If you want to update your copy of prolusion, run 'git pull origin master' from your prolusion directory\n\n"
+    prolusion_red("You already have Prolusion installed.")
+    prolusion_clear("You'll need to remove $PROLUSION_INSTALL_DIR/prolusion if you want to install Prolusion again.")
+    prolusion_clear("If you want to update your copy of prolusion, run 'git pull origin master' from your prolusion directory")
     exit 1;
 fi
 
-printf  "$CYAN Checking to see if git is installed... $RESET"
+prolusion_cyan("Checking to see if git is installed...")
 if hash git 2>&-
 then
-    printf "$GREEN found.$RESET\n"
+    prolusion_green("found.")
 else
-    printf "$RED not found. Aborting installation!$RESET\n"
+    prolusion_red("not found. Aborting installation!")
     exit 1
 fi;
 
-printf  "$CYAN Checking to see if offlineimap is installed... "
+prolusion_cyan("Checking to see if offlineimap is installed...")
 if hash offlineimap 2>&-
 then
-    printf "$GREEN found.$RESET\n"
+    prolusion_green("found.")
 else
-    printf "$RED not found. Aborting installation!!$RESET\n"
+    prolusion_red("not found. Aborting installation!!")
     exit 1
 fi
 
 prolusion_install
 
-printf "$BPURPLE ______          _           _              \n"
-printf "$BPURPLE | ___ \        | |         (_)             \n"
-printf "$BPURPLE | |_/ / __ ___ | |_   _ ___ _  ___  _ __   \n"
-printf "$BPURPLE |  __/ '__/ _ \| | | | / __| |/ _ \| '_ \  \n"
-printf "$BPURPLE | |  | | | (_) | | |_| \__ \ | (_) | | | | \n"
-printf "$BPURPLE \_|  |_|  \___/|_|\__,_|___/_|\___/|_| |_| \n\n"
-printf "$GREEN ... is now installed and ready to do thy bidding, Master $USER!$RESET\n"
+prolusion_purple(" ______          _           _              ")
+prolusion_purple(" | ___ \        | |         (_)             ")
+prolusion_purple(" | |_/ / __ ___ | |_   _ ___ _  ___  _ __   ")
+prolusion_purple(" |  __/ '__/ _ \| | | | / __| |/ _ \| '_ \  ")
+prolusion_purple(" | |  | | | (_) | | |_| \__ \ | (_) | | | | ")
+prolusion_purple(" \_|  |_|  \___/|_|\__,_|___/_|\___/|_| |_| ")
+prolusion_purple("")
+prolusion_green("... is now installed and ready to do thy bidding, Master $USER!")
+prolusion_clear("")
