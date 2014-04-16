@@ -1,21 +1,26 @@
-### .gitignore --- 
-## 
+### .gitignore ---
+##
 ## Author: Julien Wintz
 ## Created: Thu Feb 20 16:07:19 2014 (+0100)
-## Version: 
+## Version:
 ## Last-Updated: Thu Feb 20 16:08:21 2014 (+0100)
 ##           By: Julien Wintz
 ##     Update #: 1
 ######################################################################
-## 
+##
 ### Change Log:
-## 
+##
 ######################################################################
 
 *~
+*.pyc
 
 ## #################################################################
 ## Repositories
 ## #################################################################
 
-prolusioneries/*
+prolusion-mail/inbox
+prolusion-mail/local
+prolusion-mail/icloud
+prolusion-mail/inria
+prolusion-mail/gmail

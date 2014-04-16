@@ -15,10 +15,10 @@
 [general]
 accounts = Inria, iCloud, Gmail
 maxsyncaccounts = 3
-pythonfile = ~/.prolusion.py
+pythonfile = ~/.prolusion.d/prolusion-mail/prolusion-mail.py
 
 ## #################################################################
-##
+## Accounts
 ## #################################################################
 
 [Account Inria]
@@ -42,18 +42,18 @@ maxage = 30
 
 [Repository InriaLocal]
 type = Maildir
-localfolders = ~/.prolusion.d/prolusioneries/inria
+localfolders = ~/.prolusion.d/prolusion-mail/inria
 
 [Repository iCloudLocal]
 type = Maildir
-localfolders = ~/.prolusion.d/prolusioneries/icloud
+localfolders = ~/.prolusion.d/prolusion-mail/icloud
 
 [Repository GmailLocal]
 type = Maildir
-localfolders = ~/.prolusion.d/prolusioneries/gmail
+localfolders = ~/.prolusion.d/prolusion-mail/gmail
 
 ## #################################################################
-##
+## Repositories
 ## #################################################################
 
 [Repository InriaRemote]
@@ -61,15 +61,16 @@ type = IMAP
 remotehost = zimbra.inria.fr
 remoteuser = julien.wintz@inria.fr
 remotepasseval = passwd("inria/imap")
-cert_fingerprint = d2e49575d5387eb1a7830521a836174dd4eea907
+cert_fingerprint = 1fef48f9d064efb06419162b1f583badae75ed2c
 ssl = true
+folderfilter = lambda folder: folder not in ['Contacts', 'Emailed Contacts']
 
 [Repository iCloudRemote]
 type = IMAP
 remotehost = imap.mail.me.com
 remoteuser = julien.wintz
 remotepasseval = passwd("icloud/imap")
-cert_fingerprint = 13db1ba7073b75443c52a14c3bae0cc9d478567c
+cert_fingerprint = ca63a1b71691dde647ee61e20dc7e242052db8c0
 ssl = true
 
 [Repository GmailRemote]
@@ -78,3 +79,4 @@ remoteuser = jwintz@gmail.com
 remotepasseval = passwd("google/imap")
 cert_fingerprint = 89091347184d41768bfc0da9fad94bfe882dd358
 ssl = true
+folderfilter = lambda folder: folder not in ['[Gmail].All Mail', '[Gmail].Drafts', '[Gmail].Sent Mail', '[Gmail].Trash']
