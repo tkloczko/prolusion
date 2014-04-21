@@ -39,8 +39,6 @@
 ;; Sending
 ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-(setq auth-sources '((expand-file-name "prolusion-mail.gpg" prolusion-mail-dir)))
-
 (setq starttls-gnutls-program "gnutls-cli")
 (setq starttls-use-gnutls t)
 (setq starttls-extra-arguments nil)

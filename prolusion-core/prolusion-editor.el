@@ -205,9 +205,13 @@
   (require 'git-gutter-fringe)
   (require 'git-gutter))
 
-(set-face-foreground 'git-gutter-fr:modified "orange")
-(set-face-foreground 'git-gutter-fr:added    "green")
-(set-face-foreground 'git-gutter-fr:deleted  "red")
+(when (display-graphic-p)
+  (set-face-foreground 'git-gutter-fr:modified "orange")
+  (set-face-foreground 'git-gutter-fr:added    "green")
+  (set-face-foreground 'git-gutter-fr:deleted  "red"))
+
+(when (display-graphic-p)
+  (setq git-gutter-fr:side 'right-fringe))
 
 (global-set-key (kbd "C-x C-g g") 'git-gutter:toggle)
 (global-set-key (kbd "C-x C-g =") 'git-gutter:popup-hunk)
@@ -215,8 +219,6 @@
 (global-set-key (kbd "C-x C-g n") 'git-gutter:next-hunk)
 (global-set-key (kbd "C-x C-g s") 'git-gutter:stage-hunk)
 (global-set-key (kbd "C-x C-g r") 'git-gutter:revert-hunk)
-
-(setq git-gutter-fr:side 'right-fringe)
 
 (global-git-gutter-mode t)
 

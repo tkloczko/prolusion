@@ -60,7 +60,7 @@ localfolders = ~/.prolusion.d/prolusion-mail/gmail
 type = IMAP
 remotehost = zimbra.inria.fr
 remoteuser = julien.wintz@inria.fr
-remotepasseval = passwd("inria/imap")
+remotepasseval = keyring.get_password("inria", "imap")
 cert_fingerprint = 1fef48f9d064efb06419162b1f583badae75ed2c
 ssl = true
 folderfilter = lambda folder: folder not in ['Contacts', 'Emailed Contacts']
@@ -69,14 +69,14 @@ folderfilter = lambda folder: folder not in ['Contacts', 'Emailed Contacts']
 type = IMAP
 remotehost = imap.mail.me.com
 remoteuser = julien.wintz
-remotepasseval = passwd("icloud/imap")
+remotepasseval = keyring.get_password("icloud", "imap")
 cert_fingerprint = ca63a1b71691dde647ee61e20dc7e242052db8c0
 ssl = true
 
 [Repository GmailRemote]
 type = Gmail
 remoteuser = jwintz@gmail.com
-remotepasseval = passwd("google/imap")
+remotepasseval = keyring.get_password("google", "imap")
 cert_fingerprint = 89091347184d41768bfc0da9fad94bfe882dd358
 ssl = true
 folderfilter = lambda folder: folder not in ['[Gmail].All Mail', '[Gmail].Drafts', '[Gmail].Sent Mail', '[Gmail].Trash']
