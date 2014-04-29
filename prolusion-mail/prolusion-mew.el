@@ -12,11 +12,12 @@
 ;;
 ;;; Code:
 
-(setq eshell-directory-name prolusion-eshell-dir)
+(prolusion-require-package 'mew)
 
-(add-hook 'shell-mode-hook 'ansi-color-for-comint-mode-on)
+(autoload 'mew "mew" nil t)
+(autoload 'mew-send "mew" nil t)
 
-(provide 'prolusion-eshell)
+(provide 'prolusion-mew)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;; prolusion-eshell.el ends here
+;;; prolusion-mew.el ends here

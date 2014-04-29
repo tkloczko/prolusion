@@ -20,16 +20,17 @@
 (defvar prolusion-docs-dir     (expand-file-name "prolusion-docs"     prolusion-dir) "")
 (defvar prolusion-elpa-dir     (expand-file-name "prolusion-elpa"     prolusion-dir) "")
 (defvar prolusion-eshell-dir   (expand-file-name "prolusion-eshell"   prolusion-dir) "")
-(defvar prolusion-mail-dir     (expand-file-name "prolusion-mail"     prolusion-dir) "")
 (defvar prolusion-save-dir     (expand-file-name "prolusion-save"     prolusion-dir) "")
 (defvar prolusion-semantic-dir (expand-file-name "prolusion-semantic" prolusion-dir) "")
 (defvar prolusion-theme-dir    (expand-file-name "prolusion-theme"    prolusion-dir) "")
+(defvar prolusion-mail-dir     (expand-file-name "prolusion-mail"     prolusion-dir) "")
 
 (make-directory prolusion-docs-dir t)
 (make-directory prolusion-elpa-dir t)
 (make-directory prolusion-eshell-dir t)
 (make-directory prolusion-save-dir t)
 (make-directory prolusion-semantic-dir t)
+(make-directory prolusion-mail-dir t)
 
 (add-to-list              'load-path prolusion-core-dir)
 (add-to-list              'load-path prolusion-mail-dir)
@@ -41,8 +42,8 @@
 (require 'prolusion-behavior)
 (require 'prolusion-editor)
 (require 'prolusion-eshell)
-(require 'prolusion-mail)
 (require 'prolusion-modes)
+(require 'prolusion-mew)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; init.el ends here

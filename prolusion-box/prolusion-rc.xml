@@ -1,12 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
 <openbox_config xmlns="http://openbox.org/3.4/rc" xmlns:xi="http://www.w3.org/2001/XInclude">
-
   <resistance>
     <strength>10</strength>
     <screen_edge_strength>20</screen_edge_strength>
   </resistance>
-
   <focus>
     <focusNew>yes</focusNew>
     <followMouse>no</followMouse>
@@ -15,57 +12,53 @@
     <focusDelay>200</focusDelay>
     <raiseOnFocus>no</raiseOnFocus>
   </focus>
-
   <placement>
     <policy>Smart</policy>
     <monitor>Primary</monitor>
     <primaryMonitor>1</primaryMonitor>
   </placement>
-
   <theme>
     <name>Numix</name>
     <titleLayout>LIMC</titleLayout>
     <keepBorder>yes</keepBorder>
     <animateIconify>yes</animateIconify>
     <font place="ActiveWindow">
-      <name>Ubuntu</name>
-      <size>9</size>
-      <weight>bold</weight>
-      <slant>normal</slant>
+      <name>Cantarell</name>
+      <size>11</size>
+      <weight>Bold</weight>
+      <slant>Normal</slant>
     </font>
-
     <font place="InactiveWindow">
-      <name>Ubuntu</name>
-      <size>9</size>
-      <weight>bold</weight>
-      <slant>normal</slant>
+      <name>Cantarell</name>
+      <size>11</size>
+      <weight>Bold</weight>
+      <slant>Normal</slant>
     </font>
     <font place="MenuHeader">
-      <name>Ubuntu</name>
-      <size>9</size>
-      <weight>normal</weight>
-      <slant>normal</slant>
+      <name>Cantarell</name>
+      <size>11</size>
+      <weight>Bold</weight>
+      <slant>Normal</slant>
     </font>
     <font place="MenuItem">
-      <name>Ubuntu</name>
-      <size>9</size>
-      <weight>normal</weight>
-      <slant>normal</slant>
+      <name>Cantarell</name>
+      <size>11</size>
+      <weight>Normal</weight>
+      <slant>Normal</slant>
     </font>
     <font place="ActiveOnScreenDisplay">
-      <name>Ubuntu</name>
-      <size>9</size>
-      <weight>bold</weight>
-      <slant>normal</slant>
+      <name>Cantarell</name>
+      <size>11</size>
+      <weight>Normal</weight>
+      <slant>Normal</slant>
     </font>
     <font place="InactiveOnScreenDisplay">
-      <name>Ubuntu</name>
-      <size>9</size>
-      <weight>bold</weight>
-      <slant>normal</slant>
+      <name>Cantarell</name>
+      <size>11</size>
+      <weight>Normal</weight>
+      <slant>Normal</slant>
     </font>
   </theme>
-
   <desktops>
     <number>4</number>
     <firstdesk>1</firstdesk>
@@ -77,7 +70,6 @@
     </names>
     <popupTime>875</popupTime>
   </desktops>
-
   <resize>
     <drawContents>yes</drawContents>
     <popupShow>Nonpixel</popupShow>
@@ -87,14 +79,12 @@
       <y>10</y>
     </popupFixedPosition>
   </resize>
-
   <margins>
     <top>0</top>
     <bottom>0</bottom>
     <left>0</left>
     <right>0</right>
   </margins>
-
   <dock>
     <position>TopLeft</position>
     <floatingX>0</floatingX>
@@ -107,7 +97,6 @@
     <showDelay>300</showDelay>
     <moveButton>Middle</moveButton>
   </dock>
-
   <keyboard>
     <chainQuitKey>C-g</chainQuitKey>
     <keybind key="C-A-Left">
@@ -252,48 +241,47 @@
         <command>emacs</command>
       </action>
     </keybind>
-
     <keybind key="XF86MonBrightnessUp">
       <action name="Execute">
         <command>xbacklight +10</command>
       </action>
     </keybind>
-
     <keybind key="XF86MonBrightnessDown">
       <action name="Execute">
         <command>xbacklight -1</command>
       </action>
     </keybind>
-
     <keybind key="XF86KbdBrightnessUp">
       <action name="Execute">
         <command>kbdlight up</command>
       </action>
     </keybind>
-
     <keybind key="XF86KbdBrightnessDown">
       <action name="Execute">
         <command>kbdlight down</command>
       </action>
     </keybind>
-
     <keybind key="XF86AudioMute">
-	  <action name="Execute"><execute>amixer set Master toggle</execute></action>
-	</keybind>
-
-	<keybind key="XF86AudioLowerVolume">
-	  <action name="Execute"><execute>amixer set Master 10%-</execute></action>
-	</keybind>
-
-	<keybind key="XF86AudioRaiseVolume">
-	  <action name="Execute"><execute>amixer set Master 10%+</execute></action>
-	</keybind>
-
-	<keybind key="XF86Eject">
-	  <action name="Execute"><execute>eject</execute></action>
-	</keybind>
+      <action name="Execute">
+        <execute>amixer set Master toggle</execute>
+      </action>
+    </keybind>
+    <keybind key="XF86AudioLowerVolume">
+      <action name="Execute">
+        <execute>amixer set Master 10%-</execute>
+      </action>
+    </keybind>
+    <keybind key="XF86AudioRaiseVolume">
+      <action name="Execute">
+        <execute>amixer set Master 10%+</execute>
+      </action>
+    </keybind>
+    <keybind key="XF86Eject">
+      <action name="Execute">
+        <execute>eject</execute>
+      </action>
+    </keybind>
   </keyboard>
-
   <mouse>
     <dragThreshold>1</dragThreshold>
     <doubleClickTime>500</doubleClickTime>
@@ -621,7 +609,6 @@
       </mousebind>
     </context>
   </mouse>
-
   <menu>
     <file>menu.xml</file>
     <hideDelay>200</hideDelay>
@@ -631,9 +618,7 @@
     <showIcons>yes</showIcons>
     <manageDesktops>yes</manageDesktops>
   </menu>
-
   <applications>
 
   </applications>
-
 </openbox_config>

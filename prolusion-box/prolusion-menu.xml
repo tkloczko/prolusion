@@ -3,15 +3,8 @@
 <openbox_menu xmlns="http://openbox.org/3.4/menu">
 
 <menu id="system-menu" label="System">
-  <item label="Openbox Configuration Manager">
-    <action name="Execute">
-      <command>obconf</command>
-      <startupnotify><enabled>yes</enabled></startupnotify>
-    </action>
-  </item>
-  <separator />
-  <item label="Reconfigure Openbox">
-    <action name="Reconfigure" />
+  <item label="Reconfigure">
+    <action name="Reconfigure"/>
   </item>
 </menu>
 
@@ -26,9 +19,9 @@
     </action>
   </item>
 
-  <item label="Chromium">
+  <item label="Terminal">
     <action name="Execute">
-      <command>chromium</command>
+      <command>gnome-terminal</command>
       <startupnotify>
         <enabled>yes</enabled>
       </startupnotify>
