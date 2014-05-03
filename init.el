@@ -37,6 +37,7 @@
 (add-to-list              'load-path prolusion-theme-dir)
 (add-to-list 'custom-theme-load-path prolusion-theme-dir)
 
+(require 'prolusion-semantic)
 (require 'prolusion-ui)
 (require 'prolusion-packages)
 (require 'prolusion-behavior)

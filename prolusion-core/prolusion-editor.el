@@ -86,7 +86,7 @@
 (prolusion-require-package 'guide-key)
 
 (setq guide-key/guide-key-sequence
-      '("C-x"
+  '("C-x"
 	"C-x r"
 	"C-x 4"
 	"C-x 5"
@@ -102,29 +102,14 @@
 (diminish 'guide-key-mode)
 
 ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Semantic
+;; Completion
 ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-(require 'semantic)
-(require 'semantic/sb)
-(require 'srecode)
+(prolusion-require-package 'company)
 
-(semantic-mode 1)
+(global-company-mode)
 
-(global-semanticdb-minor-mode 1)
-(global-semantic-idle-scheduler-mode 1)
-(global-semantic-idle-completions-mode 1)
-(global-semantic-decoration-mode 0)
-(global-semantic-highlight-func-mode 1)
-(global-semantic-stickyfunc-mode 1)
-(global-semantic-idle-summary-mode 1)
-(global-semantic-mru-bookmark-mode 1)
-(global-semantic-idle-breadcrumbs-mode 1)
-
-(semanticdb-enable-gnu-global-databases 'c-mode)
-(semanticdb-enable-gnu-global-databases 'c++-mode)
-
-(setq semanticdb-default-save-directory prolusion-semantic-dir)
+(diminish 'company-mode)
 
 ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Helm
@@ -152,16 +137,6 @@
 (global-set-key (kbd "C-x C-j i") 'helm-apt)
 (global-set-key (kbd "C-x C-j d") 'helm-dash)
 (global-set-key (kbd "C-x C-j m") 'helm-mini)
-
-;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Completion
-;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-
-(prolusion-require-package 'company)
-
-(global-company-mode)
-
-(diminish 'company-mode)
 
 ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; IEdit
@@ -240,7 +215,7 @@
 (diminish 'git-gutter-mode)
 
 ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;
+;; Duplication
 ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (defun duplicate-line()
