@@ -52,10 +52,6 @@ prolusion_clear () {
 
 prolusion_install () {
 
-    prolusion_yellow "Cloning the Protection's GitHub repository..."
-
-    /usr/bin/env git clone $PROTECTION_URL "$PROTECTION_INSTALL_DIR" > /dev/null
-
     prolusion_yellow "Cloning the Prolusion's GitHub repository..."
 
     /usr/bin/env git clone $PROLUSION_URL "$PROLUSION_INSTALL_DIR" > /dev/null
@@ -63,14 +59,6 @@ prolusion_install () {
     prolusion_yellow "Setting up links ..."
 
     /usr/bin/env ln -s $PROLUSION_INSTALL_DIR $HOME/.emacs.d
-
-    prolusion_yellow "Fetching mail ..."
-
-    /usr/bin/env offlineimap -c $PROLUSION_INSTALL_DIR/prolusion-mail/prolusion-mail.rc
-
-    prolusion_yellow "Indexing mail ..."
-
-    /usr/bin/env mu index --maildir=$HOME/.prolusion.d/prolusion-mail
 
     if ! [ $? -eq 0 ]
     then
@@ -107,9 +95,6 @@ done
 ## Behavior
 ## #################################################################
 
-PROTECTION_URL="https://github.com/jwintz/protection.git"
-PROTECTION_INSTALL_DIR="$HOME/.password-store"
-
 PROLUSION_URL="https://github.com/jwintz/prolusion.git"
 PROLUSION_INSTALL_DIR="$HOME/.prolusion.d"
 
@@ -129,24 +114,6 @@ else
     prolusion_red "not found. Aborting installation!"
     exit 1
 fi;
-
-prolusion_cyan "Checking to see if offlineimap is installed..."
-if hash offlineimap 2>&-
-then
-    prolusion_green "found."
-else
-    prolusion_red "not found. Aborting installation!!"
-    exit 1
-fi
-
-prolusion_cyan "Checking to see if mu is installed..."
-if hash mu 2>&-
-then
-    prolusion_green "found."
-else
-    prolusion_red "not found. Aborting installation!!"
-    exit 1
-fi
 
 prolusion_install
 

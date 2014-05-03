@@ -102,39 +102,27 @@
 (diminish 'guide-key-mode)
 
 ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Completion
-;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-
-(prolusion-require-package 'company)
-
-(global-company-mode)
-
-(diminish 'company-mode)
-
-;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Helm
 ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (prolusion-require-package 'helm)
 (prolusion-require-package 'helm-ack)
-(prolusion-require-package 'helm-company)
 (prolusion-require-package 'helm-dash)
 
 (setq helm-c-ack-use-ack-grep t)
-
-(eval-after-load 'company
-  '(progn
-     (define-key company-mode-map   (kbd "<C-return>") 'helm-company)
-     (define-key company-active-map (kbd "<C-return>") 'helm-company)))
 
 (setq helm-dash-docsets-path prolusion-docs-dir)
 (setq helm-dash-common-docsets '("C" "C++" "Qt"))
 
 (custom-set-faces
- '(helm-source-header ((t (:background "black" :foreground "gainsboro" :underline nil :weight normal :height 1.0)))))
+ '(helm-source-header
+   ((t (:background "black"
+        :foreground "gainsboro"
+        :underline nil
+        :weight normal
+        :height 1.0)))))
 
 (global-set-key (kbd "C-x C-j a") 'helm-ack)
-(global-set-key (kbd "C-x C-j i") 'helm-apt)
 (global-set-key (kbd "C-x C-j d") 'helm-dash)
 (global-set-key (kbd "C-x C-j m") 'helm-mini)
 
@@ -143,8 +131,6 @@
 ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (prolusion-require-package 'iedit)
-
-;; bound to C-c ;
 
 ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Headers
@@ -238,6 +224,57 @@
     (:eval
      (if (buffer-file-name)
        (abbreviate-file-name (buffer-file-name)) "%b"))))
+
+;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Semantic
+;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+(add-to-list 'auto-mode-alist '("\\.h$" . c++-mode))
+(add-to-list 'auto-mode-alist '("\\.c$" . c++-mode))
+
+(semantic-mode 1)
+
+(setq semanticdb-default-save-directory prolusion-semantic-dir)
+
+;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;
+;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+(prolusion-require-package 'auto-complete)
+(prolusion-require-package 'auto-complete-c-headers)
+
+(require 'auto-complete)
+(require 'auto-complete-config)
+(require 'auto-complete-c-headers)
+
+(setq ac-comphist-file (expand-file-name "ac-comphist.dat" prolusion-save-dir))
+
+(ac-config-default)
+
+(add-to-list 'ac-sources 'ac-source-abbrev)
+(add-to-list 'ac-sources 'ac-source-semantic)
+(add-to-list 'ac-sources 'ac-source-c-header)
+(add-to-list 'ac-sources 'ac-source-words-in-same-mode-buffers)
+
+(global-auto-complete-mode t)
+
+;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;
+;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+(require 'irony)
+
+(setq irony-cdb-cmake-generator "Ninja")
+(setq irony-cdb-build-dir "build-irony")
+
+(irony-enable 'ac)
+
+(defun prolusion/irony-hook ()
+  (when (member major-mode irony-known-modes)
+    (irony-mode 1)))
+
+(add-hook 'c++-mode-hook 'prolusion/irony-hook)
+(add-hook   'c-mode-hook 'prolusion/irony-hook)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
