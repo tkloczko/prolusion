@@ -52,9 +52,21 @@ prolusion_clear () {
 
 prolusion_install () {
 
-    prolusion_yellow "Cloning the Prolusion's GitHub repository..."
+    prolusion_yellow "Cloning the Prolusion GitHub repository..."
 
     /usr/bin/env git clone $PROLUSION_URL "$PROLUSION_INSTALL_DIR" > /dev/null
+
+    prolusion_yellow "Cloning the Irony GitHub repository..."
+
+    /usr/bin/env git clone $IRONY_URL "$IRONY_INSTALL_DIR" > /dev/null
+
+    cd $IRONY_INSTALL_DIR
+    mkdir build
+    cd build
+    cmake ..
+    make
+    make install
+    cd $HOME
 
     prolusion_yellow "Setting up links ..."
 
@@ -97,6 +109,9 @@ done
 
 PROLUSION_URL="https://github.com/jwintz/prolusion.git"
 PROLUSION_INSTALL_DIR="$HOME/.prolusion.d"
+
+IRONY_URL="https://github.com/Sarcasm/irony-mode.git"
+IRONY_INSTALL_DIR="$PROLUSION_INSTALL_DIR/prolusion-irony"
 
 if [ -d "$PROLUSION_INSTALL_DIR" ]
 then

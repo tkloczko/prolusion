@@ -258,6 +258,8 @@
 
 (global-auto-complete-mode t)
 
+(diminish 'auto-complete-mode)
+
 ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;
 ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -275,6 +277,8 @@
 
 (add-hook 'c++-mode-hook 'prolusion/irony-hook)
 (add-hook   'c-mode-hook 'prolusion/irony-hook)
+
+(diminish 'irony-mode)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
