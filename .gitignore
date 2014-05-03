@@ -25,18 +25,7 @@ prolusion-elpa
 prolusion-eshell
 prolusion-save
 prolusion-semantic
-
-## #################################################################
-## Mail Repositories
-## #################################################################
-
-prolusion-mail/draft
-prolusion-mail/gmail
-prolusion-mail/icloud
-prolusion-mail/inbox
-prolusion-mail/inria
-prolusion-mail/local
-prolusion-mail/queue
+prolusion-irony
 
 ######################################################################
 ### .gitignore ends here
