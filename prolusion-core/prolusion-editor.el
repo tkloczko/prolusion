@@ -226,6 +226,16 @@
        (abbreviate-file-name (buffer-file-name)) "%b"))))
 
 ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Snippets
+;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+(prolusion-require-package 'yasnippet)
+
+(setq yas-snippet-dirs prolusion-snippets-dir)
+
+(yas-global-mode 1)
+
+;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Semantic
 ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
@@ -251,10 +261,38 @@
 
 (ac-config-default)
 
+(defun ac-yasnippet-candidate ()
+  (let ((table (yas/get-snippet-tables major-mode)))
+    (if table
+      (let (candidates (list))
+            (mapcar (lambda (mode)
+              (maphash (lambda (key value)
+                (push key candidates))
+              (yas/snippet-table-hash mode)))
+            table)
+        (all-completions ac-prefix candidates)))))
+
+(defface ac-yasnippet-candidate-face
+  '((t (:background "sandybrown" :foreground "black")))
+  "Face for yasnippet candidate.")
+
+(defface ac-yasnippet-selection-face
+  '((t (:background "coral3" :foreground "white")))
+  "Face for the yasnippet selected candidate.")
+
+(defvar ac-source-yasnippet
+  '((candidates . ac-yasnippet-candidate)
+    (action . yas/expand)
+    (limit . 3)
+    (candidate-face . ac-yasnippet-candidate-face)
+    (selection-face . ac-yasnippet-selection-face))
+  "Source for Yasnippet.")
+
 (add-to-list 'ac-sources 'ac-source-abbrev)
 (add-to-list 'ac-sources 'ac-source-semantic)
 (add-to-list 'ac-sources 'ac-source-c-header)
 (add-to-list 'ac-sources 'ac-source-words-in-same-mode-buffers)
+(add-to-list 'ac-sources 'ac-source-yasnippet)
 
 (global-auto-complete-mode t)
 

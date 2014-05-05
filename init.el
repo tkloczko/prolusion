@@ -24,6 +24,7 @@
 (defvar prolusion-semantic-dir (expand-file-name "prolusion-semantic"    prolusion-dir) "")
 (defvar prolusion-theme-dir    (expand-file-name "prolusion-theme"       prolusion-dir) "")
 (defvar prolusion-irony-dir    (expand-file-name "prolusion-irony/elisp" prolusion-dir) "")
+(defvar prolusion-snippets-dir (expand-file-name "prolusion-snippets"    prolusion-dir) "")
 
 (make-directory prolusion-docs-dir t)
 (make-directory prolusion-elpa-dir t)
