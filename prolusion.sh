@@ -58,7 +58,7 @@ prolusion_install () {
 
     prolusion_yellow "Cloning the Irony GitHub repository..."
 
-    /usr/bin/env git clone $IRONY_URL "$IRONY_INSTALL_DIR" > /dev/null
+    /usr/bin/env git clone --recursive $IRONY_URL "$IRONY_INSTALL_DIR" > /dev/null
 
     cd $IRONY_INSTALL_DIR
     mkdir build
@@ -123,6 +123,33 @@ fi
 
 prolusion_cyan "Checking to see if git is installed..."
 if hash git 2>&-
+then
+    prolusion_green "found."
+else
+    prolusion_red "not found. Aborting installation!"
+    exit 1
+fi;
+
+prolusion_cyan "Checking to see if emacs is installed..."
+if hash emacs 2>&-
+then
+    prolusion_green "found."
+else
+    prolusion_red "not found. Aborting installation!"
+    exit 1
+fi;
+
+prolusion_cyan "Checking to see if cmake is installed..."
+if hash cmake 2>&-
+then
+    prolusion_green "found."
+else
+    prolusion_red "not found. Aborting installation!"
+    exit 1
+fi;
+
+prolusion_cyan "Checking to see if clang is installed..."
+if hash clang 2>&-
 then
     prolusion_green "found."
 else
