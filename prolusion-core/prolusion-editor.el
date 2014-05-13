@@ -71,6 +71,8 @@
 ;; Global key bindings
 ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
+(setq text-scale-mode-step 1.05)
+
 (global-set-key (kbd "C-x \\") 'align-regexp)
 (global-set-key (kbd "C-+") 'text-scale-increase)
 (global-set-key (kbd "C--") 'text-scale-decrease)
