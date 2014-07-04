@@ -304,21 +304,21 @@
 ;;
 ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-(require 'irony)
+;; (require 'irony)
 
-(setq irony-cdb-cmake-generator "Ninja")
-(setq irony-cdb-build-dir "build-irony")
+;; (setq irony-cdb-cmake-generator "Ninja")
+;; (setq irony-cdb-build-dir "build-irony")
 
-(irony-enable 'ac)
+;; (irony-enable 'ac)
 
-(defun prolusion/irony-hook ()
-  (when (member major-mode irony-known-modes)
-    (irony-mode 1)))
+;; (defun prolusion/irony-hook ()
+;;   (when (member major-mode irony-known-modes)
+;;     (irony-mode 1)))
 
-(add-hook 'c++-mode-hook 'prolusion/irony-hook)
-(add-hook   'c-mode-hook 'prolusion/irony-hook)
+;; (add-hook 'c++-mode-hook 'prolusion/irony-hook)
+;; (add-hook   'c-mode-hook 'prolusion/irony-hook)
 
-(diminish 'irony-mode)
+;; (diminish 'irony-mode)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 

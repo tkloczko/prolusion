@@ -56,17 +56,17 @@ prolusion_install () {
 
     /usr/bin/env git clone $PROLUSION_URL "$PROLUSION_INSTALL_DIR" > /dev/null
 
-    prolusion_yellow "Cloning the Irony GitHub repository..."
+    # prolusion_yellow "Cloning the Irony GitHub repository..."
 
-    /usr/bin/env git clone --recursive $IRONY_URL "$IRONY_INSTALL_DIR" > /dev/null
+    # /usr/bin/env git clone --recursive $IRONY_URL "$IRONY_INSTALL_DIR" > /dev/null
 
-    cd $IRONY_INSTALL_DIR
-    mkdir build
-    cd build
-    cmake ../server
-    make
-    make install
-    cd $HOME
+    # cd $IRONY_INSTALL_DIR
+    # mkdir build
+    # cd build
+    # cmake ../server
+    # make
+    # make install
+    # cd $HOME
 
     prolusion_yellow "Setting up links ..."
 
