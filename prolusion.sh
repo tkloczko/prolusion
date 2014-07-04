@@ -63,7 +63,7 @@ prolusion_install () {
     cd $IRONY_INSTALL_DIR
     mkdir build
     cd build
-    cmake ..
+    cmake ../server
     make
     make install
     cd $HOME
