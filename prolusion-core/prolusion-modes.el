@@ -24,6 +24,20 @@
 (add-to-list 'auto-mode-alist '("\\.pr[io]$" . makefile-mode))
 (add-to-list 'auto-mode-alist '("\\.qml$"    . qml-mode))
 
+;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;
+;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+(defun info-mode ()
+  (interactive)
+  (let ((file-name (buffer-file-name)))
+    (kill-buffer (current-buffer))
+    (info file-name)))
+
+(add-to-list 'auto-mode-alist '("\\.info\\'" . info-mode))
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
 (provide 'prolusion-modes)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
