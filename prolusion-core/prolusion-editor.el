@@ -93,8 +93,7 @@
 	"C-x 4"
 	"C-x 5"
 	"C-x C-g"
-	"C-x C-h"
-	"C-x C-j"))
+	"C-x C-h"))
 
 (setq guide-key/highlight-command-regexp "git")
 (setq guide-key/idle-delay 1.5)
@@ -124,9 +123,9 @@
         :weight normal
         :height 1.0)))))
 
-(global-set-key (kbd "C-x C-j a") 'helm-ack)
-(global-set-key (kbd "C-x C-j d") 'helm-dash)
-(global-set-key (kbd "C-x C-j m") 'helm-mini)
+;; (global-set-key (kbd "C-x C-j a") 'helm-ack)
+;; (global-set-key (kbd "C-x C-j d") 'helm-dash)
+;; (global-set-key (kbd "C-x C-j m") 'helm-mini)
 
 ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; IEdit
