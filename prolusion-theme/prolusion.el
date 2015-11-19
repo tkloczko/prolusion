@@ -13,7 +13,7 @@
 ;;; Code:
 
 (defgroup prolusion nil
-  "Jularized theme options.
+  "Prolusion theme options.
 The theme has to be reloaded after changing anything in this group."
   :group 'faces)
 
@@ -61,10 +61,11 @@ Also affects linum-mode background."
 (defun create-prolusion-theme (variant theme-name &optional childtheme)
   "Create a VARIANT of the theme named THEME-NAME.
 
-When optional argument CHILDTHEME function is supplied it's invoked to further
-customize the resulting theme."
+   When optional argument CHILDTHEME function is supplied it's invoked to further
+   customize the resulting theme."
+
   (let* ((class '((class color) (min-colors 89)))
-         ;; Jularized palette
+         ;; prolusion palette
          (base03    "#101010") ;;"#002b36")
          (base02    "#202020") ;;"#073642")
          ;; emphasized content
@@ -79,7 +80,7 @@ customize the resulting theme."
          ;; background light
          (base3     "#f5f5f5") ;;"#fdf6e3")
 
-         ;; Jularized accented colors
+         ;; prolusion accented colors
          (yellow    "#b58900")
          (orange    "#cb4b16")
          (red       "#dc322f")
@@ -254,8 +255,6 @@ customize the resulting theme."
      `(ecb-tree-guide-line-face ((,class (:inherit ecb-default-general-face
                                                    :foreground ,prolusion-hl :height 1.0))))
 
-
-
      ;; ee
      `(ee-bookmarked ((,class (:foreground ,prolusion-emph))))
      `(ee-category ((,class (:foreground ,blue))))
@@ -264,7 +263,6 @@ customize the resulting theme."
      `(ee-marked ((,class (:foreground ,magenta :weight bold))))
      `(ee-omitted ((,class (:foreground ,prolusion-comments))))
      `(ee-shadow ((,class (:inherit shadow))))
-
 
      ;; grep
      `(grep-context-face ((,class (:foreground ,prolusion-fg))))
@@ -292,8 +290,6 @@ customize the resulting theme."
                                 :underline ,s-mode-line-bg
                                 :foreground ,s-mode-line-fg
                                 :background ,s-mode-line-bg))))
-     ;; ))))
-
      `(mode-line-buffer-id ((,class (:foreground ,s-mode-line-buffer-id-fg :weight bold))))
      `(mode-line-inactive
        ((,class (:inverse-video unspecified
@@ -303,7 +299,6 @@ customize the resulting theme."
                                 :underline ,s-mode-line-inactive-bg
                                 :foreground ,s-mode-line-inactive-fg
                                 :background ,s-mode-line-inactive-bg))))
-
      `(header-line
        ((,class (:inverse-video unspecified
                                 :underline unspecified
@@ -377,7 +372,6 @@ customize the resulting theme."
      `(font-latex-verbatim-face ((,class (:inherit fixed-pitch :foreground ,prolusion-fg
                                                    :slant italic))))
      `(font-latex-warning-face ((,class (:inherit bold :foreground ,orange))))
-
 
      ;; auto-complete
      `(ac-candidate-face ((,class (:background ,prolusion-hl :foreground ,cyan))))
@@ -510,18 +504,15 @@ customize the resulting theme."
      `(diff-hl-insert ((,class (:background ,green-lc  :foreground ,green-hc))))
      `(diff-hl-unknown ((,class (:background ,cyan-lc   :foreground ,cyan-hc))))
 
-
      ;; elfeed
      `(elfeed-search-date-face ((,class (:foreground ,prolusion-comments))))
      `(elfeed-search-feed-face ((,class (:foreground ,prolusion-comments))))
      `(elfeed-search-tag-face ((,class (:foreground ,prolusion-fg))))
      `(elfeed-search-title-face ((,class (:foreground ,cyan))))
 
-
      ;; epc
      `(epc:face-title ((,class (:foreground ,blue :background ,prolusion-bg
                                             :weight normal :underline nil))))
-
 
      ;; eshell
      `(eshell-prompt ((,class (:foreground ,yellow :weight bold))))
@@ -545,7 +536,6 @@ customize the resulting theme."
      ;; flx
      `(flx-highlight-face ((,class (:foreground ,blue
                                                 :weight normal :underline nil))))
-
 
      ;; flymake
      `(flymake-errline
@@ -853,8 +843,6 @@ customize the resulting theme."
      `(markdown-header-face-5 ((,class (:inherit markdown-header-face))))
      `(markdown-header-face-6 ((,class (:inherit markdown-header-face))))
 
-
-
      ;; message-mode
      `(message-cited-text ((,class (:foreground ,prolusion-comments))))
      `(message-header-name ((,class (:foreground ,prolusion-comments))))
@@ -866,8 +854,6 @@ customize the resulting theme."
      `(message-header-xheader ((,class (:foreground ,cyan))))
      `(message-mml ((,class (:foreground ,yellow :weight bold))))
      `(message-separator ((,class (:foreground ,prolusion-comments :slant italic))))
-
-
 
      ;; mew
      `(mew-face-header-subject ((,class (:foreground ,orange))))
@@ -958,7 +944,6 @@ customize the resulting theme."
      `(mu4e-view-link-face ((,class (:inherit link))))
      `(mu4e-view-special-header-value-face ((,class (:foreground ,blue :weight normal :underline nil
                                                                  ))))
-
      ;; mumamo
      `(mumamo-background-chunk-submode1 ((,class (:background ,prolusion-hl))))
 
@@ -1181,6 +1166,7 @@ customize the resulting theme."
                                                     :weight bold :height ,prolusion-height-plus-1))))
      `(sr-passive-path-face ((,class (:background ,prolusion-comments :foreground ,prolusion-bg
                                                   :weight bold :height ,prolusion-height-plus-1))))
+
      ;; sunrise commander marked
      `(sr-marked-dir-face ((,class (:inherit dired-marked))))
      `(sr-marked-file-face ((,class (:inherit dired-marked))))
@@ -1188,12 +1174,14 @@ customize the resulting theme."
                                                     :weight bold))))
      `(sr-alt-marked-file-face ((,class (:background ,magenta :foreground ,prolusion-bg
                                                      :weight bold))))
+
      ;; sunrise commander fstat
      `(sr-directory-face ((,class (:inherit dired-directory :weight normal))))
      `(sr-symlink-directory-face ((,class (:inherit dired-directory
                                                     :slant italic :weight normal))))
      `(sr-symlink-face ((,class (:inherit dired-symlink :slant italic :weight normal))))
      `(sr-broken-link-face ((,class (:inherit dired-warning :slant italic :weight normal))))
+
      ;; sunrise commander file types
      `(sr-compressed-face ((,class (:foreground ,prolusion-fg))))
      `(sr-encrypted-face ((,class (:foreground ,prolusion-fg))))
@@ -1201,6 +1189,7 @@ customize the resulting theme."
      `(sr-packaged-face ((,class (:foreground ,prolusion-fg))))
      `(sr-html-face ((,class (:foreground ,prolusion-fg))))
      `(sr-xml-face ((,class (:foreground ,prolusion-fg))))
+
      ;; sunrise commander misc
      `(sr-clex-hotchar-face ((,class (:background ,red  :foreground ,prolusion-bg
                                                   :weight bold))))
@@ -1227,7 +1216,6 @@ customize the resulting theme."
                                          :background ,base0))))
      '(term-default-fg-color ((t (:inherit term-color-white))))
      '(term-default-bg-color ((t (:inherit term-color-black))))
-
 
      ;; tooltip. (NOTE: This setting has no effect on the os widgets for me
      ;; zencoding uses this)
@@ -1359,7 +1347,6 @@ customize the resulting theme."
      `(wl-highlight-summary-refiled-face ((,class (:foreground ,prolusion-fg))))
      `(wl-highlight-summary-displaying-face ((,class (:underline t :weight bold))))
 
-
      ;; weechat
      `(weechat-error-face ((,class (:inherit error))))
      `(weechat-highlight-face ((,class (:foreground ,prolusion-emph :weight bold))))
@@ -1382,7 +1369,6 @@ customize the resulting theme."
 
      ;; zencoding
      `(zencoding-preview-input ((,class (:background ,prolusion-hl :box ,prolusion-emph)))))
-
 
     (custom-theme-set-variables
      theme-name

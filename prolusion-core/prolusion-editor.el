@@ -13,6 +13,12 @@
 ;;; Code:
 
 ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Diminish
+;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+(prolusion-require-package 'diminish)
+
+;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Switch form header to surce and vice versa
 ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
@@ -27,33 +33,6 @@
 (setq-default c-basic-offset 4)
 
 ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Highlight current line
-;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-
-(global-hl-line-mode +1)
-
-;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Diminish
-;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-
-(prolusion-require-package 'diminish)
-
-;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Parentheses
-;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-
-(prolusion-require-package 'smartparens)
-
-(require 'smartparens-config)
-
-(setq sp-base-key-bindings 'paredit)
-(setq sp-autoskip-closing-pair 'always)
-(setq sp-hybrid-kill-entire-symbol nil)
-(sp-use-paredit-bindings)
-
-(show-smartparens-global-mode +1)
-
-;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Whitespaces
 ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
@@ -66,6 +45,30 @@
 (add-hook 'before-save-hook (lambda () (whitespace-cleanup)))
 
 (diminish 'whitespace-mode)
+
+;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Highlight current line
+;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+(global-hl-line-mode +1)
+
+;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Parentheses
+;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+(prolusion-require-package 'smartparens)
+(prolusion-require-package 'rainbow-delimiters)
+
+(require 'smartparens-config)
+
+(setq sp-base-key-bindings 'paredit)
+(setq sp-autoskip-closing-pair 'always)
+(setq sp-hybrid-kill-entire-symbol nil)
+(sp-use-paredit-bindings)
+
+(show-smartparens-global-mode +1)
+
+(add-hook 'prog-mode-hook 'rainbow-delimiters-mode)
 
 ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Global key bindings
@@ -107,10 +110,8 @@
 ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (prolusion-require-package 'helm)
-(prolusion-require-package 'helm-ack)
+(prolusion-require-package 'helm-ag)
 (prolusion-require-package 'helm-dash)
-
-(setq helm-c-ack-use-ack-grep t)
 
 (setq helm-dash-docsets-path prolusion-docs-dir)
 (setq helm-dash-common-docsets '("C" "C++" "Qt"))
@@ -123,15 +124,9 @@
         :weight normal
         :height 1.0)))))
 
-;; (global-set-key (kbd "C-x C-j a") 'helm-ack)
-;; (global-set-key (kbd "C-x C-j d") 'helm-dash)
-;; (global-set-key (kbd "C-x C-j m") 'helm-mini)
-
-;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; IEdit
-;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-
-(prolusion-require-package 'iedit)
+(global-set-key (kbd "C-x C-j a") 'helm-ag)
+(global-set-key (kbd "C-x C-j d") 'helm-dash)
+(global-set-key (kbd "C-x C-j m") 'helm-mini)
 
 ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Headers
@@ -239,6 +234,8 @@
 (add-hook 'term-mode-hook (lambda()
   (setq yas-dont-activate t)))
 
+(diminish 'yas-minor-mode)
+
 ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Semantic
 ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -276,36 +273,6 @@
 (global-auto-complete-mode t)
 
 (diminish 'auto-complete-mode)
-
-;; (prolusion-require-package 'irony)
-
-;; (require 'irony)
-
-;; (add-hook    'c-mode-hook 'irony-mode)
-;; (add-hook  'c++-mode-hook 'irony-mode)
-;; (add-hook 'objc-mode-hook 'irony-mode)
-
-;; (defun prolusion-irony-mode-hook ()
-;;   (define-key irony-mode-map [remap completion-at-point]
-;;     'irony-completion-at-point-async)
-;;   (define-key irony-mode-map [remap complete-symbol]
-;;     'irony-completion-at-point-async))
-
-;; (add-hook 'irony-mode-hook 'prolusion-irony-mode-hook)
-;; (add-hook 'irony-mode-hook 'irony-cdb-autosetup-compile-options)
-
-;; (prolusion-require-package 'company)
-;; (prolusion-require-package 'company-irony)
-;; (prolusion-require-package 'company-irony-c-headers)
-
-;; (require 'company)
-;; (require 'company-irony)
-;; (require 'company-irony-c-headers)
-
-;; (eval-after-load ‘company ’(add-to-list 'company-backends 'company-irony))
-;; (eval-after-load ‘company ’(add-to-list 'company-backends 'company-irony-c-headers))
-
-;; (add-hook 'after-init-hook 'global-company-mode)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 

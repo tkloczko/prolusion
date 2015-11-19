@@ -60,9 +60,9 @@
 (setq auto-save-file-name-transforms `((".*" ,prolusion-save-dir t)))
 
 (setq backup-directory-alist
-      `((".*" . ,temporary-file-directory)))
+      `((".*" . ,prolusion-save-dir)))
 (setq auto-save-file-name-transforms
-      `((".*"   ,temporary-file-directory t)))
+      `((".*"   ,prolusion-save-dir t)))
 
 (global-auto-revert-mode t)
 

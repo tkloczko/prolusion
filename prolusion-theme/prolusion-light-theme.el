@@ -14,7 +14,7 @@
 
 (require 'prolusion)
 
-(deftheme prolusion-light "The light variant of the Jularized colour theme")
+(deftheme prolusion-light "The light variant of the prolusion colour theme")
 
 (create-prolusion-theme 'light 'prolusion-light)
 
