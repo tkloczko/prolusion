@@ -124,9 +124,11 @@
         :weight normal
         :height 1.0)))))
 
-(global-set-key (kbd "C-x C-j a") 'helm-ag)
-(global-set-key (kbd "C-x C-j d") 'helm-dash)
-(global-set-key (kbd "C-x C-j m") 'helm-mini)
+(global-set-key (kbd "C-c d a") 'helm-ag)
+(global-set-key (kbd "C-c d d") 'helm-dash)
+(global-set-key (kbd "C-c d m") 'helm-mini)
+
+(setq browse-url-browser-function 'eww-browse-url)
 
 ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Headers
@@ -222,6 +224,14 @@
        (abbreviate-file-name (buffer-file-name)) "%b"))))
 
 ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Iedit
+;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+(prolusion-require-package 'iedit)
+
+(define-key global-map (kbd "C-c ;") 'iedit-mode)
+
+;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Snippets
 ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
@@ -264,6 +274,11 @@
 
 (ac-config-default)
 
+(add-to-list 'achead:include-directories '"/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1")
+(add-to-list 'achead:include-directories '"/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/clang/6.1.0/include")
+(add-to-list 'achead:include-directories '"/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include")
+(add-to-list 'achead:include-directories '"/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.10.sdk/usr/include")
+
 (add-to-list 'ac-sources 'ac-source-abbrev)
 (add-to-list 'ac-sources 'ac-source-semantic)
 (add-to-list 'ac-sources 'ac-source-c-header)
@@ -272,7 +287,7 @@
 
 (global-auto-complete-mode t)
 
-(diminish 'auto-complete-mode)
+;; (diminish 'auto-complete-mode)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
