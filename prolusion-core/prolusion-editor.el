@@ -251,76 +251,61 @@
 (setq semanticdb-default-save-directory prolusion-semantic-dir)
 
 ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;
+;; Auto-Completion
 ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (prolusion-require-package 'auto-complete)
 (prolusion-require-package 'auto-complete-c-headers)
+(prolusion-require-package 'auto-complete-clang)
 
 (require 'auto-complete)
 (require 'auto-complete-config)
 (require 'auto-complete-c-headers)
+(require 'auto-complete-clang)
 
 (setq ac-comphist-file (expand-file-name "ac-comphist.dat" prolusion-save-dir))
 
 (ac-config-default)
 
-(defun ac-yasnippet-candidate ()
-  (let ((table (yas/get-snippet-tables major-mode)))
-    (if table
-      (let (candidates (list))
-            (mapcar (lambda (mode)
-              (maphash (lambda (key value)
-                (push key candidates))
-              (yas/snippet-table-hash mode)))
-            table)
-        (all-completions ac-prefix candidates)))))
-
-(defface ac-yasnippet-candidate-face
-  '((t (:background "sandybrown" :foreground "black")))
-  "Face for yasnippet candidate.")
-
-(defface ac-yasnippet-selection-face
-  '((t (:background "coral3" :foreground "white")))
-  "Face for the yasnippet selected candidate.")
-
-(defvar ac-source-yasnippet
-  '((candidates . ac-yasnippet-candidate)
-    (action . yas/expand)
-    (limit . 3)
-    (candidate-face . ac-yasnippet-candidate-face)
-    (selection-face . ac-yasnippet-selection-face))
-  "Source for Yasnippet.")
-
 (add-to-list 'ac-sources 'ac-source-abbrev)
 (add-to-list 'ac-sources 'ac-source-semantic)
 (add-to-list 'ac-sources 'ac-source-c-header)
 (add-to-list 'ac-sources 'ac-source-words-in-same-mode-buffers)
-(add-to-list 'ac-sources 'ac-source-yasnippet)
+(add-to-list 'ac-sources 'ac-source-clang)
 
 (global-auto-complete-mode t)
 
 (diminish 'auto-complete-mode)
 
-;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;
-;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; (prolusion-require-package 'irony)
 
 ;; (require 'irony)
 
-;; (setq irony-cdb-cmake-generator "Ninja")
-;; (setq irony-cdb-build-dir "build-irony")
+;; (add-hook    'c-mode-hook 'irony-mode)
+;; (add-hook  'c++-mode-hook 'irony-mode)
+;; (add-hook 'objc-mode-hook 'irony-mode)
 
-;; (irony-enable 'ac)
+;; (defun prolusion-irony-mode-hook ()
+;;   (define-key irony-mode-map [remap completion-at-point]
+;;     'irony-completion-at-point-async)
+;;   (define-key irony-mode-map [remap complete-symbol]
+;;     'irony-completion-at-point-async))
 
-;; (defun prolusion/irony-hook ()
-;;   (when (member major-mode irony-known-modes)
-;;     (irony-mode 1)))
+;; (add-hook 'irony-mode-hook 'prolusion-irony-mode-hook)
+;; (add-hook 'irony-mode-hook 'irony-cdb-autosetup-compile-options)
 
-;; (add-hook 'c++-mode-hook 'prolusion/irony-hook)
-;; (add-hook   'c-mode-hook 'prolusion/irony-hook)
+;; (prolusion-require-package 'company)
+;; (prolusion-require-package 'company-irony)
+;; (prolusion-require-package 'company-irony-c-headers)
 
-;; (diminish 'irony-mode)
+;; (require 'company)
+;; (require 'company-irony)
+;; (require 'company-irony-c-headers)
+
+;; (eval-after-load ‘company ’(add-to-list 'company-backends 'company-irony))
+;; (eval-after-load ‘company ’(add-to-list 'company-backends 'company-irony-c-headers))
+
+;; (add-hook 'after-init-hook 'global-company-mode)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 

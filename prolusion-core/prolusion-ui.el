@@ -22,7 +22,7 @@
 (setq prolusion-use-variable-pitch nil)
 
 (when (display-graphic-p)
-  (load-theme 'prolusion-dark t))
+   (load-theme 'prolusion-dark t))
 
 (when (display-graphic-p)
   (set-frame-parameter (selected-frame) 'alpha '(85 50))
@@ -40,7 +40,7 @@
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-(set-default-font "Inconsolata-11")
+(set-default-font "Inconsolata-14")
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 

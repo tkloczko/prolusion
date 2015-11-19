@@ -1,18 +1,18 @@
 #!/bin/bash
 
-# prolusion.sh ---
+# Version: $Id$
 #
-# Author: Julien Wintz
-# Created: Thu Feb 20 10:41:34 2014 (+0100)
-# Version:
-# Last-Updated:
-#           By:
-#     Update #: 340
+#
+
+# Commentary:
+#
 #
 
 # Change Log:
 #
 #
+
+# Code:
 
 ## #################################################################
 ## Helper functions
@@ -56,18 +56,6 @@ prolusion_install () {
 
     /usr/bin/env git clone $PROLUSION_URL "$PROLUSION_INSTALL_DIR" > /dev/null
 
-    # prolusion_yellow "Cloning the Irony GitHub repository..."
-
-    # /usr/bin/env git clone --recursive $IRONY_URL "$IRONY_INSTALL_DIR" > /dev/null
-
-    # cd $IRONY_INSTALL_DIR
-    # mkdir build
-    # cd build
-    # cmake ../server
-    # make
-    # make install
-    # cd $HOME
-
     prolusion_yellow "Setting up links ..."
 
     /usr/bin/env ln -s $PROLUSION_INSTALL_DIR $HOME/.emacs.d
@@ -109,9 +97,6 @@ done
 
 PROLUSION_URL="https://github.com/jwintz/prolusion.git"
 PROLUSION_INSTALL_DIR="$HOME/.prolusion.d"
-
-IRONY_URL="https://github.com/Sarcasm/irony-mode.git"
-IRONY_INSTALL_DIR="$PROLUSION_INSTALL_DIR/prolusion-irony"
 
 if [ -d "$PROLUSION_INSTALL_DIR" ]
 then
@@ -168,3 +153,6 @@ prolusion_purple " \_|  |_|  \___/|_|\__,_|___/_|\___/|_| |_| "
 prolusion_purple ""
 prolusion_green  "... is now installed and ready to do thy bidding, Master $USER!"
 prolusion_clear  ""
+
+#
+# prolusion.sh ends here
