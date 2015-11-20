@@ -14,31 +14,33 @@
 
 (require 'package)
 
-;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Save packages into prolusion-elpa dir
-;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(load-library "url-handlers")
 
 (setq package-user-dir prolusion-elpa-dir)
 
-(setq package-archives '())
-
-(add-to-list 'package-archives '("melpa" . "http://melpa.milkbox.net/packages/"))
 (add-to-list 'package-archives '("gnu" . "http://elpa.gnu.org/packages/"))
-
-(package-refresh-contents)
+(add-to-list 'package-archives '("melpa" . "http://melpa.milkbox.net/packages/"))
+(add-to-list 'package-archives '("melpa-stable" . "http://melpa-stable.milkbox.net/packages/"))
 
 (package-initialize)
 
-;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Helper 'require' function
-;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(when (not package-archive-contents)
+  (message "Fetching package meta data")
+  (package-refresh-contents))
 
 (defun prolusion-require-package (package) ""
-  (unless (package-installed-p package)
-    (package-install package))
-  (require 'package))
+       (message "Loading package %s" package)
+       (unless (package-installed-p package)
+         (package-install package))
+       (require 'package))
 
-;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(defun prolusion-upgrade-packages () ""
+       (interactive)
+       (message "Upgrading packages")
+       (save-window-excursion
+         (package-list-packages t)
+         (package-menu-mark-upgrades)
+         (package-menu-execute t)))
 
 (provide 'prolusion-packages)
 

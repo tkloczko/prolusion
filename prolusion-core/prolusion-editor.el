@@ -52,7 +52,8 @@
 ;; Highlight current line
 ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-(global-hl-line-mode +1)
+(when (display-graphic-p)
+  (global-hl-line-mode +1))
 
 ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Parentheses
@@ -94,11 +95,11 @@
 
 (setq guide-key/guide-key-sequence
   '("C-x"
-	"C-x r"
-	"C-x 4"
-	"C-x 5"
-	"C-x C-g"
-	"C-x C-h"))
+    "C-x r"
+    "C-x 4"
+    "C-x 5"
+    "C-x C-g"
+    "C-x C-h"))
 
 (setq guide-key/highlight-command-regexp "git")
 (setq guide-key/idle-delay 1.5)
@@ -106,6 +107,16 @@
 (guide-key-mode 1)
 
 (diminish 'guide-key-mode)
+
+;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Undo tree
+;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+(prolusion-require-package 'undo-tree)
+
+(global-undo-tree-mode)
+
+(diminish 'undo-tree-mode)
 
 ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Helm
@@ -126,9 +137,9 @@
         :weight normal
         :height 1.0)))))
 
-(global-set-key (kbd "C-c d a") 'helm-ag)
-(global-set-key (kbd "C-c d d") 'helm-dash)
-(global-set-key (kbd "C-c d m") 'helm-mini)
+(global-set-key (kbd "C-c h a") 'helm-ag)
+(global-set-key (kbd "C-c h d") 'helm-dash)
+(global-set-key (kbd "C-c h m") 'helm-mini)
 
 (setq browse-url-browser-function 'eww-browse-url)
 
@@ -272,6 +283,8 @@
 (add-hook  'c++-mode-hook 'irony-mode)
 (add-hook 'objc-mode-hook 'irony-mode)
 
+(add-hook 'irony-mode-hook 'irony-cdb-autosetup-compile-options)
+
 (eval-after-load 'irony '(diminish 'irony-mode))
 
 ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -300,14 +313,15 @@
 ;; Fly-checking
 ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-;; (prolusion-require-package 'flycheck-irony)
+(prolusion-require-package 'flycheck-irony)
 
-;; (eval-after-load 'flycheck '(add-hook 'flycheck-mode-hook 'flycheck-irony-set))
+(eval-after-load 'flycheck '(add-hook 'flycheck-mode-hook 'flycheck-irony-setup))
 
-;; (add-hook          'c-mode-hook 'flycheck-mode)
-;; (add-hook        'c++-mode-hook 'flycheck-mode)
-;; (add-hook       'objc-mode-hook 'flycheck-mode)
-;; (add-hook 'emacs-lisp-mode-hook 'flycheck-mode)
+(add-hook          'c-mode-hook 'flycheck-mode)
+(add-hook        'c++-mode-hook 'flycheck-mode)
+(add-hook       'objc-mode-hook 'flycheck-mode)
+
+(eval-after-load 'flycheck '(diminish 'flycheck-mode))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 

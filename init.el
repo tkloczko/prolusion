@@ -12,6 +12,8 @@
 ;;
 ;;; Code:
 
+(package-initialize)
+
 (defvar prolusion-user "Julien Wintz")
 (defvar prolusion-mail "julien.wintz@inria.fr")
 

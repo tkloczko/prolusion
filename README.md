@@ -5,8 +5,9 @@ From Latin prolusio(n- ), from prolus- ‘practised beforehand’, from the verb
 ## Prerequisites
 
     $ brew install curl
+    $ brew install gpg
     $ brew install git
-    $ brew install emacs --HEAD --cocoa
+    $ brew install emacs --use-git-head --cocoa
     $ brew install cmake
     $ brew install ninja
     $ brew installl llvm --with-clang
@@ -23,3 +24,9 @@ From Latin prolusio(n- ), from prolus- ‘practised beforehand’, from the verb
 ## Additions
 
 ...
+
+## Upgrades
+
+* emacs
+* prolusion
+* prolusion-packages
