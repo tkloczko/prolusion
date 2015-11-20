@@ -18,6 +18,8 @@
 
 (prolusion-require-package 'diminish)
 
+(diminish 'abbrev-mode)
+
 ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Switch form header to surce and vice versa
 ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -258,66 +260,54 @@
 (setq semanticdb-default-save-directory prolusion-semantic-dir)
 
 ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Auto-Completion
+;; Completion backend
 ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-
-;; (prolusion-require-package 'auto-complete)
-;; (prolusion-require-package 'auto-complete-c-headers)
-;; (prolusion-require-package 'auto-complete-clang)
-
-;; (require 'auto-complete)
-;; (require 'auto-complete-config)
-;; (require 'auto-complete-c-headers)
-;; (require 'auto-complete-clang)
-
-;; (setq ac-comphist-file (expand-file-name "ac-comphist.dat" prolusion-save-dir))
-
-;; (ac-config-default)
-
-;; (add-to-list 'achead:include-directories '"/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1")
-;; (add-to-list 'achead:include-directories '"/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/clang/6.1.0/include")
-;; (add-to-list 'achead:include-directories '"/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include")
-;; (add-to-list 'achead:include-directories '"/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.10.sdk/usr/include")
-
-;; (add-to-list 'ac-sources 'ac-source-abbrev)
-;; (add-to-list 'ac-sources 'ac-source-semantic)
-;; (add-to-list 'ac-sources 'ac-source-c-header)
-;; (add-to-list 'ac-sources 'ac-source-words-in-same-mode-buffers)
-;; (add-to-list 'ac-sources 'ac-source-clang)
-
-;; (global-auto-complete-mode t)
-
-;; (diminish 'auto-complete-mode)
 
 (prolusion-require-package 'irony)
 
-(custom-set-variables
- '(irony-server-install-prefix prolusion-irony-dir)
- '(irony-user-dir              prolusion-irony-dir))
+(setq irony-server-install-prefix prolusion-irony-dir)
+(setq irony-user-dir              prolusion-irony-dir)
 
 (add-hook    'c-mode-hook 'irony-mode)
 (add-hook  'c++-mode-hook 'irony-mode)
 (add-hook 'objc-mode-hook 'irony-mode)
 
-(defun prolusion/irony-mode-hook ()
-  (define-key irony-mode-map [remap completion-at-point]
-    'irony-completion-at-point-async)
-  (define-key irony-mode-map [remap complete-symbol]
-    'irony-completion-at-point-async))
-
-(add-hook 'irony-mode-hook 'prolusion/irony-mode-hook)
-(add-hook 'irony-mode-hook 'irony-cdb-autosetup-compile-options)
+(eval-after-load 'irony '(diminish 'irony-mode))
 
 ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Auto Completion
 ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (prolusion-require-package 'company)
+(prolusion-require-package 'company-irony)
+(prolusion-require-package 'company-irony-c-headers)
+
+(eval-after-load 'company '(add-to-list 'company-backends 'company-irony))
+(eval-after-load 'company '(add-to-list 'company-backends 'company-irony-c-headers))
 
 (setq company-idle-delay 0.2)
+(setq company-echo-delay 0.0)
 (setq company-minimum-prefix-length 1)
 
-(global-company-mode)
+(add-hook          'c-mode-hook 'company-mode)
+(add-hook        'c++-mode-hook 'company-mode)
+(add-hook       'objc-mode-hook 'company-mode)
+(add-hook 'emacs-lisp-mode-hook 'company-mode)
+
+(eval-after-load 'company '(diminish 'company-mode))
+
+;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Fly-checking
+;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;; (prolusion-require-package 'flycheck-irony)
+
+;; (eval-after-load 'flycheck '(add-hook 'flycheck-mode-hook 'flycheck-irony-set))
+
+;; (add-hook          'c-mode-hook 'flycheck-mode)
+;; (add-hook        'c++-mode-hook 'flycheck-mode)
+;; (add-hook       'objc-mode-hook 'flycheck-mode)
+;; (add-hook 'emacs-lisp-mode-hook 'flycheck-mode)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 

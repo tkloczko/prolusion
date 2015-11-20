@@ -4,7 +4,6 @@ From Latin prolusio(n- ), from prolus- ‘practised beforehand’, from the verb
 
 ## Prerequisites
 
-    $ brew install gpg
     $ brew install curl
     $ brew install git
     $ brew install emacs --HEAD --cocoa
@@ -19,11 +18,8 @@ From Latin prolusio(n- ), from prolus- ‘practised beforehand’, from the verb
 
 ## Builtins
 
-* `M-x global-hl-line-mode`
-* `C-x r t`
-* narrow to region etc.
-* wdired-change-to-wdired-mode
+...
 
 ## Additions
 
-*
+...
