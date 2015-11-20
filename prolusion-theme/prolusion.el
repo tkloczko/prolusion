@@ -91,7 +91,6 @@ Also affects linum-mode background."
          (green     "#859900")
 
          ;; Darker and lighter accented colors
-         ;; Only use these in exceptional circumstances!
          (yellow-d  "#7B6000")
          (yellow-l  "#DEB542")
          (orange-d  "#8B2C02")
@@ -122,7 +121,6 @@ Also affects linum-mode background."
          (prolusion-comments (if (eq variant 'light) base0 base00))
 
          ;; Light/Dark adaptive higher/lower contrast accented colors
-         ;; Only use these in exceptional cirmumstances!
          (prolusion-fg-hc (if (eq variant 'light) base3 base03))
          (prolusion-fg-lc (if (eq variant 'light) base03 base3))
 
@@ -144,8 +142,7 @@ Also affects linum-mode background."
          (green-lc (if (eq variant 'light) green-l green-d))
 
          ;; customize based face properties
-         (s-variable-pitch (if prolusion-use-variable-pitch
-                               'variable-pitch 'default))
+         (s-variable-pitch (if prolusion-use-variable-pitch 'variable-pitch 'default))
          (s-fringe-bg (if prolusion-distinct-fringe-background
                           prolusion-hl prolusion-bg))
 
@@ -173,7 +170,7 @@ Also affects linum-mode background."
      `(cursor ((,class (:foreground ,prolusion-bg :background ,prolusion-fg
                                     :inverse-video t))))
      `(mouse ((,class (:foreground ,prolusion-bg :background ,prolusion-fg
-				   :inverse-video t))))
+                                   :inverse-video t))))
      `(escape-glyph-face ((,class (:foreground ,red))))
      `(fringe ((,class (:foreground ,prolusion-fg :background ,s-fringe-bg))))
      `(highlight ((,class (:background ,prolusion-hl))))
@@ -208,16 +205,6 @@ Also affects linum-mode background."
        ((,class (:inherit compilation-error :foreground ,red :weight bold))))
      `(compilation-mode-line-run ((,class (:foreground ,orange :weight bold))))
 
-     ;; cua
-     `(cua-global-mark ((,class (:background ,yellow :foreground ,prolusion-bg))))
-     `(cua-rectangle ((,class (:inherit region
-                                        :background ,magenta :foreground ,prolusion-bg))))
-     `(cua-rectangle-noselect ((,class (:inherit region :background ,prolusion-hl
-                                                 :foreground ,prolusion-comments))))
-
-     ;; diary
-     `(diary ((,class (:foreground ,yellow))))
-
      ;; dired
      `(dired-directory ((,class (:foreground ,blue :weight normal))))
      `(dired-flagged ((,class (:foreground ,red))))
@@ -232,37 +219,6 @@ Also affects linum-mode background."
      ;; dropdown
      `(dropdown-list-face ((,class (:background ,prolusion-hl :foreground ,cyan))))
      `(dropdown-list-selection-face ((,class (:background ,cyan-lc :foreground ,cyan-hc))))
-
-     ;; ecb
-     `(ecb-default-highlight-face ((,class (:background ,blue :foreground ,prolusion-bg))))
-     `(ecb-history-bucket-node-dir-soure-path-face
-       ((,class (:inherit ecb-history-bucket-node-face :foreground ,yellow))))
-     `(ecb-source-in-directories-buffer-face ((,class (:inherit ecb-directories-general-face
-                                                                :foreground ,prolusion-fg))))
-     `(ecb-history-dead-buffer-face ((,class (:inherit ecb-history-general-face
-                                                       :foreground ,prolusion-comments))))
-     `(ecb-directory-not-accessible-face ((,class (:inherit ecb-directories-general-face
-                                                            :foreground ,prolusion-comments))))
-     `(ecb-bucket-node-face ((,class (:inherit ecb-default-general-face :weight normal
-                                               :foreground ,blue))))
-     `(ecb-tag-header-face ((,class (:background ,prolusion-hl))))
-     `(ecb-analyse-bucket-element-face ((,class (:inherit ecb-analyse-general-face
-                                                          :foreground ,green))))
-     `(ecb-directories-general-face ((,class (:inherit ecb-default-general-face :height 1.0))))
-     `(ecb-method-non-semantic-face ((,class (:inherit ecb-methods-general-face
-                                                       :foreground ,cyan))))
-     `(ecb-mode-line-prefix-face ((,class (:foreground ,green))))
-     `(ecb-tree-guide-line-face ((,class (:inherit ecb-default-general-face
-                                                   :foreground ,prolusion-hl :height 1.0))))
-
-     ;; ee
-     `(ee-bookmarked ((,class (:foreground ,prolusion-emph))))
-     `(ee-category ((,class (:foreground ,blue))))
-     `(ee-link ((,class (:inherit link))))
-     `(ee-link-visited ((,class (:inherit link-visited))))
-     `(ee-marked ((,class (:foreground ,magenta :weight bold))))
-     `(ee-omitted ((,class (:foreground ,prolusion-comments))))
-     `(ee-shadow ((,class (:inherit shadow))))
 
      ;; grep
      `(grep-context-face ((,class (:foreground ,prolusion-fg))))
@@ -333,111 +289,23 @@ Also affects linum-mode background."
 
      `(c-annotation-face ((,class (:inherit font-lock-constant-face))))
 
-     ;;; external
-
-     ;; ace-jump-mode
-     `(ace-jump-face-background
-       ((,class (:foreground ,prolusion-comments :background ,prolusion-bg
-                             :inverse-video nil))))
-     `(ace-jump-face-foreground
-       ((,class (:foreground ,red :background ,prolusion-bg :inverse-video nil :weight bold))))
-
-     ;; auctex
-     `(font-latex-bold-face ((,class (:inherit bold :foreground ,prolusion-emph))))
-     `(font-latex-doctex-documentation-face ((,class (:background unspecified))))
-     `(font-latex-doctex-preprocessor-face ((,class
-                                             (:inherit (font-latex-doctex-documentation-face
-                                                        font-lock-builtin-face
-                                                        font-lock-preprocessor-face)))))
-     `(font-latex-italic-face ((,class (:inherit italic :foreground ,prolusion-emph))))
-     `(font-latex-math-face ((,class (:foreground ,violet))))
-     `(font-latex-sectioning-0-face ((,class (:inherit font-latex-sectioning-1-face
-                                                       :height ,prolusion-height-plus-1))))
-     `(font-latex-sectioning-1-face ((,class (:inherit font-latex-sectioning-2-face
-                                                       :height ,prolusion-height-plus-1))))
-     `(font-latex-sectioning-2-face ((,class (:inherit font-latex-sectioning-3-face
-                                                       :height ,prolusion-height-plus-1))))
-     `(font-latex-sectioning-3-face ((,class (:inherit font-latex-sectioning-4-face
-                                                       :height ,prolusion-height-plus-1))))
-     `(font-latex-sectioning-4-face ((,class (:inherit font-latex-sectioning-5-face
-                                                       :height ,prolusion-height-plus-1))))
-     `(font-latex-sectioning-5-face ((,class (:inherit ,s-variable-pitch :foreground ,yellow
-                                                       :weight bold))))
-     `(font-latex-sedate-face ((,class (:foreground ,prolusion-emph))))
-     `(font-latex-slide-title-face ((,class (:inherit (,s-variable-pitch font-lock-type-face)
-                                                      :weight bold :height ,prolusion-height-plus-3))))
-     `(font-latex-string-face ((,class (:foreground ,cyan))))
-     `(font-latex-subscript-face ((,class (:height ,prolusion-height-minus-1))))
-     `(font-latex-superscript-face ((,class (:height ,prolusion-height-minus-1))))
-     `(font-latex-verbatim-face ((,class (:inherit fixed-pitch :foreground ,prolusion-fg
-                                                   :slant italic))))
-     `(font-latex-warning-face ((,class (:inherit bold :foreground ,orange))))
-
-     ;; auto-complete
-     `(ac-candidate-face ((,class (:background ,prolusion-hl :foreground ,cyan))))
-     `(ac-selection-face ((,class (:background ,cyan-lc :foreground ,cyan-hc))))
-     `(ac-candidate-mouse-face ((,class (:background ,cyan-hc :foreground ,cyan-lc))))
-     `(ac-completion-face ((,class (:foreground ,prolusion-emph :underline t))))
-     `(ac-gtags-candidate-face ((,class (:background ,prolusion-hl :foreground ,blue))))
-     `(ac-gtags-selection-face ((,class (:background ,blue-lc :foreground ,blue-hc))))
-     `(ac-yasnippet-candidate-face ((,class (:background ,prolusion-hl :foreground ,yellow))))
-     `(ac-yasnippet-selection-face ((,class (:background ,yellow-lc :foreground ,yellow-hc))))
+     ;; company
+     (custom-set-faces
+      '(company-preview ((t (:foreground "darkgray" :underline t))))
+      '(company-preview-common ((t (:inherit company-preview))))
+      '(company-tooltip ((t (:background "black" :foreground "white"))))
+      '(company-tooltip-selection ((t (:background "steelblue" :foreground "white"))))
+      '(company-tooltip-common ((((type x)) (:inherit company-tooltip :weight bold)) (t (:inherit company-tooltip))))
+      '(company-tooltip-common-selection ((((type x)) (:inherit company-tooltip-selection :weight bold)) (t (:inherit company-tooltip-selection)))))
 
      ;; auto highlight symbol
-     `(ahs-definition-face ((,class (:foreground ,magenta :background unspecified
-                                                 :slant normal))))
+     `(ahs-definition-face ((,class (:foreground ,magenta :background unspecified :slant normal))))
      `(ahs-edit-mode-face ((,class (:foreground ,prolusion-bg :background ,magenta))))
      `(ahs-face ((,class (:foreground ,magenta :background unspecified))))
      `(ahs-plugin-bod-face ((,class (:foreground ,magenta :background unspecified ))))
      `(ahs-plugin-defalt-face ((,class (:foreground ,magenta :background unspecified))))
      `(ahs-plugin-whole-buffer-face ((,class (:foreground ,magenta  :background unspecified))))
      `(ahs-warning-face ((,class (:foreground ,red :weight bold))))
-
-     ;; android mode
-     `(android-mode-debug-face ((,class (:foreground ,green))))
-     `(android-mode-error-face ((,class (:foreground ,orange :weight bold))))
-     `(android-mode-info-face ((,class (:foreground ,prolusion-fg))))
-     `(android-mode-verbose-face ((,class (:foreground ,prolusion-comments))))
-     `(android-mode-warning-face ((,class (:foreground ,yellow))))
-
-     ;; anzu-mode
-     `(anzu-mode-line ((,class (:foreground ,magenta :weight bold))))
-
-     ;; bm
-     `(bm-face ((,class (:background ,yellow-lc :foreground ,prolusion-bg))))
-     `(bm-fringe-face ((,class (:background ,yellow-lc :foreground ,prolusion-bg))))
-     `(bm-fringe-persistent-face ((,class (:background ,green-lc :foreground ,prolusion-bg))))
-     `(bm-persistent-face ((,class (:background ,green-lc :foreground ,prolusion-bg))))
-
-     ;; calfw
-     `(cfw:face-day-title ((,class (:background ,prolusion-hl))))
-     `(cfw:face-annotation ((,class (:inherit cfw:face-day-title :foreground ,yellow))))
-     `(cfw:face-default-content ((,class (:foreground ,green))))
-     `(cfw:face-default-day ((,class (:inherit cfw:face-day-title :weight bold))))
-     `(cfw:face-disable ((,class (:inherit cfw:face-day-title
-                                           :foreground ,prolusion-comments))))
-     `(cfw:face-grid ((,class (:foreground ,prolusion-comments))))
-     `(cfw:face-header ((,class (:foreground ,blue-hc :background ,blue-lc :weight bold))))
-     `(cfw:face-holiday ((,class (:background nil :foreground ,red :weight bold))))
-     `(cfw:face-periods ((,class (:foreground ,magenta))))
-     `(cfw:face-select ((,class (:background ,magenta-lc :foreground ,magenta-hc))))
-     `(cfw:face-saturday ((,class (:foreground ,cyan-hc :background ,cyan-lc))))
-     `(cfw:face-sunday ((,class (:foreground ,red-hc :background ,red-lc :weight bold))))
-     `(cfw:face-title ((,class (:inherit ,s-variable-pitch :foreground ,yellow
-                                         :weight bold :height ,prolusion-height-plus-4))))
-     `(cfw:face-today ((,class (:weight bold :background ,prolusion-hl :foreground nil))))
-     `(cfw:face-today-title ((,class (:background ,yellow-lc
-                                                  :foreground ,yellow-hc :weight bold))))
-     `(cfw:face-toolbar ((,class (:background ,prolusion-hl :foreground ,prolusion-fg))))
-     `(cfw:face-toolbar-button-off ((,class (:background ,yellow-lc :foreground ,yellow-hc
-                                                         :weight bold))))
-     `(cfw:face-toolbar-button-on ((,class (:background ,yellow-hc :foreground ,yellow-lc
-                                                        :weight bold))))
-
-     ;; clojure-test-mode
-     `(clojure-test-failure-face ((t (:foreground ,orange :weight bold :underline t))))
-     `(clojure-test-error-face ((t (:foreground ,red :weight bold :underline t))))
-     `(clojure-test-success-face ((t (:foreground ,green :weight bold :underline t))))
 
      ;; cscope
      `(cscope-file-face ((,class (:foreground ,green :weight bold))))
@@ -504,16 +372,6 @@ Also affects linum-mode background."
      `(diff-hl-insert ((,class (:background ,green-lc  :foreground ,green-hc))))
      `(diff-hl-unknown ((,class (:background ,cyan-lc   :foreground ,cyan-hc))))
 
-     ;; elfeed
-     `(elfeed-search-date-face ((,class (:foreground ,prolusion-comments))))
-     `(elfeed-search-feed-face ((,class (:foreground ,prolusion-comments))))
-     `(elfeed-search-tag-face ((,class (:foreground ,prolusion-fg))))
-     `(elfeed-search-title-face ((,class (:foreground ,cyan))))
-
-     ;; epc
-     `(epc:face-title ((,class (:foreground ,blue :background ,prolusion-bg
-                                            :weight normal :underline nil))))
-
      ;; eshell
      `(eshell-prompt ((,class (:foreground ,yellow :weight bold))))
      `(eshell-ls-archive ((,class (:foreground ,red :weight bold))))
@@ -526,16 +384,6 @@ Also affects linum-mode background."
      `(eshell-ls-product ((,class (:inherit font-lock-doc-face))))
      `(eshell-ls-special ((,class (:foreground ,yellow :weight bold))))
      `(eshell-ls-symlink ((,class (:foreground ,cyan :weight bold))))
-
-     ;; fic
-     `(fic-author-face ((,class (:background ,prolusion-bg :foreground ,orange
-                                             :underline t :slant italic))))
-     `(fic-face ((,class (:background ,prolusion-bg :foreground ,orange
-                                      :weight normal :slant italic))))
-
-     ;; flx
-     `(flx-highlight-face ((,class (:foreground ,blue
-                                                :weight normal :underline nil))))
 
      ;; flymake
      `(flymake-errline
@@ -578,28 +426,6 @@ Also affects linum-mode background."
          (:underline (:style wave :color ,red) :inherit unspecified))
         (,class (:foreground ,red :weight bold :underline t))))
 
-     ;; erc
-     `(erc-action-face ((,class (:inherit erc-default-face))))
-     `(erc-bold-face ((,class (:weight bold))))
-     `(erc-current-nick-face ((,class (:foreground ,blue :weight bold))))
-     `(erc-dangerous-host-face ((,class (:inherit font-lock-warning-face))))
-     `(erc-default-face ((,class (:foreground ,prolusion-fg))))
-     `(erc-highlight-face ((,class (:inherit erc-default-face
-                                             :background ,prolusion-hl))))
-     `(erc-direct-msg-face ((,class (:inherit erc-default-face))))
-     `(erc-error-face ((,class (:inherit font-lock-warning-face))))
-     `(erc-fool-face ((,class (:inherit erc-default-face))))
-     `(erc-input-face ((,class (:foreground ,yellow))))
-     `(erc-keyword-face ((,class (:foreground ,blue :weight bold))))
-     `(erc-nick-default-face ((,class (:foreground ,yellow :weight bold))))
-     `(erc-my-nick-face ((,class (:foreground ,red :weight bold))))
-     `(erc-nick-msg-face ((,class (:inherit erc-default-face))))
-     `(erc-notice-face ((,class (:foreground ,green))))
-     `(erc-pal-face ((,class (:foreground ,orange :weight bold))))
-     `(erc-prompt-face ((,class (:foreground ,orange :background ,prolusion-bg :weight bold))))
-     `(erc-timestamp-face ((,class (:foreground ,green))))
-     `(erc-underline-face ((t (:underline t))))
-
      ;; git-gutter
      `(git-gutter:added ((,class (:background ,green :foreground ,prolusion-bg
                                               :weight bold))))
@@ -635,63 +461,7 @@ Also affects linum-mode background."
      `(guide-key/key-face ((,class (:foreground ,prolusion-comments))))
      `(guide-key/prefix-command-face ((,class (:foreground ,green))))
 
-     ;; gnus
-     `(gnus-group-mail-1 ((,class (:weight bold :inherit gnus-group-mail-1-empty))))
-     `(gnus-group-mail-1-empty ((,class (:inherit gnus-group-news-1-empty))))
-     `(gnus-group-mail-2 ((,class (:weight bold :inherit gnus-group-mail-2-empty))))
-     `(gnus-group-mail-2-empty ((,class (:inherit gnus-group-news-2-empty))))
-     `(gnus-group-mail-3 ((,class (:weight bold :inherit gnus-group-mail-3-empty))))
-     `(gnus-group-mail-3-empty ((,class (:inherit gnus-group-news-3-empty))))
-     `(gnus-group-mail-low ((,class (:weight bold :inherit gnus-group-mail-low-empty))))
-     `(gnus-group-mail-low-empty ((,class (:inherit gnus-group-news-low-empty))))
-     `(gnus-group-news-1 ((,class (:weight bold :inherit gnus-group-news-1-empty))))
-     `(gnus-group-news-2 ((,class (:weight bold :inherit gnus-group-news-2-empty))))
-     `(gnus-group-news-3 ((,class (:weight bold :inherit gnus-group-news-3-empty))))
-     `(gnus-group-news-4 ((,class (:weight bold :inherit gnus-group-news-4-empty))))
-     `(gnus-group-news-5 ((,class (:weight bold :inherit gnus-group-news-5-empty))))
-     `(gnus-group-news-6 ((,class (:weight bold :inherit gnus-group-news-6-empty))))
-     `(gnus-group-news-low ((,class (:weight bold :inherit gnus-group-news-low-empty))))
-     `(gnus-header-content ((,class (:inherit message-header-other))))
-     `(gnus-header-from ((,class (:inherit message-header-other))))
-     `(gnus-header-name ((,class (:inherit message-header-name))))
-     `(gnus-header-newsgroups ((,class (:inherit message-header-other))))
-     `(gnus-header-subject ((,class (:inherit message-header-subject))))
-     `(gnus-summary-cancelled ((,class (:foreground ,orange))))
-     `(gnus-summary-high-ancient ((,class (:foreground ,blue :weight bold))))
-     `(gnus-summary-high-read ((,class (:foreground ,green :weight bold))))
-     `(gnus-summary-high-ticked ((,class (:foreground ,orange :weight bold))))
-     `(gnus-summary-high-unread ((,class (:foreground ,prolusion-fg :weight bold))))
-     `(gnus-summary-low-ancient ((,class (:foreground ,blue))))
-     `(gnus-summary-low-read ((t (:foreground ,green))))
-     `(gnus-summary-low-ticked ((,class (:foreground ,orange))))
-     `(gnus-summary-low-unread ((,class (:foreground ,prolusion-fg))))
-     `(gnus-summary-normal-ancient ((,class (:foreground ,blue))))
-     `(gnus-summary-normal-read ((,class (:foreground ,green))))
-     `(gnus-summary-normal-ticked ((,class (:foreground ,orange))))
-     `(gnus-summary-normal-unread ((,class (:foreground ,prolusion-fg))))
-     `(gnus-summary-selected ((,class (:foreground ,yellow :weight bold))))
-     `(gnus-cite-1 ((,class (:foreground ,blue))))
-     `(gnus-cite-2 ((,class (:foreground ,blue))))
-     `(gnus-cite-3 ((,class (:foreground ,blue))))
-     `(gnus-cite-4 ((,class (:foreground ,green))))
-     `(gnus-cite-5 ((,class (:foreground ,green))))
-     `(gnus-cite-6 ((,class (:foreground ,green))))
-     `(gnus-cite-7 ((,class (:foreground ,red))))
-     `(gnus-cite-8 ((,class (:foreground ,red))))
-     `(gnus-cite-9 ((,class (:foreground ,red))))
-     `(gnus-cite-10 ((,class (:foreground ,yellow))))
-     `(gnus-cite-11 ((,class (:foreground ,yellow))))
-     `(gnus-group-news-1-empty ((,class (:foreground ,yellow))))
-     `(gnus-group-news-2-empty ((,class (:foreground ,green))))
-     `(gnus-group-news-3-empty ((,class (:foreground ,green))))
-     `(gnus-group-news-4-empty ((,class (:foreground ,blue))))
-     `(gnus-group-news-5-empty ((,class (:foreground ,blue))))
-     `(gnus-group-news-6-empty ((,class (:foreground ,blue-lc))))
-     `(gnus-group-news-low-empty ((,class (:foreground ,prolusion-comments))))
-     `(gnus-signature ((,class (:foreground ,yellow))))
-     `(gnus-x-face ((,class (:background ,prolusion-fg :foreground ,prolusion-bg))))
-
-     ;; helm (these probably needs tweaking)
+     ;; helm
      `(helm-apt-deinstalled ((,class (:foreground ,prolusion-comments))))
      `(helm-apt-installed ((,class (:foreground ,green))))
      `(helm-bookmark-directory ((,class (:inherit helm-ff-directory))))
@@ -769,23 +539,6 @@ Also affects linum-mode background."
      `(ido-indicator ((,class (:background ,red :foreground ,prolusion-bg :width condensed))))
      `(ido-virtual ((,class (:foreground ,cyan))))
 
-     `(jabber-activity-face ((,class (:weight bold :foreground ,red))))
-     `(jabber-activity-personal-face ((,class (:weight bold :foreground ,blue))))
-     `(jabber-chat-error ((,class (:weight bold :foreground ,red))))
-     `(jabber-chat-prompt-foreign ((,class (:weight bold :foreground ,red))))
-     `(jabber-chat-prompt-local ((,class (:weight bold :foreground ,blue))))
-     `(jabber-chat-prompt-system ((,class (:weight bold :foreground ,green))))
-     `(jabber-chat-text-foreign ((,class (:foreground ,base1))))
-     `(jabber-chat-text-local ((,class (:foreground ,base0))))
-     `(jabber-chat-rare-time-face ((,class (:underline t :foreground ,green))))
-     `(jabber-roster-user-away ((,class (:slant italic :foreground ,green))))
-     `(jabber-roster-user-chatty ((,class (:weight bold :foreground ,orange))))
-     `(jabber-roster-user-dnd ((,class (:slant italic :foreground ,red))))
-     `(jabber-roster-user-error ((,class (:weight light :slant italic :foreground ,red))))
-     `(jabber-roster-user-offline ((,class (:foreground ,base01))))
-     `(jabber-roster-user-online ((,class (:weight bold :foreground ,blue))))
-     `(jabber-roster-user-xa ((,class (:slant italic :foreground ,magenta))))
-
      ;; js2-mode colors
      `(js2-error ((,class (:foreground ,red))))
      `(js2-external-variable ((,class (:foreground ,orange))))
@@ -801,17 +554,8 @@ Also affects linum-mode background."
      `(js2-private-member ((,class (:foreground ,blue))))
      `(js2-warning ((,class (:underline ,orange))))
 
-     ;; jedi
-     `(jedi:highlight-function-argument ((,class (:inherit bold))))
-
      ;; linum-mode
      `(linum ((,class (:foreground ,prolusion-comments :background ,s-fringe-bg))))
-
-     ;; lusty-explorer
-     `(lusty-directory-face ((,class (:inherit dired-directory))))
-     `(lusty-file-face ((,class nil)))
-     `(lusty-match-face ((,class (:inherit ido-first-match))))
-     `(lusty-slash-face ((,class (:foreground ,cyan :weight bold))))
 
      ;; magit
      `(magit-section-title ((,class (:foreground ,yellow :weight bold))))
@@ -842,71 +586,6 @@ Also affects linum-mode background."
      `(markdown-header-face-4 ((,class (:inherit markdown-header-face :height ,prolusion-height-plus-1))))
      `(markdown-header-face-5 ((,class (:inherit markdown-header-face))))
      `(markdown-header-face-6 ((,class (:inherit markdown-header-face))))
-
-     ;; message-mode
-     `(message-cited-text ((,class (:foreground ,prolusion-comments))))
-     `(message-header-name ((,class (:foreground ,prolusion-comments))))
-     `(message-header-other ((,class (:foreground ,prolusion-fg :weight normal))))
-     `(message-header-to ((,class (:foreground ,prolusion-fg :weight normal))))
-     `(message-header-cc ((,class (:foreground ,prolusion-fg :weight normal))))
-     `(message-header-newsgroups ((,class (:foreground ,yellow :weight bold))))
-     `(message-header-subject ((,class (:foreground ,cyan :weight normal))))
-     `(message-header-xheader ((,class (:foreground ,cyan))))
-     `(message-mml ((,class (:foreground ,yellow :weight bold))))
-     `(message-separator ((,class (:foreground ,prolusion-comments :slant italic))))
-
-     ;; mew
-     `(mew-face-header-subject ((,class (:foreground ,orange))))
-     `(mew-face-header-from ((,class (:foreground ,yellow))))
-     `(mew-face-header-date ((,class (:foreground ,green))))
-     `(mew-face-header-to ((,class (:foreground ,red))))
-     `(mew-face-header-key ((,class (:foreground ,green))))
-     `(mew-face-header-private ((,class (:foreground ,green))))
-     `(mew-face-header-important ((,class (:foreground ,blue))))
-     `(mew-face-header-marginal ((,class (:foreground ,prolusion-fg :weight bold))))
-     `(mew-face-header-warning ((,class (:foreground ,red))))
-     `(mew-face-header-xmew ((,class (:foreground ,green))))
-     `(mew-face-header-xmew-bad ((,class (:foreground ,red))))
-     `(mew-face-body-url ((,class (:foreground ,orange))))
-     `(mew-face-body-comment ((,class (:foreground ,prolusion-fg :slant italic))))
-     `(mew-face-body-cite1 ((,class (:foreground ,green))))
-     `(mew-face-body-cite2 ((,class (:foreground ,blue))))
-     `(mew-face-body-cite3 ((,class (:foreground ,orange))))
-     `(mew-face-body-cite4 ((,class (:foreground ,yellow))))
-     `(mew-face-body-cite5 ((,class (:foreground ,red))))
-     `(mew-face-mark-review ((,class (:foreground ,blue))))
-     `(mew-face-mark-escape ((,class (:foreground ,green))))
-     `(mew-face-mark-delete ((,class (:foreground ,red))))
-     `(mew-face-mark-unlink ((,class (:foreground ,yellow))))
-     `(mew-face-mark-refile ((,class (:foreground ,green))))
-     `(mew-face-mark-unread ((,class (:foreground ,red))))
-     `(mew-face-eof-message ((,class (:foreground ,green))))
-     `(mew-face-eof-part ((,class (:foreground ,yellow))))
-
-     ;; mingus
-     `(mingus-directory-face ((,class (:foreground ,blue))))
-     `(mingus-pausing-face ((,class (:foreground ,magenta))))
-     `(mingus-playing-face ((,class (:foreground ,cyan))))
-     `(mingus-playlist-face ((,class (:foreground ,cyan ))))
-     `(mingus-song-file-face ((,class (:foreground ,yellow))))
-     `(mingus-stopped-face ((,class (:foreground ,red))))
-
-     ;; moccur
-     `(moccur-current-line-face ((,class (:underline t))))
-     `(moccur-edit-done-face ((,class
-                               (:foreground ,prolusion-comments
-                                            :background ,prolusion-bg
-                                            :slant italic))))
-     `(moccur-edit-face
-       ((,class (:background ,yellow :foreground ,prolusion-bg))))
-     `(moccur-edit-file-face ((,class (:background ,prolusion-hl))))
-     `(moccur-edit-reject-face ((,class (:foreground ,red))))
-     `(moccur-face ((,class (:background ,prolusion-hl :foreground ,prolusion-emph
-                                         :weight bold))))
-     `(search-buffers-face ((,class (:background ,prolusion-hl :foreground ,prolusion-emph
-                                                 :weight bold))))
-     `(search-buffers-header-face ((,class (:background ,prolusion-hl :foreground ,yellow
-                                                        :weight bold))))
 
      ;; mu4e
      `(mu4e-cited-1-face ((,class (:foreground ,green :slant italic :weight normal))))
@@ -944,20 +623,6 @@ Also affects linum-mode background."
      `(mu4e-view-link-face ((,class (:inherit link))))
      `(mu4e-view-special-header-value-face ((,class (:foreground ,blue :weight normal :underline nil
                                                                  ))))
-     ;; mumamo
-     `(mumamo-background-chunk-submode1 ((,class (:background ,prolusion-hl))))
-
-     ;; nav
-     `(nav-face-heading ((,class (:foreground ,yellow))))
-     `(nav-face-button-num ((,class (:foreground ,cyan))))
-     `(nav-face-dir ((,class (:foreground ,green))))
-     `(nav-face-hdir ((,class (:foreground ,red))))
-     `(nav-face-file ((,class (:foreground ,prolusion-fg))))
-     `(nav-face-hfile ((,class (:foreground ,red))))
-
-     ;; nav-flash
-     `(nav-flash-face ((,class (:background ,prolusion-hl))))
-
      ;; org-mode
      `(org-agenda-structure
        ((,class (:foreground ,prolusion-emph :background ,prolusion-hl
@@ -1085,25 +750,6 @@ Also affects linum-mode background."
      `(rainbow-delimiters-unmatched-face
        ((,class (:foreground ,prolusion-fg :background ,prolusion-bg :inverse-video t))))
 
-     ;; rst-mode
-     `(rst-level-1-face ((,class (:background ,yellow   :foreground ,prolusion-bg))))
-     `(rst-level-2-face ((,class (:background ,cyan    :foreground ,prolusion-bg))))
-     `(rst-level-3-face ((,class (:background ,blue    :foreground ,prolusion-bg))))
-     `(rst-level-4-face ((,class (:background ,violet  :foreground ,prolusion-bg))))
-     `(rst-level-5-face ((,class (:background ,magenta :foreground ,prolusion-bg))))
-     `(rst-level-6-face ((,class (:background ,red     :foreground ,prolusion-bg))))
-
-     ;; rpm-mode
-     `(rpm-spec-dir-face ((,class (:foreground ,green))))
-     `(rpm-spec-doc-face ((,class (:foreground ,green))))
-     `(rpm-spec-ghost-face ((,class (:foreground ,red))))
-     `(rpm-spec-macro-face ((,class (:foreground ,yellow))))
-     `(rpm-spec-obsolete-tag-face ((,class (:foreground ,red))))
-     `(rpm-spec-package-face ((,class (:foreground ,red))))
-     `(rpm-spec-section-face ((,class (:foreground ,yellow))))
-     `(rpm-spec-tag-face ((,class (:foreground ,blue))))
-     `(rpm-spec-var-face ((,class (:foreground ,red))))
-
      ;; sh-mode
      `(sh-quoted-exec ((,class (:foreground ,violet :weight bold))))
      `(sh-escaped-newline ((,class (:foreground ,yellow :weight bold))))
@@ -1141,59 +787,6 @@ Also affects linum-mode background."
        ((,class (:foreground ,red :background ,prolusion-bg
                              :weight normal :inverse-video t))))
 
-     ;; SLIME
-     `(slime-repl-inputed-output-face ((,class (:foreground ,red))))
-
-     ;; speedbar
-     `(speedbar-button-face ((,class (:inherit ,s-variable-pitch
-                                               :foreground ,prolusion-comments))))
-     `(speedbar-directory-face ((,class (:inherit ,s-variable-pitch :foreground ,blue))))
-     `(speedbar-file-face ((,class (:inherit ,s-variable-pitch :foreground ,prolusion-fg))))
-     `(speedbar-highlight-face ((,class (:inherit ,s-variable-pitch :background ,prolusion-hl))))
-     `(speedbar-selected-face ((,class (:inherit ,s-variable-pitch
-                                                 :foreground ,yellow :underline t))))
-     `(speedbar-separator-face ((,class (:inherit ,s-variable-pitch
-                                                  :background ,blue :foreground ,prolusion-bg
-                                                  :overline ,cyan-lc))))
-     `(speedbar-tag-face ((,class (:inherit ,s-variable-pitch :foreground ,green))))
-
-     ;; sunrise commander headings
-     `(sr-active-path-face ((,class (:background ,blue :foreground ,prolusion-bg
-                                                 :height ,prolusion-height-plus-1  :weight bold))))
-     `(sr-editing-path-face ((,class (:background ,yellow :foreground ,prolusion-bg
-                                                  :weight bold :height ,prolusion-height-plus-1))))
-     `(sr-highlight-path-face ((,class (:background ,green :foreground ,prolusion-bg
-                                                    :weight bold :height ,prolusion-height-plus-1))))
-     `(sr-passive-path-face ((,class (:background ,prolusion-comments :foreground ,prolusion-bg
-                                                  :weight bold :height ,prolusion-height-plus-1))))
-
-     ;; sunrise commander marked
-     `(sr-marked-dir-face ((,class (:inherit dired-marked))))
-     `(sr-marked-file-face ((,class (:inherit dired-marked))))
-     `(sr-alt-marked-dir-face ((,class (:background ,magenta :foreground ,prolusion-bg
-                                                    :weight bold))))
-     `(sr-alt-marked-file-face ((,class (:background ,magenta :foreground ,prolusion-bg
-                                                     :weight bold))))
-
-     ;; sunrise commander fstat
-     `(sr-directory-face ((,class (:inherit dired-directory :weight normal))))
-     `(sr-symlink-directory-face ((,class (:inherit dired-directory
-                                                    :slant italic :weight normal))))
-     `(sr-symlink-face ((,class (:inherit dired-symlink :slant italic :weight normal))))
-     `(sr-broken-link-face ((,class (:inherit dired-warning :slant italic :weight normal))))
-
-     ;; sunrise commander file types
-     `(sr-compressed-face ((,class (:foreground ,prolusion-fg))))
-     `(sr-encrypted-face ((,class (:foreground ,prolusion-fg))))
-     `(sr-log-face ((,class (:foreground ,prolusion-fg))))
-     `(sr-packaged-face ((,class (:foreground ,prolusion-fg))))
-     `(sr-html-face ((,class (:foreground ,prolusion-fg))))
-     `(sr-xml-face ((,class (:foreground ,prolusion-fg))))
-
-     ;; sunrise commander misc
-     `(sr-clex-hotchar-face ((,class (:background ,red  :foreground ,prolusion-bg
-                                                  :weight bold))))
-
      ;; table
      `(table-cell ((,class (:foreground ,prolusion-fg :background ,prolusion-hl))))
 
@@ -1217,21 +810,6 @@ Also affects linum-mode background."
      '(term-default-fg-color ((t (:inherit term-color-white))))
      '(term-default-bg-color ((t (:inherit term-color-black))))
 
-     ;; tooltip. (NOTE: This setting has no effect on the os widgets for me
-     ;; zencoding uses this)
-     `(tooltip ((,class (:background ,yellow-lc :foreground ,yellow-hc
-                                     :inherit ,s-variable-pitch))))
-
-     ;; tuareg
-     `(tuareg-font-lock-governing-face ((,class (:foreground ,magenta :weight bold))))
-     `(tuareg-font-lock-multistage-face ((,class (:foreground ,blue :background ,prolusion-hl
-                                                              :weight bold))))
-     `(tuareg-font-lock-operator-face ((,class (:foreground ,prolusion-emph))))
-     `(tuareg-font-lock-error-face ((,class (:foreground ,yellow :background ,red
-                                                         :weight bold))))
-     `(tuareg-font-lock-interactive-output-face ((,class (:foreground ,cyan))))
-     `(tuareg-font-lock-interactive-error-face ((,class (:foreground ,red))))
-
      ;; undo-tree
      `(undo-tree-visualizer-default-face
        ((,class (:foreground ,prolusion-comments :background ,prolusion-bg))))
@@ -1243,29 +821,6 @@ Also affects linum-mode background."
 
      ;; volatile highlights
      `(vhl/default-face ((,class (:background ,green-lc :foreground ,green-hc))))
-
-     ;; w3m
-     `(w3m-anchor ((,class (:inherit link))))
-     `(w3m-arrived-anchor ((,class (:inherit link-visited))))
-     `(w3m-form ((,class (:background ,prolusion-bg :foreground ,prolusion-fg))))
-     `(w3m-header-line-location-title ((,class (:background ,prolusion-hl :foreground ,yellow))))
-     `(w3m-header-line-location-content ((,class (:background ,prolusion-hl :foreground ,prolusion-fg))))
-     `(w3m-bold ((,class (:foreground ,prolusion-emph :weight bold))))
-     `(w3m-image-anchor ((,class (:background ,prolusion-bg :foreground ,cyan :inherit link))))
-     `(w3m-image ((,class (:background ,prolusion-bg :foreground ,cyan))))
-     `(w3m-lnum-minibuffer-prompt ((,class (:foreground ,prolusion-emph))))
-     `(w3m-lnum-match ((,class (:background ,prolusion-hl))))
-     `(w3m-lnum ((,class (:underline nil :bold nil :foreground ,red))))
-     `(w3m-session-select ((,class (:foreground ,prolusion-fg))))
-     `(w3m-session-selected ((,class (:foreground ,prolusion-emph :bold t :underline t))))
-     `(w3m-tab-background ((,class (:background ,prolusion-bg :foreground ,prolusion-fg))))
-     `(w3m-tab-selected-background ((,class (:background ,prolusion-bg :foreground ,prolusion-fg))))
-     `(w3m-tab-mouse ((,class (:background ,prolusion-hl :foreground ,yellow))))
-     `(w3m-tab-selected ((,class (:background ,prolusion-hl :foreground ,prolusion-emph :bold t))))
-     `(w3m-tab-unselected ((,class (:background ,prolusion-hl :foreground ,prolusion-fg))))
-     `(w3m-tab-selected-retrieving ((,class (:background ,prolusion-hl :foreground ,red))))
-     `(w3m-tab-unselected-retrieving ((,class (:background ,prolusion-hl :foreground ,orange))))
-     `(w3m-tab-unselected-unseen ((,class (:background ,prolusion-hl :foreground ,violet))))
 
      ;; web-mode
      `(web-mode-builtin-face ((,class (:foreground ,red))))
@@ -1318,43 +873,6 @@ Also affects linum-mode background."
      `(whitespace-space-after-tab ((,class (:background unspecified :foreground ,orange
                                                         :inverse-video t :weight bold))))
 
-     ;; wanderlust
-     `(wl-highlight-folder-few-face ((,class (:foreground ,red))))
-     `(wl-highlight-folder-many-face ((,class (:foreground ,red))))
-     `(wl-highlight-folder-path-face ((,class (:foreground ,orange))))
-     `(wl-highlight-folder-unread-face ((,class (:foreground ,blue))))
-     `(wl-highlight-folder-zero-face ((,class (:foreground ,prolusion-fg))))
-     `(wl-highlight-folder-unknown-face ((,class (:foreground ,blue))))
-     `(wl-highlight-message-citation-header ((,class (:foreground ,red))))
-     `(wl-highlight-message-cited-text-1 ((,class (:foreground ,red))))
-     `(wl-highlight-message-cited-text-2 ((,class (:foreground ,green))))
-     `(wl-highlight-message-cited-text-3 ((,class (:foreground ,blue))))
-     `(wl-highlight-message-cited-text-4 ((,class (:foreground ,blue))))
-     `(wl-highlight-message-header-contents-face ((,class (:foreground ,green))))
-     `(wl-highlight-message-headers-face ((,class (:foreground ,red))))
-     `(wl-highlight-message-important-header-contents ((,class (:foreground ,green))))
-     `(wl-highlight-message-header-contents ((,class (:foreground ,green))))
-     `(wl-highlight-message-important-header-contents2 ((,class (:foreground ,green))))
-     `(wl-highlight-message-signature ((,class (:foreground ,green))))
-     `(wl-highlight-message-unimportant-header-contents ((,class (:foreground ,prolusion-fg))))
-     `(wl-highlight-summary-answered-face ((,class (:foreground ,blue))))
-     `(wl-highlight-summary-disposed-face ((,class (:foreground ,prolusion-fg
-                                                                :slant italic))))
-     `(wl-highlight-summary-new-face ((,class (:foreground ,blue))))
-     `(wl-highlight-summary-normal-face ((,class (:foreground ,prolusion-fg))))
-     `(wl-highlight-summary-thread-top-face ((,class (:foreground ,yellow))))
-     `(wl-highlight-thread-indent-face ((,class (:foreground ,magenta))))
-     `(wl-highlight-summary-refiled-face ((,class (:foreground ,prolusion-fg))))
-     `(wl-highlight-summary-displaying-face ((,class (:underline t :weight bold))))
-
-     ;; weechat
-     `(weechat-error-face ((,class (:inherit error))))
-     `(weechat-highlight-face ((,class (:foreground ,prolusion-emph :weight bold))))
-     `(weechat-nick-self-face ((,class (:foreground ,green :weight unspecified
-                                                    :inverse-video t))))
-     `(weechat-prompt-face ((,class (:inherit minibuffer-prompt))))
-     `(weechat-time-face ((,class (:foreground ,prolusion-comments))))
-
      ;; which-func-mode
      `(which-func ((,class (:foreground ,green))))
 
@@ -1366,14 +884,6 @@ Also affects linum-mode background."
        ((,class (:foreground ,prolusion-comments :background ,prolusion-comments))))
      `(yascroll:thumb-fringe
        ((,class (:foreground ,prolusion-comments :background ,prolusion-comments))))
-
-     ;; zencoding
-     `(zencoding-preview-input ((,class (:background ,prolusion-hl :box ,prolusion-emph)))))
-
-    (custom-theme-set-variables
-     theme-name
-     `(ansi-color-names-vector [,prolusion-bg ,red ,green ,yellow
-                                              ,blue ,magenta ,cyan ,prolusion-fg])
 
      ;; compilation
      `(compilation-message-face 'default)
