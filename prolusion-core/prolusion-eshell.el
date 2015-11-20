@@ -22,6 +22,15 @@
 
 (add-hook 'shell-mode-hook 'ansi-color-for-comint-mode-on)
 
+(defun prolusion-eshell-clear-buffer () "Clear eshell buffer"
+       (interactive)
+       (let ((inhibit-read-only t))
+         (erase-buffer)
+         (eshell-send-input)))
+
+(add-hook 'eshell-mode-hook
+          '(lambda() (local-set-key (kbd "C-l") 'prolusion-eshell-clear-buffer)))
+
 (provide 'prolusion-eshell)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
