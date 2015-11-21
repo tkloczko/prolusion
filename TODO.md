@@ -12,3 +12,6 @@
 * refactor
 * change `git-gutter` key bindings to `C-c g ...`
 * helm face box to 1 - test with `C-c h m`
+* add all used prefixes to `guide-key`
+* tweak the opacity settings to be both more opaque whether active or not
+* move default `eww` url folder to `prolusion-www` and gitignore it.
