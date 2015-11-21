@@ -296,7 +296,10 @@ Also affects linum-mode background."
       '(company-tooltip ((t (:background "black" :foreground "white"))))
       '(company-tooltip-selection ((t (:background "steelblue" :foreground "white"))))
       '(company-tooltip-common ((((type x)) (:inherit company-tooltip :weight bold)) (t (:inherit company-tooltip))))
-      '(company-tooltip-common-selection ((((type x)) (:inherit company-tooltip-selection :weight bold)) (t (:inherit company-tooltip-selection)))))
+      '(company-tooltip-common-selection ((((type x)) (:inherit company-tooltip-selection :weight bold)) (t (:inherit company-tooltip-selection))))
+
+      `(company-scrollbar-bg ((t (:background "#000000"))))
+      `(company-scrollbar-fg ((t (:background "#202020")))))
 
      ;; auto highlight symbol
      `(ahs-definition-face ((,class (:foreground ,magenta :background unspecified :slant normal))))
@@ -385,76 +388,26 @@ Also affects linum-mode background."
      `(eshell-ls-special ((,class (:foreground ,yellow :weight bold))))
      `(eshell-ls-symlink ((,class (:foreground ,cyan :weight bold))))
 
-     ;; flymake
-     `(flymake-errline
-       ((,(append '((supports :underline (:style wave))) class)
-         (:underline (:style wave :color ,red) :inherit unspecified
-                     :foreground unspecified :background unspecified))
-        (,class (:foreground ,red-hc :background ,red-lc :weight bold :underline t))))
-     `(flymake-infoline
-       ((,(append '((supports :underline (:style wave))) class)
-         (:underline (:style wave :color ,green) :inherit unspecified
-                     :foreground unspecified :background unspecified))
-        (,class (:foreground ,green-hc :background ,green-lc))))
-     `(flymake-warnline
-       ((,(append '((supports :underline (:style wave))) class)
-         (:underline (:style wave :color ,yellow) :inherit unspecified
-                     :foreground unspecified :background unspecified))
-        (,class (:foreground ,yellow-hc :background ,yellow-lc :weight bold :underline t))))
-
      ;; flycheck
      `(flycheck-error
-       ((,(append '((supports :underline (:style wave))) class)
-         (:underline (:style wave :color ,red) :inherit unspecified))
+       ((,(append '((supports :underline (:style line))) class)
+         (:underline (:style line :color ,red) :inherit unspecified))
         (,class (:foreground ,red-hc :background ,red-lc :weight bold :underline t))))
      `(flycheck-warning
-       ((,(append '((supports :underline (:style wave))) class)
-         (:underline (:style wave :color ,yellow) :inherit unspecified))
+       ((,(append '((supports :underline (:style line))) class)
+         (:underline (:style line :color ,yellow) :inherit unspecified))
         (,class (:foreground ,yellow-hc :background ,yellow-lc :weight bold :underline t))))
+     `(flycheck-info
+       ((,(append '((supports :underline (:style line))) class)
+         (:underline (:style line :color ,orange) :inherit unspecified))
+        (,class (:foreground ,orange-hc :background ,orange-lc :weight bold :underline t))))
+
      `(flycheck-fringe-error
        ((,class (:foreground ,red-hc :background ,red-lc :weight bold))))
      `(flycheck-fringe-warning
        ((,class (:foreground ,yellow-hc :background ,yellow-lc :weight bold))))
-
-     ;; flyspell
-     `(flyspell-duplicate
-       ((,(append '((supports :underline (:style wave))) class)
-         (:underline (:style wave :color ,yellow) :inherit unspecified))
-        (,class (:foreground ,yellow :weight bold :underline t))))
-     `(flyspell-incorrect
-       ((,(append '((supports :underline (:style wave))) class)
-         (:underline (:style wave :color ,red) :inherit unspecified))
-        (,class (:foreground ,red :weight bold :underline t))))
-
-     ;; git-gutter
-     `(git-gutter:added ((,class (:background ,green :foreground ,prolusion-bg
-                                              :weight bold))))
-     `(git-gutter:deleted ((,class (:background ,red :foreground ,prolusion-bg
-                                                :weight bold))))
-     `(git-gutter:modified ((,class (:background ,blue :foreground ,prolusion-bg
-                                                 :weight bold))))
-     `(git-gutter:unchanged ((,class (:background ,prolusion-hl
-                                                  :foreground ,prolusion-bg
-                                                  :weight bold))))
-
-     ;; git-gutter-fr
-     `(git-gutter-fr:added ((,class (:foreground ,green  :weight bold))))
-     `(git-gutter-fr:deleted ((,class (:foreground ,red :weight bold))))
-     `(git-gutter-fr:modified ((,class (:foreground ,blue :weight bold))))
-
-     ;; git-gutter+ and git-gutter+-fr
-     `(git-gutter+-added ((,class (:background ,green :foreground ,prolusion-bg
-                                               :weight bold))))
-     `(git-gutter+-deleted ((,class (:background ,red :foreground ,prolusion-bg
-                                                 :weight bold))))
-     `(git-gutter+-modified ((,class (:background ,blue :foreground ,prolusion-bg
-                                                  :weight bold))))
-     `(git-gutter+-unchanged ((,class (:background ,prolusion-hl
-                                                   :foreground ,prolusion-bg
-                                                   :weight bold))))
-     `(git-gutter-fr+-added ((,class (:foreground ,green  :weight bold))))
-     `(git-gutter-fr+-deleted ((,class (:foreground ,red :weight bold))))
-     `(git-gutter-fr+-modified ((,class (:foreground ,blue :weight bold))))
+     `(flycheck-fringe-info
+       ((,class (:foreground ,orange-hc :background ,orange-lc :weight bold))))
 
      ;; guide-key
      `(guide-key/highlight-command-face ((,class (:foreground ,blue))))
@@ -500,8 +453,8 @@ Also affects linum-mode background."
      `(helm-selection-line ((,class (:background ,prolusion-hl :foreground ,prolusion-emph
                                                  :underline nil))))
      `(helm-separator ((,class (:foreground ,red))))
-     `(helm-source-header ((,class (:background ,blue-lc :foreground ,prolusion-bg
-                                                :underline nil))))
+     `(helm-source-header ((,class (:background ,"black" :foreground ,"gainsboro"
+                                                :underline nil :weight normal :height 1.0))))
      `(helm-time-zone-current ((,class (:foreground ,green))))
      `(helm-time-zone-home ((,class (:foreground ,red))))
      `(helm-visible-mark ((,class (:background ,prolusion-bg :foreground ,magenta :bold t))))
@@ -932,18 +885,7 @@ Also affects linum-mode background."
          (340 . "#2790C3")
          (360 . ,blue)))
      `(vc-annotate-very-old-color nil)
-     `(vc-annotate-background nil)
-
-     ;; weechat
-     `(weechat-color-list
-       '(unspecified ,base03 ,base02
-                     ,red-d ,red
-                     ,green-d ,green
-                     ,yellow-d ,yellow
-                     ,blue-d ,blue
-                     ,magenta-d ,magenta
-                     ,cyan-d ,cyan
-                     ,base0 ,base00)))
+     `(vc-annotate-background nil))
 
     ;; call chained theme function
     (when childtheme (funcall childtheme))))

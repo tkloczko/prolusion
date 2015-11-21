@@ -13,6 +13,16 @@
 ;;; Code:
 
 ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Buffer based title
+;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+(setq frame-title-format
+  '("Emacs - "
+    (:eval
+     (if (buffer-file-name)
+         (abbreviate-file-name (buffer-file-name)) "%b"))))
+
+;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Yes-Or-No
 ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
@@ -28,7 +38,7 @@
 ;; Save place
 ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-(require 'saveplace)
+(prolusion-require-package 'saveplace)
 (setq save-place-file (expand-file-name "place" prolusion-save-dir))
 (setq-default save-place t)
 
@@ -57,7 +67,6 @@
 ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (setq auto-save-list-file-prefix prolusion-save-dir)
-(setq auto-save-file-name-transforms `((".*" ,prolusion-save-dir t)))
 
 (setq backup-directory-alist
       `((".*" . ,prolusion-save-dir)))

@@ -12,15 +12,27 @@
 ;;
 ;;; Code:
 
+(setq eshell-directory-name prolusion-eshell-dir)
+
+;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; MacOSX specifics
+;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
 (prolusion-require-package 'exec-path-from-shell)
 
 (when (memq window-system '(mac ns))
   (exec-path-from-shell-initialize)
   (exec-path-from-shell-copy-env "CMAKE_PREFIX_PATH"))
 
-(setq eshell-directory-name prolusion-eshell-dir)
+;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Translate escape sequences
+;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (add-hook 'shell-mode-hook 'ansi-color-for-comint-mode-on)
+
+;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Convenience functions
+;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (defun prolusion-eshell-clear-buffer () "Clear eshell buffer"
        (interactive)
@@ -30,6 +42,8 @@
 
 (add-hook 'eshell-mode-hook
           '(lambda() (local-set-key (kbd "C-l") 'prolusion-eshell-clear-buffer)))
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (provide 'prolusion-eshell)
 

@@ -33,8 +33,8 @@
 ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (when (display-graphic-p)
-  (set-frame-parameter (selected-frame) 'alpha '(90 75))
-  (add-to-list 'default-frame-alist '(alpha 90 75)))
+  (set-frame-parameter (selected-frame) 'alpha '(95 85))
+  (add-to-list 'default-frame-alist '(alpha 95 85)))
 
 ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; line/column modes

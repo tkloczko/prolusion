@@ -71,7 +71,7 @@
 
 (show-smartparens-global-mode +1)
 
-(add-hook 'prog-mode-hook 'rainbow-delimiters-mode)
+(add-hook 'prog-mode-hook #'rainbow-delimiters-mode)
 
 ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Global key bindings
@@ -98,7 +98,8 @@
     "C-x r"
     "C-x 4"
     "C-x 5"
-    "C-x C-g"
+    "C-c g"
+    "C-c h"
     "C-x C-h"))
 
 (setq guide-key/highlight-command-regexp "git")
@@ -128,14 +129,6 @@
 
 (setq helm-dash-docsets-path prolusion-docs-dir)
 (setq helm-dash-common-docsets '("C" "C++" "Qt"))
-
-(custom-set-faces
- '(helm-source-header
-   ((t (:background "black"
-        :foreground "gainsboro"
-        :underline nil
-        :weight normal
-        :height 1.0)))))
 
 (global-set-key (kbd "C-c h a") 'helm-ag)
 (global-set-key (kbd "C-c h d") 'helm-dash)
@@ -173,45 +166,6 @@
 (global-set-key (kbd "C-x C-h g") 'update-file-header)
 
 ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Git
-;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-
-(prolusion-require-package 'magit)
-
-(global-set-key (kbd "C-x g") 'magit-status)
-
-;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Git gutter
-;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-
-(prolusion-require-package 'fringe-helper)
-(prolusion-require-package 'git-gutter)
-(prolusion-require-package 'git-gutter-fringe)
-
-(when (display-graphic-p)
-  (require 'git-gutter-fringe)
-  (require 'git-gutter))
-
-(when (display-graphic-p)
-  (set-face-foreground 'git-gutter-fr:modified "orange")
-  (set-face-foreground 'git-gutter-fr:added    "green")
-  (set-face-foreground 'git-gutter-fr:deleted  "red"))
-
-(when (display-graphic-p)
-  (setq git-gutter-fr:side 'right-fringe))
-
-(global-set-key (kbd "C-x C-g g") 'git-gutter:toggle)
-(global-set-key (kbd "C-x C-g =") 'git-gutter:popup-hunk)
-(global-set-key (kbd "C-x C-g p") 'git-gutter:previous-hunk)
-(global-set-key (kbd "C-x C-g n") 'git-gutter:next-hunk)
-(global-set-key (kbd "C-x C-g s") 'git-gutter:stage-hunk)
-(global-set-key (kbd "C-x C-g r") 'git-gutter:revert-hunk)
-
-(global-git-gutter-mode t)
-
-(diminish 'git-gutter-mode)
-
-;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Duplication
 ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
@@ -227,101 +181,12 @@
 (global-set-key (kbd "C-S-D") 'duplicate-line)
 
 ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Buffer based title
-;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-
-(setq frame-title-format
-  '("Emacs - "
-    (:eval
-     (if (buffer-file-name)
-       (abbreviate-file-name (buffer-file-name)) "%b"))))
-
-;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Iedit
 ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (prolusion-require-package 'iedit)
 
 (define-key global-map (kbd "C-c ;") 'iedit-mode)
-
-;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Snippets
-;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-
-(prolusion-require-package 'yasnippet)
-
-(setq yas-snippet-dirs prolusion-snippets-dir)
-
-(yas-global-mode 1)
-
-(add-hook 'term-mode-hook (lambda()
-  (setq yas-dont-activate t)))
-
-(diminish 'yas-minor-mode)
-
-;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Semantic
-;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-
-(add-to-list 'auto-mode-alist '("\\.h$" . c++-mode))
-(add-to-list 'auto-mode-alist '("\\.c$" . c++-mode))
-
-(semantic-mode 1)
-
-(setq semanticdb-default-save-directory prolusion-semantic-dir)
-
-;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Completion backend
-;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-
-(prolusion-require-package 'irony)
-
-(setq irony-server-install-prefix prolusion-irony-dir)
-(setq irony-user-dir              prolusion-irony-dir)
-
-(add-hook    'c-mode-hook 'irony-mode)
-(add-hook  'c++-mode-hook 'irony-mode)
-(add-hook 'objc-mode-hook 'irony-mode)
-
-(add-hook 'irony-mode-hook 'irony-cdb-autosetup-compile-options)
-
-(eval-after-load 'irony '(diminish 'irony-mode))
-
-;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Auto Completion
-;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-
-(prolusion-require-package 'company)
-(prolusion-require-package 'company-irony)
-(prolusion-require-package 'company-irony-c-headers)
-
-(eval-after-load 'company '(add-to-list 'company-backends 'company-irony))
-(eval-after-load 'company '(add-to-list 'company-backends 'company-irony-c-headers))
-
-(setq company-idle-delay 0.2)
-(setq company-echo-delay 0.0)
-(setq company-minimum-prefix-length 1)
-
-(add-hook          'c-mode-hook 'company-mode)
-(add-hook        'c++-mode-hook 'company-mode)
-(add-hook       'objc-mode-hook 'company-mode)
-(add-hook 'emacs-lisp-mode-hook 'company-mode)
-
-(eval-after-load 'company '(diminish 'company-mode))
-
-;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Fly-checking
-;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-
-(prolusion-require-package 'flycheck-irony)
-
-(eval-after-load 'flycheck '(add-hook 'flycheck-mode-hook 'flycheck-irony-setup))
-
-(add-hook          'c-mode-hook 'flycheck-mode)
-(add-hook        'c++-mode-hook 'flycheck-mode)
-(add-hook       'objc-mode-hook 'flycheck-mode)
-
-(eval-after-load 'flycheck '(diminish 'flycheck-mode))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 

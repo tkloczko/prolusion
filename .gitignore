@@ -14,18 +14,18 @@
 
 *~
 *.elc
-*.pyc
 
 ## #################################################################
 ## Generated folders
 ## #################################################################
 
+prolusion-www
 prolusion-docs
 prolusion-elpa
 prolusion-eshell
+prolusion-irony
 prolusion-save
 prolusion-semantic
-prolusion-irony
 
 ######################################################################
 ### .gitignore ends here
