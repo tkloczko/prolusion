@@ -19,7 +19,6 @@
 (prolusion-require-package 'cmake-mode)
 (prolusion-require-package 'csharp-mode)
 (prolusion-require-package 'markdown-mode)
-(prolusion-require-package 'json-mode)
 (prolusion-require-package 'qml-mode)
 (prolusion-require-package 'rbenv)
 (prolusion-require-package 'rainbow-mode)
