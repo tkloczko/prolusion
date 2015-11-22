@@ -23,6 +23,7 @@
 (prolusion-require-package 'qml-mode)
 (prolusion-require-package 'rbenv)
 (prolusion-require-package 'rainbow-mode)
+(prolusion-require-package 'yaml-mode)
 
 ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Custom convenience modes
@@ -39,6 +40,7 @@
 (add-to-list 'auto-mode-alist '("\\.qrc$"        . xml-mode))
 (add-to-list 'auto-mode-alist '("\\.qs$"         . javascript-mode))
 (add-to-list 'auto-mode-alist '("\\.qml$"        . qml-mode))
+(add-to-list 'auto-mode-alist '("\\.yml$"        . yaml-mode))
 
 ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Info mode
