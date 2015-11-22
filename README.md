@@ -27,6 +27,17 @@ From Latin prolusio(n- ), from prolus- ‘practised beforehand’, from the verb
 
 ## Upgrades
 
-* emacs
-* prolusion
-* prolusion-packages
+Here is how to stay on the cutting edge.
+
+### Emacs
+
+    $ brew install emacs --use-git-head --cocoa
+
+### Prolusion
+
+    $ cd ~/.prolusion.d
+    $ git pull origin master
+
+### Prolusion packages
+
+    M-x prolusion-upgrade-packages
