@@ -2,6 +2,7 @@
 
 * add user search path for `irony`, `company-irony`
 * write `yas` snippets
+* give `ido` a try (spacemacs' one is awesome)
 * enable more `company` backends
 * investigate `projectile`
 * investigate `cscope` through `xscope.el`

@@ -22,7 +22,10 @@
 (prolusion-require-package 'qml-mode)
 (prolusion-require-package 'rbenv)
 (prolusion-require-package 'rainbow-mode)
+(prolusion-require-package 'json-mode)
 (prolusion-require-package 'yaml-mode)
+(prolusion-require-package 'js2-mode)
+(prolusion-require-package 'js2-refactor)
 
 ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Custom convenience modes
@@ -40,6 +43,14 @@
 (add-to-list 'auto-mode-alist '("\\.qs$"         . javascript-mode))
 (add-to-list 'auto-mode-alist '("\\.qml$"        . qml-mode))
 (add-to-list 'auto-mode-alist '("\\.yml$"        . yaml-mode))
+(add-to-list 'auto-mode-alist '("\\.js\\'"       . js2-mode))
+(add-to-list 'auto-mode-alist '("\\.json\\'"     . json-mode))
+
+;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Convenience hooks
+;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+(add-hook 'js2-mode-hook 'js2-refactor-mode)
 
 ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Info mode

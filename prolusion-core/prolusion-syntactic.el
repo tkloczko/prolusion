@@ -23,6 +23,7 @@
 (eval-after-load 'company '(add-to-list 'company-backends 'company-irony))
 (eval-after-load 'company '(add-to-list 'company-backends 'company-irony-c-headers))
 (eval-after-load 'company '(add-to-list 'company-backends 'company-cmake))
+(eval-after-load 'company '(add-to-list 'company-backends 'company-dabbrev))
 
 (setq company-idle-delay 0.2)
 (setq company-echo-delay 0.0)
@@ -68,6 +69,7 @@
 ;; Fly-checking
 ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
+(prolusion-require-package 'flycheck)
 (prolusion-require-package 'flycheck-irony)
 
 (custom-set-variables '(flycheck-indication-mode 'right-fringe))

@@ -23,6 +23,31 @@
          (abbreviate-file-name (buffer-file-name)) "%b"))))
 
 ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Interactively do things
+;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;; (prolusion-require-package 'ido)
+;; (prolusion-require-package 'ido-ubiquitous)
+;; (prolusion-require-package 'ido-vertical-mode)
+
+;; (setq ido-enable-flex-matching t)
+;; (setq ido-save-directory-list-file (expand-file-name "ido" prolusion-save-dir))
+
+;; (ido-mode t)
+;; (ido-everywhere t)
+;; (ido-vertical-mode t)
+;; (ido-ubiquitous-mode t)
+
+;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Better M-x - SMEX
+;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;; (prolusion-require-package 'smex)
+
+;; (global-set-key (kbd "M-x") 'smex)
+;; (global-set-key (kbd "M-X") 'smex-major-mode-commands)
+
+;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Yes-Or-No
 ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 

@@ -292,7 +292,6 @@ Also affects linum-mode background."
       '(company-tooltip-selection ((t (:background "steelblue" :foreground "white"))))
       '(company-tooltip-common ((((type x)) (:inherit company-tooltip :weight bold)) (t (:inherit company-tooltip))))
       '(company-tooltip-common-selection ((((type x)) (:inherit company-tooltip-selection :weight bold)) (t (:inherit company-tooltip-selection))))
-
       `(company-scrollbar-bg ((t (:background "#000000"))))
       `(company-scrollbar-fg ((t (:background "#202020")))))
 
@@ -313,11 +312,9 @@ Also affects linum-mode background."
      `(cscope-mouse-face ((,class (:background ,blue :foreground ,prolusion-fg))))
 
      ;; ctable
-     `(ctbl:face-cell-select ((,class (:background ,prolusion-hl :foreground ,prolusion-emph
-                                                   :underline ,prolusion-emph :weight bold))))
+     `(ctbl:face-cell-select ((,class (:background ,prolusion-hl :foreground ,prolusion-emph :underline ,prolusion-emph :weight bold))))
      `(ctbl:face-continue-bar ((,class (:background ,prolusion-hl :foreground ,yellow))))
-     `(ctbl:face-row-select ((,class (:background ,prolusion-hl :foreground ,prolusion-fg
-                                                  :underline t))))
+     `(ctbl:face-row-select ((,class (:background ,prolusion-hl :foreground ,prolusion-fg :underline t))))
 
      ;; coffee
      `(coffee-mode-class-name ((,class (:foreground ,yellow :weight bold))))
