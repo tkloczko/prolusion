@@ -7,4 +7,5 @@
 * investigate `cscope` through `xscope.el`
 * add all used prefixes to `guide-key`
 * fix flycheck fringe indicators
+* Check more tools in `prolusion.sh`
 * blog about compilation databases using `cmake`, `bear`, `libclang` and `irony`.
