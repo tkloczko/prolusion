@@ -24,14 +24,18 @@
 ;; Git gutter
 ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-(prolusion-require-package 'fringe-helper)
 (prolusion-require-package 'git-gutter)
 (prolusion-require-package 'git-gutter-fringe)
 
 (custom-set-variables
- '(git-gutter:modified-sign "~")
+ '(git-gutter:modified-sign "±")
  '(git-gutter:added-sign    "+")
  '(git-gutter:deleted-sign  "-"))
+
+(custom-set-faces
+ '(git-gutter:added    ((t (:foreground "green"  :weight bold))))
+ '(git-gutter:deleted  ((t (:foreground "red"    :weight bold))))
+ '(git-gutter:modified ((t (:foreground "orange" :weight bold)))))
 
 (global-set-key (kbd "C-c g g") 'git-gutter:toggle)
 (global-set-key (kbd "C-c g =") 'git-gutter:popup-hunk)

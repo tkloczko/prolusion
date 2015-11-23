@@ -6,4 +6,5 @@
 * investigate `projectile`
 * investigate `cscope` through `xscope.el`
 * add all used prefixes to `guide-key`
+* fix flycheck fringe indicators
 * blog about compilation databases using `cmake`, `bear`, `libclang` and `irony`.

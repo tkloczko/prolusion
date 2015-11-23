@@ -1,7 +1,7 @@
 ;; Version: $Id$
 ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;
+;
 ;;; Commentary:
 ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -66,19 +66,20 @@ Also affects linum-mode background."
 
   (let* ((class '((class color) (min-colors 89)))
          ;; prolusion palette
-         (base03    "#101010") ;;"#002b36")
-         (base02    "#202020") ;;"#073642")
+         (base03    "#101010")
+         (base02    "#202020")
          ;; emphasized content
-         (base01    "#303030") ;;"#586e75")
+         (base01    "#303030")
          ;; primary content
-         (base00    "#505050") ;; #657b83")
-         (base0     "#b0b0b0") ;;"#839496")
+         (base00    "#505050")
+         (base0     "#b0b0b0")
          ;; comments
-         (base1     "#d0d0d0") ;;"#93a1a1")
+         (base1     "#d0d0d0")
          ;; background highlight light
-         (base2     "#e0e0e0") ;;"#eee8d5")
+         (base2     "#e0e0e0")
+
          ;; background light
-         (base3     "#f5f5f5") ;;"#fdf6e3")
+         (base3     "#f5f5f5")
 
          ;; prolusion accented colors
          (yellow    "#b58900")
@@ -167,10 +168,8 @@ Also affects linum-mode background."
      `(default ((,class (:foreground ,prolusion-fg :background ,prolusion-bg))))
      `(shadow ((,class (:foreground ,prolusion-comments))))
      `(match ((,class (:background ,prolusion-hl :foreground ,prolusion-emph :weight bold))))
-     `(cursor ((,class (:foreground ,prolusion-bg :background ,prolusion-fg
-                                    :inverse-video t))))
-     `(mouse ((,class (:foreground ,prolusion-bg :background ,prolusion-fg
-                                   :inverse-video t))))
+     `(cursor ((,class (:foreground ,prolusion-bg :background ,prolusion-fg :inverse-video t))))
+     `(mouse ((,class (:foreground ,prolusion-bg :background ,prolusion-fg :inverse-video t))))
      `(escape-glyph-face ((,class (:foreground ,red))))
      `(fringe ((,class (:foreground ,prolusion-fg :background ,s-fringe-bg))))
      `(highlight ((,class (:background ,prolusion-hl))))
@@ -179,14 +178,12 @@ Also affects linum-mode background."
      `(success ((,class (:foreground ,green ))))
      `(warning ((,class (:foreground ,yellow ))))
      `(error ((,class (:foreground ,orange))))
-     `(lazy-highlight ((,class (:foreground ,prolusion-bg :background ,yellow
-                                            :weight normal))))
+     `(lazy-highlight ((,class (:foreground ,prolusion-bg :background ,yellow :weight normal))))
      `(escape-glyph ((,class (:foreground ,violet))))
 
      ;; compilation
      `(compilation-column-face ((,class (:foreground ,cyan :underline nil))))
-     `(compilation-column-number ((,class (:inherit font-lock-doc-face :foreground ,cyan
-                                                    :underline nil))))
+     `(compilation-column-number ((,class (:inherit font-lock-doc-face :foreground ,cyan :underline nil))))
      `(compilation-enter-directory-face ((,class (:foreground ,green :underline nil))))
      `(compilation-error ((,class (:inherit error :underline nil))))
      `(compilation-error-face ((,class (:foreground ,red : :underline nil))))
@@ -199,10 +196,8 @@ Also affects linum-mode background."
      `(compilation-warning ((,class (:inherit warning :underline nil))))
      `(compilation-warning-face ((,class (:foreground ,yellow :weight normal :underline nil))))
 
-     `(compilation-mode-line-exit
-       ((,class (:inherit compilation-info :foreground ,green :weight bold))))
-     `(compilation-mode-line-fail
-       ((,class (:inherit compilation-error :foreground ,red :weight bold))))
+     `(compilation-mode-line-exit ((,class (:inherit compilation-info :foreground ,green :weight bold))))
+     `(compilation-mode-line-fail ((,class (:inherit compilation-error :foreground ,red :weight bold))))
      `(compilation-mode-line-run ((,class (:foreground ,orange :weight bold))))
 
      ;; dired
@@ -356,18 +351,12 @@ Also affects linum-mode background."
 
      `(ediff-current-diff-C ((,class (:background ,blue-lc))))
 
-     `(ediff-even-diff-A ((,class (:background ,prolusion-comments
-                                               :foreground ,prolusion-fg-lc ))))
-     `(ediff-odd-diff-A ((,class (:background ,prolusion-comments
-                                              :foreground ,prolusion-fg-hc ))))
-     `(ediff-even-diff-B ((,class (:background ,prolusion-comments
-                                               :foreground ,prolusion-fg-hc ))))
-     `(ediff-odd-diff-B ((,class (:background ,prolusion-comments
-                                              :foreground ,prolusion-fg-lc ))))
-     `(ediff-even-diff-C ((,class (:background ,prolusion-comments
-                                               :foreground ,prolusion-fg ))))
-     `(ediff-odd-diff-C ((,class (:background ,prolusion-comments
-                                              :foreground ,prolusion-bg ))))
+     `(ediff-even-diff-A ((,class (:background ,prolusion-comments :foreground ,prolusion-fg-lc ))))
+     `(ediff-odd-diff-A ((,class (:background ,prolusion-comments :foreground ,prolusion-fg-hc ))))
+     `(ediff-even-diff-B ((,class (:background ,prolusion-comments :foreground ,prolusion-fg-hc ))))
+     `(ediff-odd-diff-B ((,class (:background ,prolusion-comments :foreground ,prolusion-fg-lc ))))
+     `(ediff-even-diff-C ((,class (:background ,prolusion-comments :foreground ,prolusion-fg ))))
+     `(ediff-odd-diff-C ((,class (:background ,prolusion-comments :foreground ,prolusion-bg ))))
 
      ;; diff-hl
      `(diff-hl-change ((,class (:background ,blue-lc  :foreground ,blue-hc))))
@@ -400,14 +389,13 @@ Also affects linum-mode background."
      `(flycheck-info
        ((,(append '((supports :underline (:style line))) class)
          (:underline (:style line :color ,orange) :inherit unspecified))
-        (,class (:foreground ,orange-hc :background ,orange-lc :weight bold :underline t))))
-
+        (,class (:foreground ,cyan-hc :background ,cyan-lc :weight bold :underline t))))
      `(flycheck-fringe-error
-       ((,class (:foreground ,red-hc :background ,red-lc :weight bold))))
+       ((,class (:foreground ,red :background ,s-fringe-bg :weight bold))))
      `(flycheck-fringe-warning
-       ((,class (:foreground ,yellow-hc :background ,yellow-lc :weight bold))))
+       ((,class (:foreground ,yellow :background ,s-fringe-bg :weight bold))))
      `(flycheck-fringe-info
-       ((,class (:foreground ,orange-hc :background ,orange-lc :weight bold))))
+       ((,class (:foreground ,cyan :background ,s-fringe-bg :weight bold))))
 
      ;; guide-key
      `(guide-key/highlight-command-face ((,class (:foreground ,blue))))
