@@ -16,10 +16,10 @@
 ;; Fringe
 ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-(if (fboundp 'fringe-mode) (fringe-mode 8))
-(if (fboundp 'fringe-mode) (menu-bar-mode -1))
-(if (fboundp 'fringe-mode) (tool-bar-mode -1))
-(if (fboundp 'fringe-mode) (scroll-bar-mode -1))
+(fringe-mode 8)
+(menu-bar-mode -1)
+(tool-bar-mode -1)
+(scroll-bar-mode -1)
 
 ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Theme

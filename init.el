@@ -12,7 +12,7 @@
 ;;
 ;;; Code:
 ;;
-;; (package-initialize) ;; Required as of 25.1.50.1
+;; (package-initialize)
 
 (defvar prolusion-dir          (file-name-directory load-file-name))
 (defvar prolusion-core-dir     (expand-file-name "prolusion-core"     prolusion-dir) "")
@@ -22,7 +22,6 @@
 (defvar prolusion-eshell-dir   (expand-file-name "prolusion-eshell"   prolusion-dir) "")
 (defvar prolusion-save-dir     (expand-file-name "prolusion-save"     prolusion-dir) "")
 (defvar prolusion-irony-dir    (expand-file-name "prolusion-irony"    prolusion-dir) "")
-(defvar prolusion-semantic-dir (expand-file-name "prolusion-semantic" prolusion-dir) "")
 (defvar prolusion-theme-dir    (expand-file-name "prolusion-theme"    prolusion-dir) "")
 (defvar prolusion-snippets-dir (expand-file-name "prolusion-snippets" prolusion-dir) "")
 
@@ -32,7 +31,6 @@
 (make-directory prolusion-eshell-dir t)
 (make-directory prolusion-irony-dir t)
 (make-directory prolusion-save-dir t)
-(make-directory prolusion-semantic-dir t)
 
 (add-to-list              'load-path prolusion-core-dir)
 (add-to-list              'load-path prolusion-theme-dir)
