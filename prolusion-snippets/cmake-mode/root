@@ -1,21 +1,7 @@
 # -*- mode: snippet; require-final-newline: nil -*-
-# name: root
+# name: CMakeLists.txt root file
+# key: root
 # --
-
-## Version: $Id$
-##
-######################################################################
-##
-### Commentary:
-##
-######################################################################
-##
-### Change Log:
-##
-######################################################################
-##
-### Code:
-
 cmake_minimum_required(VERSION 3.0.0)
 
 ######################################################################
@@ -152,6 +138,3 @@ set(CPACK_PACKAGE_VERSION_MINOR "\${\${PROJECT_NAME}_VERSION_MINOR}")
 set(CPACK_PACKAGE_VERSION_PATCH "\${\${PROJECT_NAME}_VERSION_PATCH}")
 
 include(CPack)
-
-######################################################################
-### CMakeLists.txt ends here

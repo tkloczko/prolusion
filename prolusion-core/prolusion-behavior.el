@@ -23,29 +23,39 @@
          (abbreviate-file-name (buffer-file-name)) "%b"))))
 
 ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Diminish
+;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+(prolusion-require-package 'diminish)
+
+(diminish 'abbrev-mode)
+
+;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Interactively do things
 ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-;; (prolusion-require-package 'ido)
-;; (prolusion-require-package 'ido-ubiquitous)
-;; (prolusion-require-package 'ido-vertical-mode)
+(prolusion-require-package 'ido)
+(prolusion-require-package 'ido-ubiquitous)
+(prolusion-require-package 'ido-vertical-mode)
 
-;; (setq ido-enable-flex-matching t)
-;; (setq ido-save-directory-list-file (expand-file-name "ido" prolusion-save-dir))
+(setq ido-enable-flex-matching t)
+(setq ido-save-directory-list-file (expand-file-name "ido" prolusion-save-dir))
 
-;; (ido-mode t)
-;; (ido-everywhere t)
-;; (ido-vertical-mode t)
-;; (ido-ubiquitous-mode t)
+(ido-mode t)
+(ido-everywhere t)
+(ido-vertical-mode t)
+(ido-ubiquitous-mode t)
 
 ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Better M-x - SMEX
+;; Better M-x
 ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-;; (prolusion-require-package 'smex)
+(prolusion-require-package 'smex)
 
-;; (global-set-key (kbd "M-x") 'smex)
-;; (global-set-key (kbd "M-X") 'smex-major-mode-commands)
+(setq smex-save-file (expand-file-name "smex" prolusion-save-dir))
+
+(global-set-key (kbd "M-x") 'smex)
+(global-set-key (kbd "M-X") 'smex-major-mode-commands)
 
 ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Yes-Or-No
@@ -64,6 +74,7 @@
 ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (prolusion-require-package 'saveplace)
+
 (setq save-place-file (expand-file-name "place" prolusion-save-dir))
 (setq-default save-place t)
 
@@ -75,6 +86,7 @@
  '(search ring regexp-search-ring)
    savehist-autosave-interval 60
    savehist-file (expand-file-name "history" prolusion-save-dir))
+
 (savehist-mode +1)
 
 ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -82,9 +94,13 @@
 ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (prolusion-require-package 'recentf)
+
 (setq recentf-save-file (expand-file-name "files" prolusion-save-dir))
+(setq recentf-keep '(file-remote-p file-readable-p))
 (setq recentf-max-saved-items 500)
 (setq recentf-max-menu-items 15)
+(setq recentf-auto-cleanup 'never)
+
 (recentf-mode +1)
 
 ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -101,13 +117,14 @@
 (global-auto-revert-mode t)
 
 ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Command log
+;; Global keys helper
 ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-(prolusion-require-package 'mwe-log-commands)
+(prolusion-require-package 'which-key)
 
-(add-hook 'prog-mode-hook (function mwe:log-keyboard-commands))
-(add-hook 'text-mode-hook (function mwe:log-keyboard-commands))
+(which-key-mode)
+
+(diminish 'which-key-mode)
 
 ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Custom file

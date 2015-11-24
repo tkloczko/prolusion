@@ -12,6 +12,10 @@
 ;;
 ;;; Code:
 
+;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Emacs Web Woser
+;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
 (setq url-cookie-file (expand-file-name "cookies" prolusion-www-dir))
 (setq url-configuration-directory prolusion-www-dir)
 

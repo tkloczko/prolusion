@@ -13,14 +13,6 @@
 ;;; Code:
 
 ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Diminish
-;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-
-(prolusion-require-package 'diminish)
-
-(diminish 'abbrev-mode)
-
-;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Switch form header to surce and vice versa
 ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
@@ -67,6 +59,7 @@
 (setq sp-base-key-bindings 'paredit)
 (setq sp-autoskip-closing-pair 'always)
 (setq sp-hybrid-kill-entire-symbol nil)
+
 (sp-use-paredit-bindings)
 
 (show-smartparens-global-mode +1)
@@ -79,35 +72,12 @@
 
 (setq text-scale-mode-step 1.05)
 
-(global-set-key (kbd "C-x \\") 'align-regexp)
 (global-set-key (kbd "C-+") 'text-scale-increase)
 (global-set-key (kbd "C--") 'text-scale-decrease)
 (global-set-key (kbd "C-x O")
    (lambda ()
      (interactive)
      (other-window -1)))
-
-;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Global keys guide
-;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-
-(prolusion-require-package 'guide-key)
-
-(setq guide-key/guide-key-sequence
-  '("C-x"
-    "C-x r"
-    "C-x 4"
-    "C-x 5"
-    "C-c g"
-    "C-c h"
-    "C-x C-h"))
-
-(setq guide-key/highlight-command-regexp "git")
-(setq guide-key/idle-delay 1.5)
-
-(guide-key-mode 1)
-
-(diminish 'guide-key-mode)
 
 ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Undo tree

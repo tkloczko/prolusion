@@ -19,11 +19,12 @@
 (prolusion-require-package 'yasnippet)
 
 (setq yas-snippet-dirs prolusion-snippets-dir)
-
-(yas-global-mode 1)
+(setq yas-prompt-functions '(yas-dropdown-prompt))
 
 (add-hook 'term-mode-hook (lambda()
   (setq yas-dont-activate t)))
+
+(yas-global-mode 1)
 
 (diminish 'yas-minor-mode)
 

@@ -11,8 +11,8 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;
 ;;; Code:
-
-(package-initialize)
+;;
+;; (package-initialize) ;; Required as of 25.1.50.1
 
 (defvar prolusion-dir          (file-name-directory load-file-name))
 (defvar prolusion-core-dir     (expand-file-name "prolusion-core"     prolusion-dir) "")
@@ -43,12 +43,12 @@
 (require 'prolusion-packages)
 (require 'prolusion-behavior)
 (require 'prolusion-eshell)
-(require 'prolusion-modes)
 (require 'prolusion-editor)
+(require 'prolusion-modes)
 (require 'prolusion-snippets)
 (require 'prolusion-irony)
-(require 'prolusion-syntactic)
-(require 'prolusion-semantic)
+(require 'prolusion-completion)
+(require 'prolusion-checking)
 (require 'prolusion-vc)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
