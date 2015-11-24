@@ -47,6 +47,7 @@
 (require 'prolusion-irony)
 (require 'prolusion-completion)
 (require 'prolusion-checking)
+(require 'prolusion-narrowing)
 (require 'prolusion-vc)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;

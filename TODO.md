@@ -1,10 +1,9 @@
 # TODO
 
-* write `yas` snippets
-* give `ido` a try (spacemacs' one is awesome)
-* enable more `company` backends
-* investigate `projectile`
-* investigate `cscope` through `xscope.el`
+* investigate `projectile` and then add `helm-projectile`
+* investigate `cscope` through `xscope.el` and then add `helm-cscope`
 * fix flycheck fringe indicators (color is always the same)
+* give `ido` a last chance
 * Check more tools in `prolusion.sh`
+* Populate README using major/minor modes
 * blog about compilation databases using `cmake`, `bear`, `libclang` and `irony`.

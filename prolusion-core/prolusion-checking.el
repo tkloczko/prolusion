@@ -19,6 +19,10 @@
 (prolusion-require-package 'flycheck)
 (prolusion-require-package 'flycheck-irony)
 
+;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Define fringe indicators
+;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
 (custom-set-variables '(flycheck-indication-mode 'right-fringe))
 
 (when (fboundp 'define-fringe-bitmap)
@@ -55,6 +59,10 @@
   :overlay-category 'flycheck-info-overlay
   :fringe-bitmap 'prolusion-flycheck-fringe-indicator
   :fringe-face 'flycheck-fringe-info)
+
+;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Enable for c/c++/objc
+;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (eval-after-load 'flycheck '(add-hook 'flycheck-mode-hook 'flycheck-irony-setup))
 

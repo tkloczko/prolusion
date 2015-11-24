@@ -19,7 +19,7 @@
 (global-set-key (kbd "C-x z") 'ff-find-other-file)
 
 ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Tabs
+;; Use spaces for tabulation
 ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (setq-default indent-tabs-mode nil)
@@ -67,7 +67,7 @@
 (add-hook 'prog-mode-hook 'rainbow-delimiters-mode)
 
 ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Global key bindings
+;; Text scaling
 ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (setq text-scale-mode-step 1.05)
@@ -93,23 +93,6 @@
 (global-undo-tree-mode)
 
 (diminish 'undo-tree-mode)
-
-;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Helm
-;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-
-(prolusion-require-package 'helm)
-(prolusion-require-package 'helm-ag)
-(prolusion-require-package 'helm-dash)
-
-(setq helm-dash-docsets-path prolusion-docs-dir)
-(setq helm-dash-common-docsets '("C" "C++" "Qt"))
-
-(global-set-key (kbd "C-c h a") 'helm-ag)
-(global-set-key (kbd "C-c h d") 'helm-dash)
-(global-set-key (kbd "C-c h m") 'helm-mini)
-
-(setq browse-url-browser-function 'eww-browse-url)
 
 ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Headers
@@ -141,7 +124,7 @@
 (global-set-key (kbd "C-x C-h g") 'update-file-header)
 
 ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Duplication
+;; Line duplication
 ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (defun duplicate-line()
@@ -153,7 +136,7 @@
   (next-line 1)
   (yank))
 
-(global-set-key (kbd "C-S-D") 'duplicate-line)
+(global-set-key (kbd "C-c d") 'duplicate-line)
 
 ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Iedit
