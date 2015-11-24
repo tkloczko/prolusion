@@ -1,15 +1,16 @@
 # -*- mode: snippet; require-final-newline: nil -*-
-# name: QCoreApplication
-# key: qcoreapplication
+# name: QApplication
+# key: qapplication
 # binding: direct-keybinding
 # --
 #include <QtCore>
+#include <QtGui>
 
 int main(int argc, char **argv)
 {
-    QCoreApplication application(argc, argv);
+    QApplication application(argc, argv);
 
     $0
 
-    return 0;
+    return application.exec();
 }
