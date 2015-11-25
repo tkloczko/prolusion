@@ -1,8 +1,8 @@
 # -*- mode: snippet; require-final-newline: nil -*-
-# name: if
-# key: if
+# name: foreach
+# key: foreach
 # binding: direct-keybinding
 # --
-if ($1 {
-   $0
+foreach($1, $2) {
+    $0
 }
