@@ -3,6 +3,6 @@
 # key: foreach
 # binding: direct-keybinding
 # --
-foreach($1, $2) {
+foreach ($1, $2) {
     $0
 }
