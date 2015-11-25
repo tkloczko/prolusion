@@ -13,48 +13,30 @@
 ;;; Code:
 
 ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Switch form header to surce and vice versa
+;; Editor requirements
 ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-(global-set-key (kbd "C-x z") 'ff-find-other-file)
+(prolusion-require-package 'rainbow-delimiters)
+(prolusion-require-package 'smartparens)
+(prolusion-require-package 'undo-tree)
+(prolusion-require-package 'iedit)
+
+(require 'whitespace)
+(require 'smartparens-config)
 
 ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Use spaces for tabulation
+;; Editor setup
 ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (setq-default indent-tabs-mode nil)
 (setq-default tab-width 4)
 (setq-default c-basic-offset 4)
 
-;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Whitespaces
-;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-
-(require 'whitespace)
-
 (setq whitespace-line-column 80)
 (setq whitespace-style '(face tabs empty trailing lines-tail))
 
-(add-hook   'find-file-hook (lambda () (whitespace-mode +1)))
-(add-hook 'before-save-hook (lambda () (whitespace-cleanup)))
-
-(diminish 'whitespace-mode)
-
-;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Highlight current line
-;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-
 (when (display-graphic-p)
   (global-hl-line-mode +1))
-
-;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Parentheses
-;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-
-(prolusion-require-package 'smartparens)
-(prolusion-require-package 'rainbow-delimiters)
-
-(require 'smartparens-config)
 
 (setq sp-base-key-bindings 'paredit)
 (setq sp-autoskip-closing-pair 'always)
@@ -64,45 +46,9 @@
 
 (show-smartparens-global-mode +1)
 
-(add-hook 'prog-mode-hook 'rainbow-delimiters-mode)
-
-;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Text scaling
-;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-
-(setq text-scale-mode-step 1.05)
-
-(global-set-key (kbd "C-+") 'text-scale-increase)
-(global-set-key (kbd "C--") 'text-scale-decrease)
-
-;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Reverse window switching
-;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-
-(global-set-key (kbd "C-x O")
-   (lambda ()
-     (interactive)
-     (other-window -1)))
-
-;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Undo tree
-;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-
-(prolusion-require-package 'undo-tree)
-
 (global-undo-tree-mode)
 
-(diminish 'undo-tree-mode)
-
-;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Headers
-;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-
-(prolusion-require-package 'header2)
-
-(setq header-author 'user-full-name)
 (setq header-file-name 'buffer-file-name)
-(setq header-modification-author 'user-full-name)
 
 (setq make-header-hook
   '(header-rcs-id
@@ -117,17 +63,11 @@
     header-code
     header-eof))
 
-(global-set-key (kbd "C-x C-h m") 'make-header)
-(global-set-key (kbd "C-x C-h c") 'make-box-comment)
-(global-set-key (kbd "C-x C-h d") 'make-divider)
-(global-set-key (kbd "C-x C-h r") 'make-revision)
-(global-set-key (kbd "C-x C-h g") 'update-file-header)
-
 ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Line duplication
+;; Editor functions
 ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-(defun duplicate-line()
+(defun prolusion-duplicate-line()
   (interactive)
   (move-beginning-of-line 1)
   (kill-line)
@@ -136,15 +76,34 @@
   (next-line 1)
   (yank))
 
-(global-set-key (kbd "C-c d") 'duplicate-line)
-
 ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Iedit
+;; Editor hooks
 ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-(prolusion-require-package 'iedit)
+(add-hook   'find-file-hook (lambda () (whitespace-mode +1)))
+(add-hook 'before-save-hook (lambda () (whitespace-cleanup)))
 
-(define-key global-map (kbd "C-c ;") 'iedit-mode)
+(add-hook 'prog-mode-hook 'rainbow-delimiters-mode)
+
+;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Editor modeline
+;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+(diminish 'whitespace-mode)
+(diminish  'undo-tree-mode)
+
+;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Editor keybindings
+;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+(global-set-key (kbd "C-c e f") 'ff-find-other-file)
+(global-set-key (kbd "C-c e m") 'make-header)
+(global-set-key (kbd "C-c e c") 'make-box-comment)
+(global-set-key (kbd "C-c e d") 'make-divider)
+(global-set-key (kbd "C-c e r") 'make-revision)
+(global-set-key (kbd "C-c e g") 'update-file-header)
+(global-set-key (kbd "C-c e l") 'prolusion-duplicate-line)
+(global-set-key (kbd "C-c e e") 'iedit-mode)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 

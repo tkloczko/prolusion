@@ -13,16 +13,19 @@
 ;;; Code:
 
 ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; WWW setup
+;; Builtins keybindings
 ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-(setq url-cookie-file (expand-file-name "cookies" prolusion-www-dir))
-(setq url-configuration-directory prolusion-www-dir)
-(setq browse-url-browser-function 'eww-browse-url)
+(global-set-key (kbd "C-c r c")  'clear-rectangle)
+(global-set-key (kbd "C-c r d") 'delete-rectangle)
+(global-set-key (kbd "C-c r k")   'kill-rectangle)
+(global-set-key (kbd "C-c r o")   'open-rectangle)
+(global-set-key (kbd "C-c r t") 'string-rectangle)
+(global-set-key (kbd "C-c r y")   'yank-rectangle)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-(provide 'prolusion-www)
+(provide 'prolusion-builtins)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;; prolusion-www.el ends here
+;;; prolusion-builtins.el ends here

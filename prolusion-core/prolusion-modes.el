@@ -13,7 +13,7 @@
 ;;; Code:
 
 ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Retrieve 3rd party modes
+;; Modes requirements
 ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (prolusion-require-package 'cmake-mode)
@@ -27,7 +27,7 @@
 (prolusion-require-package 'js2-refactor)
 
 ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Custom convenience modes
+;; Modes setup
 ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (add-to-list 'auto-mode-alist '("\\.h$"          . c++-mode))
@@ -43,15 +43,10 @@
 (add-to-list 'auto-mode-alist '("\\.qml$"        . qml-mode))
 (add-to-list 'auto-mode-alist '("\\.yml$"        . yaml-mode))
 (add-to-list 'auto-mode-alist '("\\.js\\'"       . js2-mode))
+(add-to-list 'auto-mode-alist '("\\.info\\'"     . info-mode))
 
 ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Convenience hooks
-;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-
-(add-hook 'js2-mode-hook 'js2-refactor-mode)
-
-;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Info mode
+;; Modes functions
 ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (defun info-mode ()
@@ -60,7 +55,11 @@
     (kill-buffer (current-buffer))
     (info file-name)))
 
-(add-to-list 'auto-mode-alist '("\\.info\\'" . info-mode))
+;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Modes hooks
+;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+(add-hook 'js2-mode-hook 'js2-refactor-mode)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
