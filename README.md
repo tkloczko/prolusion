@@ -10,13 +10,8 @@ more polished configuration kit, I can only recommand
 [Spacemacs](https://github.com/syl20bnr/spacemacs).
 
 Prolusion is organized as a set layers, each of which is organized as
-follows:
-* requirements
-* setup
-* functions
-* hooks
-* modeline
-* keybindings
+follows: requirements, setup, functions, hooks, modeline and
+keybindings.
 
 ## Prerequisites
 
@@ -35,22 +30,22 @@ follows:
 
 ## Upgrade
 
-### Emacs
+**Emacs**
 
     $ brew   install emacs --use-git-head --cocoa # if emacs is not installed
     $ brew reinstall emacs --use-git-head --cocoa # if emacs is     installed
 
-### Emacs configuration
+**Emacs configuration**
 
     ~/.prolusion.d $ git pull origin master
 
-### Emacs packages
+**Emacs packages**
 
     M-x prolusion-upgrade-packages
 
 ## Bindings
 
-### prolusion-packages
+**prolusion-packages**
 
 | Keybinding           | Function                   |
 | -------------------- | -------------------------- |
@@ -58,7 +53,7 @@ follows:
 | <kbd>`C-c p r`</kbd> | package-refresh-contents   |
 | <kbd>`C-c p u`</kbd> | prolusion-upgrade-packages |
 
-### prolusion-behavior
+**prolusion-behavior**
 
 | Keybinding         | Function          |
 | ------------------ | ----------------- |
@@ -70,7 +65,7 @@ follows:
 | <kbd>`C-+`</kbd> | `text-scale-increase` |
 | <kbd>`C--`</kbd> | `text-scale-decrease` |
 
-### prolusion-builtins
+**prolusion-builtins**
 
 | Keybinding           | Function           |
 | -------------------- | ------------------:|
@@ -81,7 +76,7 @@ follows:
 | <kbd>`C-c r s`</kbd> | `string-rectangle` |
 | <kbd>`C-c r y`</kbd> |   `yank-rectangle` |
 
-### prolusion-editor
+**prolusion-editor**
 
 | Keybinding           | Function                   |
 | -------------------- | -------------------------- |
@@ -99,7 +94,7 @@ follows:
 | <kbd>`C-+`</kbd> | `text-scale-increase` |
 | <kbd>`C--`</kbd> | `text-scale-decrease` |
 
-### prolusion-snippets
+**prolusion-snippets**
 
 | Keybinding           | Function               |
 | -------------------- | ---------------------- |
@@ -107,7 +102,7 @@ follows:
 | <kbd>`C-c y s`</kbd> | yas-insert-snippet     |
 | <kbd>`C-c y v`</kbd> | yas-visit-snippet-file |
 
-### prolusion-narrowing
+**prolusion-narrowing**
 
 | Keybinding           | Function               |
 | -------------------- | ---------------------- |
@@ -118,7 +113,7 @@ follows:
 | <kbd>`C-c n f`</kbd> | helm-flycheck          |
 | <kbd>`C-c n y`</kbd> | helm-yas-complete      |
 
-### prolusion-vc
+**prolusion-vc**
 
 | Keybinding           | Function                    |
 | -------------------- | --------------------------- |

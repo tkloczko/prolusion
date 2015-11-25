@@ -106,6 +106,15 @@ then
     exit 1;
 fi
 
+prolusion_cyan "Checking to see if gpg is installed..."
+if hash gpg 2>&-
+then
+    prolusion_green "found."
+else
+    prolusion_red "not found. Aborting installation!"
+    exit 1
+fi;
+
 prolusion_cyan "Checking to see if git is installed..."
 if hash git 2>&-
 then
@@ -142,17 +151,16 @@ else
     exit 1
 fi;
 
-prolusion_install
+prolusion_cyan "Checking to see if ag is installed..."
+if hash ag 2>&-
+then
+    prolusion_green "found."
+else
+    prolusion_red "not found. Aborting installation!"
+    exit 1
+fi;
 
-prolusion_purple " ______          _           _              "
-prolusion_purple " | ___ \        | |         (_)             "
-prolusion_purple " | |_/ / __ ___ | |_   _ ___ _  ___  _ __   "
-prolusion_purple " |  __/ '__/ _ \| | | | / __| |/ _ \| '_ \  "
-prolusion_purple " | |  | | | (_) | | |_| \__ \ | (_) | | | | "
-prolusion_purple " \_|  |_|  \___/|_|\__,_|___/_|\___/|_| |_| "
-prolusion_purple ""
-prolusion_green  "... is now installed and ready to do thy bidding, Master $USER!"
-prolusion_clear  ""
+prolusion_install
 
 #
 # prolusion.sh ends here
