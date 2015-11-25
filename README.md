@@ -9,7 +9,7 @@ more polished configuration kit, I can only recommand
 [Prelude](https://github.com/bbatsov/prelude) or
 [Spacemacs](https://github.com/syl20bnr/spacemacs).
 
-Prolusion is organized as a set layers, each of which is organized as
+Prolusion is organized as a set of layers, each of which is organized as
 follows: requirements, setup, functions, hooks, modeline and
 keybindings.
 
