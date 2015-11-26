@@ -81,11 +81,6 @@ keybindings.
 | <kbd>`C-c e l`</kbd> | `prolusion-duplicate-line` |
 | <kbd>`C-c e e`</kbd> | `iedit-mode`               |
 
-| Keybinding       | Function              |
-| ---------------- | --------------------- |
-| <kbd>`C-+`</kbd> | `text-scale-increase` |
-| <kbd>`C--`</kbd> | `text-scale-decrease` |
-
 **prolusion-snippets**
 
 | Keybinding           | Function                 |
