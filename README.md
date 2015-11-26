@@ -35,11 +35,11 @@ keybindings.
     $ brew   install emacs --use-git-head --cocoa # if emacs is not installed
     $ brew reinstall emacs --use-git-head --cocoa # if emacs is     installed
 
-**Emacs configuration**
+**Emacs prolusion**
 
-    ~/.prolusion.d $ git pull origin master
+    M-x prolusion-upgrade
 
-**Emacs packages**
+**Emacs prolusion packages**
 
     M-x prolusion-upgrade-packages
 
