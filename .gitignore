@@ -25,7 +25,7 @@ prolusion-elpa
 prolusion-eshell
 prolusion-irony
 prolusion-save
-prolusion-semantic
+prolusion-projectile
 
 ######################################################################
 ### .gitignore ends here

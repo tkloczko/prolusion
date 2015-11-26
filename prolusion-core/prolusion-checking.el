@@ -81,4 +81,4 @@
 (provide 'prolusion-checking)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;; prolusion-semantic.el ends here
+;;; prolusion-checking.el ends here

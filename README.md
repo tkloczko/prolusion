@@ -65,7 +65,7 @@ keybindings.
 | <kbd>`C-c r d`</kbd> | `delete-rectangle` |
 | <kbd>`C-c r k`</kbd> |   `kill-rectangle` |
 | <kbd>`C-c r o`</kbd> |   `open-rectangle` |
-| <kbd>`C-c r s`</kbd> | `string-rectangle` |
+| <kbd>`C-c r t`</kbd> | `string-rectangle` |
 | <kbd>`C-c r y`</kbd> |   `yank-rectangle` |
 
 **prolusion-editor**
@@ -117,8 +117,25 @@ keybindings.
 | <kbd>`C-c g s`</kbd> | `git-gutter::stage-hunk`    |
 | <kbd>`C-c g r`</kbd> | `git-gutter::revert-hunk`   |
 
+**prolusion-projectile**
+
+| Keybinding           | Function                                      |
+| -------------------- | --------------------------------------------- |
+| <kbd>C-c p a</kbd>   | 'helm-projectile-find-other-file              |
+| <kbd>C-c p f</kbd>   | 'helm-projectile-find-file                    |
+| <kbd>C-c p F</kbd>   | 'helm-projectile-find-file-in-known-projects  |
+| <kbd>C-c p g</kbd>   | 'helm-projectile-find-file-dwim               |
+| <kbd>C-c p d</kbd>   | 'helm-projectile-find-dir                     |
+| <kbd>C-c p p</kbd>   | 'helm-projectile-switch-project               |
+| <kbd>C-c p e</kbd>   | 'helm-projectile-recentf                      |
+| <kbd>C-c p b</kbd>   | 'helm-projectile-switch-to-buffer             |
+| <kbd>C-c p s g</kbd> | 'helm-projectile-grep                         |
+| <kbd>C-c p s a</kbd> | 'helm-projectile-ack                          |
+| <kbd>C-c p s s</kbd> | 'helm-projectile-ag                           |
+
 ## Caveats
 
-Some functionalities are not available in terminal mode. They include:
+Some functionalities are not available in terminal
+mode. They include:
 * test scaling
 * fringe indicators
