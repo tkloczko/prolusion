@@ -47,9 +47,16 @@
          (package-install package))
        (require 'package))
 
+(defun prolusion-upgrade () ""
+       (interactive)
+       (cd prolusion-dir)
+       (message "Upgrading prolusion")
+       (shell-command "git pull")
+       (message "Upgrade finished. Restart Emacs to complete the process."))
+
 (defun prolusion-upgrade-packages () ""
        (interactive)
-       (message "Upgrading packages")
+       (message "Upgrading prolusion packages")
        (save-window-excursion
          (package-list-packages t)
          (package-menu-mark-upgrades)
