@@ -83,6 +83,11 @@
 
 (which-key-mode)
 
+;; dired
+
+(setq dired-recursive-deletes 'always)
+(setq dired-recursive-copies  'always)
+
 ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Behavior modeline
 ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;

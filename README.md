@@ -81,13 +81,13 @@ keybindings.
 | Keybinding           | Function                   |
 | -------------------- | -------------------------- |
 | <kbd>`C-c e f`</kbd> | `ff-find-other-file`       |
-| <kbd>`C-c e f`</kbd> | `make-header`              |
-| <kbd>`C-c e f`</kbd> | `make-box-comment`         |
-| <kbd>`C-c e f`</kbd> | `make-divider`             |
-| <kbd>`C-c e f`</kbd> | `make-revision`            |
-| <kbd>`C-c e f`</kbd> | `update-file-header`       |
-| <kbd>`C-c e f`</kbd> | `prolusion-duplicate-line` |
-| <kbd>`C-c e f`</kbd> | `iedit-mode`               |
+| <kbd>`C-c e m`</kbd> | `make-header`              |
+| <kbd>`C-c e c`</kbd> | `make-box-comment`         |
+| <kbd>`C-c e d`</kbd> | `make-divider`             |
+| <kbd>`C-c e r`</kbd> | `make-revision`            |
+| <kbd>`C-c e g`</kbd> | `update-file-header`       |
+| <kbd>`C-c e l`</kbd> | `prolusion-duplicate-line` |
+| <kbd>`C-c e e`</kbd> | `iedit-mode`               |
 
 | Keybinding       | Function              |
 | ---------------- | --------------------- |
