@@ -19,6 +19,7 @@
 (prolusion-require-package 'rainbow-delimiters)
 (prolusion-require-package 'smartparens)
 (prolusion-require-package 'undo-tree)
+(prolusion-require-package 'header2)
 (prolusion-require-package 'iedit)
 
 (require 'whitespace)
