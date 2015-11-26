@@ -131,6 +131,6 @@ keybindings.
 ## Caveats
 
 Some functionalities are not available in terminal
-mode. They include:
-* test scaling
+mode.
+* text scaling
 * fringe indicators
