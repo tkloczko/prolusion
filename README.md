@@ -88,50 +88,50 @@ keybindings.
 
 **prolusion-snippets**
 
-| Keybinding           | Function               |
-| -------------------- | ---------------------- |
-| <kbd>`C-c y n`</kbd> | yas-new-snippet        |
-| <kbd>`C-c y s`</kbd> | yas-insert-snippet     |
-| <kbd>`C-c y v`</kbd> | yas-visit-snippet-file |
+| Keybinding           | Function                 |
+| -------------------- | ------------------------ |
+| <kbd>`C-c y n`</kbd> | `yas-new-snippet`        |
+| <kbd>`C-c y s`</kbd> | `yas-insert-snippet`     |
+| <kbd>`C-c y v`</kbd> | `yas-visit-snippet-file` |
 
 **prolusion-narrowing**
 
-| Keybinding           | Function               |
-| -------------------- | ---------------------- |
-| <kbd>`C-c n a`</kbd> | helm-ag                |
-| <kbd>`C-c n d`</kbd> | helm-dash              |
-| <kbd>`C-c n m`</kbd> | helm-mini              |
-| <kbd>`C-c n c`</kbd> | helm-company           |
-| <kbd>`C-c n f`</kbd> | helm-flycheck          |
-| <kbd>`C-c n y`</kbd> | helm-yas-complete      |
+| Keybinding           | Function            |
+| -------------------- | ------------------- |
+| <kbd>`C-c n a`</kbd> | `helm-ag`           |
+| <kbd>`C-c n d`</kbd> | `helm-dash`         |
+| <kbd>`C-c n m`</kbd> | `helm-mini`         |
+| <kbd>`C-c n c`</kbd> | `helm-company`      |
+| <kbd>`C-c n f`</kbd> | `helm-flycheck`     |
+| <kbd>`C-c n y`</kbd> | `helm-yas-complete` |
 
 **prolusion-vc**
 
 | Keybinding           | Function                    |
 | -------------------- | --------------------------- |
-| <kbd>`C-c g m`</kbd> | `magit-status`              |
-| <kbd>`C-c g g`</kbd> | `git-gutter::toggle`        |
-| <kbd>`C-c g =`</kbd> | `git-gutter::popup-hunk`    |
-| <kbd>`C-c g p`</kbd> | `git-gutter::previous-hunk` |
-| <kbd>`C-c g n`</kbd> | `git-gutter::next-hunk`     |
-| <kbd>`C-c g s`</kbd> | `git-gutter::stage-hunk`    |
-| <kbd>`C-c g r`</kbd> | `git-gutter::revert-hunk`   |
+| <kbd>`C-c v m`</kbd> | `magit-status`              |
+| <kbd>`C-c v g`</kbd> | `git-gutter::toggle`        |
+| <kbd>`C-c v =`</kbd> | `git-gutter::popup-hunk`    |
+| <kbd>`C-c v p`</kbd> | `git-gutter::previous-hunk` |
+| <kbd>`C-c v n`</kbd> | `git-gutter::next-hunk`     |
+| <kbd>`C-c v s`</kbd> | `git-gutter::stage-hunk`    |
+| <kbd>`C-c v r`</kbd> | `git-gutter::revert-hunk`   |
 
 **prolusion-projectile**
 
 | Keybinding           | Function                                      |
 | -------------------- | --------------------------------------------- |
-| <kbd>C-c p a</kbd>   | 'helm-projectile-find-other-file              |
-| <kbd>C-c p f</kbd>   | 'helm-projectile-find-file                    |
-| <kbd>C-c p F</kbd>   | 'helm-projectile-find-file-in-known-projects  |
-| <kbd>C-c p g</kbd>   | 'helm-projectile-find-file-dwim               |
-| <kbd>C-c p d</kbd>   | 'helm-projectile-find-dir                     |
-| <kbd>C-c p p</kbd>   | 'helm-projectile-switch-project               |
-| <kbd>C-c p e</kbd>   | 'helm-projectile-recentf                      |
-| <kbd>C-c p b</kbd>   | 'helm-projectile-switch-to-buffer             |
-| <kbd>C-c p s g</kbd> | 'helm-projectile-grep                         |
-| <kbd>C-c p s a</kbd> | 'helm-projectile-ack                          |
-| <kbd>C-c p s s</kbd> | 'helm-projectile-ag                           |
+| <kbd>C-c p a</kbd>   | `helm-projectile-find-other-file`             |
+| <kbd>C-c p f</kbd>   | `helm-projectile-find-file`                   |
+| <kbd>C-c p F</kbd>   | `helm-projectile-find-file-in-known-projects` |
+| <kbd>C-c p g</kbd>   | `helm-projectile-find-file-dwim`              |
+| <kbd>C-c p d</kbd>   | `helm-projectile-find-dir`                    |
+| <kbd>C-c p p</kbd>   | `helm-projectile-switch-project`              |
+| <kbd>C-c p e</kbd>   | `helm-projectile-recentf`                     |
+| <kbd>C-c p b</kbd>   | `helm-projectile-switch-to-buffer`            |
+| <kbd>C-c p s g</kbd> | `helm-projectile-grep`                        |
+| <kbd>C-c p s a</kbd> | `helm-projectile-ack`                         |
+| <kbd>C-c p s s</kbd> | `helm-projectile-ag`                          |
 
 ## Caveats
 

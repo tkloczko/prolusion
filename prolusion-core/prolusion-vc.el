@@ -46,13 +46,13 @@
 ;; VC keybindings
 ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-(global-set-key (kbd "C-c g m") 'magit-status)
-(global-set-key (kbd "C-c g g") 'git-gutter:toggle)
-(global-set-key (kbd "C-c g =") 'git-gutter:popup-hunk)
-(global-set-key (kbd "C-c g p") 'git-gutter:previous-hunk)
-(global-set-key (kbd "C-c g n") 'git-gutter:next-hunk)
-(global-set-key (kbd "C-c g s") 'git-gutter:stage-hunk)
-(global-set-key (kbd "C-c g r") 'git-gutter:revert-hunk)
+(global-set-key (kbd "C-c v m") 'magit-status)
+(global-set-key (kbd "C-c v g") 'git-gutter:toggle)
+(global-set-key (kbd "C-c v =") 'git-gutter:popup-hunk)
+(global-set-key (kbd "C-c v p") 'git-gutter:previous-hunk)
+(global-set-key (kbd "C-c v n") 'git-gutter:next-hunk)
+(global-set-key (kbd "C-c v s") 'git-gutter:stage-hunk)
+(global-set-key (kbd "C-c v r") 'git-gutter:revert-hunk)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
