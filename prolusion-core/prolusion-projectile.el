@@ -25,6 +25,7 @@
 
 (projectile-global-mode)
 
+(setq projectile-enable-caching t)
 (setq projectile-completion-system 'helm)
 (setq projectile-known-projects-file (expand-file-name "known" prolusion-projectile-dir))
 (setq projectile-cache-file          (expand-file-name "cache" prolusion-projectile-dir))
