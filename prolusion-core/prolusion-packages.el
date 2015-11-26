@@ -55,14 +55,6 @@
          (package-menu-mark-upgrades)
          (package-menu-execute t)))
 
-;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Package keybindings
-;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-
-(global-set-key (kbd "C-c p l") 'package-list-packages)
-(global-set-key (kbd "C-c p r") 'package-refresh-contents)
-(global-set-key (kbd "C-c p u") 'prolusion-upgrade-packages)
-
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (provide 'prolusion-packages)

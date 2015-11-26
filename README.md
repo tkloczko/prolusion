@@ -45,14 +45,6 @@ keybindings.
 
 ## Bindings
 
-**prolusion-packages**
-
-| Keybinding           | Function                   |
-| -------------------- | -------------------------- |
-| <kbd>`C-c p l`</kbd> | package-list-package       |
-| <kbd>`C-c p r`</kbd> | package-refresh-contents   |
-| <kbd>`C-c p u`</kbd> | prolusion-upgrade-packages |
-
 **prolusion-behavior**
 
 | Keybinding         | Function          |
