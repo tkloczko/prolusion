@@ -18,7 +18,7 @@ keybindings.
     $ brew install curl
     $ brew install gpg
     $ brew install git
-    $ brew install emacs --use-git-head --cocoa
+    $ brew install emacs --use-git-head --with-cocoa
     $ brew install cmake
     $ brew install ninja
     $ brew install llvm --with-clang
