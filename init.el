@@ -42,7 +42,6 @@
 (require 'prolusion-www)
 (require 'prolusion-packages)
 (require 'prolusion-behavior)
-(require 'prolusion-builtins)
 (require 'prolusion-eshell)
 (require 'prolusion-editor)
 (require 'prolusion-modes)
@@ -53,6 +52,7 @@
 (require 'prolusion-narrowing)
 (require 'prolusion-vc)
 (require 'prolusion-projectile)
+(require 'prolusion-builtins)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; init.el ends here
