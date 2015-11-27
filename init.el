@@ -49,6 +49,7 @@
 (require 'prolusion-irony)
 (require 'prolusion-completion)
 (require 'prolusion-checking)
+(require 'prolusion-scoping)
 (require 'prolusion-narrowing)
 (require 'prolusion-vc)
 (require 'prolusion-projectile)
