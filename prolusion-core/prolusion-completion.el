@@ -27,6 +27,7 @@
 (eval-after-load 'company '(add-to-list 'company-backends 'company-irony))
 (eval-after-load 'company '(add-to-list 'company-backends 'company-irony-c-headers))
 (eval-after-load 'company '(add-to-list 'company-backends 'company-cmake))
+(eval-after-load 'company '(add-to-list 'company-backends 'company-yasnippet))
 
 (setq company-idle-delay 0.2)
 (setq company-echo-delay 0.0)
