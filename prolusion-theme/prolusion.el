@@ -386,7 +386,7 @@ Also affects linum-mode background."
      `(helm-selection ((,class (:background ,prolusion-hl :underline t))))
      `(helm-selection-line ((,class (:background ,prolusion-hl :foreground ,prolusion-emph :underline nil))))
      `(helm-separator ((,class (:foreground ,red))))
-     `(helm-source-header ((,class (:background ,"black" :foreground ,"gainsboro" :underline nil :weight normal :height 1.0))))
+     `(helm-source-header ((,class (:background "#1e2648" :foreground ,"gainsboro" :underline nil :weight normal :height 1.0))))
      `(helm-time-zone-current ((,class (:foreground ,green))))
      `(helm-time-zone-home ((,class (:foreground ,red))))
      `(helm-visible-mark ((,class (:background ,prolusion-bg :foreground ,magenta :bold t))))
