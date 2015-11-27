@@ -47,17 +47,6 @@ keybindings.
 
 **prolusion-behavior**
 
-<table style="width:100%">
-  <tr>
-    <td>Keybinding</td>
-    <td>Function</td>
-  </tr>
-  <tr>
-    <td><kbd>`C-x o`</kbd></td>
-    <td>`other-window`</td>
-  </tr>
-</table>
-
 | Keybinding         | Function          |
 | ------------------ |:----------------- |
 | <kbd>`C-x o`</kbd> | `other-window`    |
