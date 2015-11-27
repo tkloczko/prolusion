@@ -57,6 +57,7 @@
 (defun prolusion-upgrade-packages () ""
        (interactive)
        (message "Upgrading prolusion packages")
+       (package-refresh-contents)
        (save-window-excursion
          (package-list-packages t)
          (package-menu-mark-upgrades)
