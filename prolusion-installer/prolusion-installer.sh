@@ -151,6 +151,15 @@ else
     exit 1
 fi;
 
+prolusion_cyan "Checking to see if cscope is installed..."
+if hash cscope 2>&-
+then
+    prolusion_green "found."
+else
+    prolusion_red "not found. Aborting installation!"
+    exit 1
+fi;
+
 prolusion_cyan "Checking to see if ag is installed..."
 if hash ag 2>&-
 then
@@ -163,4 +172,4 @@ fi;
 prolusion_install
 
 #
-# prolusion.sh ends here
+# prolusion-installer.sh ends here

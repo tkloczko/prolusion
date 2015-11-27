@@ -22,11 +22,12 @@ keybindings.
     $ brew install cmake
     $ brew install ninja
     $ brew install llvm --with-clang
+    $ brew install cscope
     $ brew install the_silver_searcher
 
 ## Installation
 
-    $ curl -L https://raw.github.com/jwintz/prolusion/master/prolusion.sh | sh
+    $ curl -L https://raw.github.com/jwintz/prolusion/master/prolusion-installer/prolusion-installer.sh | sh
 
 ## Upgrade
 
@@ -99,6 +100,47 @@ keybindings.
 | <kbd>`C-c n c`</kbd> | `helm-company`      |
 | <kbd>`C-c n f`</kbd> | `helm-flycheck`     |
 | <kbd>`C-c n y`</kbd> | `helm-yas-complete` |
+
+**prolusion-scoping**
+
+| Keybinding           | Function                                       |
+| -------------------- |:---------------------------------------------- |
+| <kbd>`C-c s L`</kbd> | `'cscope-create-list-of-files-to-index`        |
+| <kbd>`C-c s I`</kbd> | `'cscope-index-files`                          |
+| <kbd>`C-c s E`</kbd> | `'cscope-edit-list-of-files-to-index`          |
+| <kbd>`C-c s W`</kbd> | `'cscope-tell-user-about-directory`            |
+| <kbd>`C-c s S`</kbd> | `'cscope-tell-user-about-directory`            |
+| <kbd>`C-c s T`</kbd> | `'cscope-tell-user-about-directory`            |
+| <kbd>`C-c s D`</kbd> | `'cscope-dired-directory`                      |
+
+| Keybinding           | Function                                       |
+| -------------------- |:---------------------------------------------- |
+| <kbd>`C-c s a`</kbd> | `'cscope-set-initial-directory`                |
+| <kbd>`C-c s A`</kbd> | `'cscope-unset-initial-directory`              |
+
+| Keybinding           | Function                                       |
+| -------------------- |:---------------------------------------------- |
+| <kbd>`C-c s s`</kbd> | `'cscope-find-this-symbol`                     |
+| <kbd>`C-c s d`</kbd> | `'cscope-find-global-definition`               |
+| <kbd>`C-c s g`</kbd> | `'cscope-find-global-definition`               |
+| <kbd>`C-c s G`</kbd> | `'cscope-find-global-definition-no-prompting`  |
+| <kbd>`C-c s =`</kbd> | `'cscope-find-assignments-to-this-symbol`      |
+| <kbd>`C-c s c`</kbd> | `'cscope-find-functions-calling-this-function` |
+| <kbd>`C-c s C`</kbd> | `'cscope-find-called-functions`                |
+| <kbd>`C-c s t`</kbd> | `'cscope-find-this-text-string`                |
+| <kbd>`C-c s e`</kbd> | `'cscope-find-egrep-pattern`                   |
+| <kbd>`C-c s f`</kbd> | `'cscope-find-this-file`                       |
+| <kbd>`C-c s i`</kbd> | `'cscope-find-files-including-file`            |
+
+| Keybinding           | Function                                       |
+| -------------------- |:---------------------------------------------- |
+| <kbd>`C-c s b`</kbd> | `'cscope-display-buffer`                       |
+| <kbd>`C-c s B`</kbd> | `'cscope-display-buffer-toggle`                |
+| <kbd>`C-c s n`</kbd> | `'cscope-history-forward-line-current-result`  |
+| <kbd>`C-c s N`</kbd> | `'cscope-history-forward-file-current-result`  |
+| <kbd>`C-c s p`</kbd> | `'cscope-history-backward-line-current-result` |
+| <kbd>`C-c s P`</kbd> | `'cscope-history-backward-file-current-result` |
+| <kbd>`C-c s u`</kbd> | `'cscope-pop-mark`                             |
 
 **prolusion-vc**
 
