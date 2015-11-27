@@ -116,7 +116,7 @@ keybindings.
 
 | Keybinding           | Function                                      |
 | -------------------- |:--------------------------------------------- |
-| <kbd>C-c p a</kbd>   | `helm-projectile`             |
+| <kbd>C-c p h</kbd>   | `helm-projectile`                             |
 | <kbd>C-c p a</kbd>   | `helm-projectile-find-other-file`             |
 | <kbd>C-c p f</kbd>   | `helm-projectile-find-file`                   |
 | <kbd>C-c p F</kbd>   | `helm-projectile-find-file-in-known-projects` |
