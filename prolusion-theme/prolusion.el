@@ -65,23 +65,15 @@ Also affects linum-mode background."
    customize the resulting theme."
 
   (let* ((class '((class color) (min-colors 89)))
-         ;; prolusion palette
          (base03    "#101010")
          (base02    "#202020")
-         ;; emphasized content
          (base01    "#303030")
-         ;; primary content
          (base00    "#505050")
          (base0     "#b0b0b0")
-         ;; comments
          (base1     "#d0d0d0")
-         ;; background highlight light
          (base2     "#e0e0e0")
-
-         ;; background light
          (base3     "#f5f5f5")
 
-         ;; prolusion accented colors
          (yellow    "#b58900")
          (orange    "#cb4b16")
          (red       "#dc322f")
@@ -91,7 +83,6 @@ Also affects linum-mode background."
          (cyan      "#2aa198")
          (green     "#859900")
 
-         ;; Darker and lighter accented colors
          (yellow-d  "#7B6000")
          (yellow-l  "#DEB542")
          (orange-d  "#8B2C02")
@@ -109,11 +100,9 @@ Also affects linum-mode background."
          (green-d   "#546E00")
          (green-l   "#B4C342")
 
-         ;; Extreme values
          (ml-light "#e8e8e8")
          (ml-dark "#151515")
 
-         ;; Light/Dark adaptive prolusion colors
          (prolusion-ml (if (eq variant 'light) ml-light ml-dark))
          (prolusion-fg (if (eq variant 'light) base00 base0))
          (prolusion-bg (if (eq variant 'light) base3 base03))
@@ -121,7 +110,6 @@ Also affects linum-mode background."
          (prolusion-emph (if (eq variant 'light) base01 base1))
          (prolusion-comments (if (eq variant 'light) base0 base00))
 
-         ;; Light/Dark adaptive higher/lower contrast accented colors
          (prolusion-fg-hc (if (eq variant 'light) base3 base03))
          (prolusion-fg-lc (if (eq variant 'light) base03 base3))
 
@@ -144,22 +132,16 @@ Also affects linum-mode background."
 
          ;; customize based face properties
          (s-variable-pitch (if prolusion-use-variable-pitch 'variable-pitch 'default))
-         (s-fringe-bg (if prolusion-distinct-fringe-background
-                          prolusion-hl prolusion-bg))
+         (s-fringe-bg (if prolusion-distinct-fringe-background prolusion-hl prolusion-bg))
 
-         (s-mode-line-fg (if prolusion-high-contrast-mode-line
-                             prolusion-bg prolusion-fg))
-         (s-mode-line-bg (if prolusion-high-contrast-mode-line
-                             prolusion-fg prolusion-hl))
+         (s-mode-line-fg (if prolusion-high-contrast-mode-line prolusion-bg prolusion-fg))
+         (s-mode-line-bg (if prolusion-high-contrast-mode-line prolusion-fg prolusion-hl))
 
-         (s-mode-line-buffer-id-fg (if prolusion-high-contrast-mode-line
-                                       'unspecified prolusion-emph))
-         (s-mode-line-inactive-fg (if prolusion-high-contrast-mode-line
-                                      prolusion-fg prolusion-comments))
-         (s-mode-line-inactive-bg (if prolusion-high-contrast-mode-line
-                                      prolusion-hl prolusion-ml))
-         (s-mode-line-inactive-bc (if prolusion-high-contrast-mode-line
-                                      prolusion-fg prolusion-hl)))
+         (s-mode-line-buffer-id-fg (if prolusion-high-contrast-mode-line 'unspecified prolusion-emph))
+         (s-mode-line-inactive-fg (if prolusion-high-contrast-mode-line prolusion-fg prolusion-comments))
+         (s-mode-line-inactive-bg (if prolusion-high-contrast-mode-line prolusion-hl prolusion-ml))
+         (s-mode-line-inactive-bc (if prolusion-high-contrast-mode-line prolusion-fg prolusion-hl)))
+
     (custom-theme-set-faces
      theme-name
      '(button ((t (:underline t))))
@@ -233,41 +215,18 @@ Also affects linum-mode background."
      ;; misc faces
      `(menu ((,class (:foreground ,prolusion-fg :background ,prolusion-bg))))
      `(minibuffer-prompt ((,class (:foreground ,prolusion-fg))))
-     `(mode-line
-       ((,class (:inverse-video unspecified
-                                ;; :underline unspecified
-                                :box (:line-width 1 :color ,s-mode-line-bg :style unspecified)
-                                :overline ,s-mode-line-bg
-                                :underline ,s-mode-line-bg
-                                :foreground ,s-mode-line-fg
-                                :background ,s-mode-line-bg))))
+     `(mode-line ((,class (:inverse-video unspecified :box (:line-width 1 :color ,s-mode-line-bg :style unspecified) :overline ,s-mode-line-bg :underline ,s-mode-line-bg :foreground ,s-mode-line-fg :background ,s-mode-line-bg))))
      `(mode-line-buffer-id ((,class (:foreground ,s-mode-line-buffer-id-fg :weight bold))))
-     `(mode-line-inactive
-       ((,class (:inverse-video unspecified
-                                ;; :underline unspecified
-                                :box (:line-width 1 :color ,s-mode-line-inactive-bg :style unspecified)
-                                :overline ,s-mode-line-inactive-bg
-                                :underline ,s-mode-line-inactive-bg
-                                :foreground ,s-mode-line-inactive-fg
-                                :background ,s-mode-line-inactive-bg))))
-     `(header-line
-       ((,class (:inverse-video unspecified
-                                :underline unspecified
-                                :foreground ,prolusion-emph
-                                :background ,prolusion-hl
-                                :box (:line-width 1 :color ,prolusion-hl
-                                                  :style unspecified)))))
-
+     `(mode-line-inactive ((,class (:inverse-video unspecified :box (:line-width 1 :color ,s-mode-line-inactive-bg :style unspecified) :overline ,s-mode-line-inactive-bg :underline ,s-mode-line-inactive-bg :foreground ,s-mode-line-inactive-fg :background ,s-mode-line-inactive-bg))))
+     `(header-line ((,class (:inverse-video unspecified :underline unspecified :foreground ,prolusion-emph :background ,prolusion-hl :box (:line-width 1 :color ,prolusion-hl :style unspecified)))))
      `(region ((,class (:foreground ,prolusion-bg :background ,prolusion-emph))))
      `(secondary-selection ((,class (:background ,prolusion-hl))))
-
      `(trailing-whitespace ((,class (:background ,red))))
      `(vertical-border ((,class (:foreground ,prolusion-ml))))
 
      ;; font lock
      `(font-lock-builtin-face ((,class (:foreground ,prolusion-fg :weight bold))))
-     `(font-lock-comment-delimiter-face
-       ((,class (:foreground ,prolusion-comments))))
+     `(font-lock-comment-delimiter-face ((,class (:foreground ,prolusion-comments))))
      `(font-lock-comment-face ((,class (:foreground ,prolusion-comments))))
      `(font-lock-constant-face ((,class (:foreground ,blue :weight bold))))
      `(font-lock-doc-face ((,class (:foreground ,cyan))))
@@ -281,7 +240,6 @@ Also affects linum-mode background."
      `(font-lock-type-face ((,class (:foreground ,yellow))))
      `(font-lock-variable-name-face ((,class (:foreground ,blue))))
      `(font-lock-warning-face ((,class (:foreground ,orange :weight bold :underline t))))
-
      `(c-annotation-face ((,class (:inherit font-lock-constant-face))))
 
      ;; company
@@ -321,10 +279,8 @@ Also affects linum-mode background."
      `(coffee-mode-function-param ((,class (:foreground ,violet :slant italic))))
 
      ;; custom
-     `(custom-face-tag ((,class (:inherit ,s-variable-pitch :height ,prolusion-height-plus-3
-                                          :foreground ,violet :weight bold))))
-     `(custom-variable-tag ((,class (:inherit ,s-variable-pitch
-                                              :foreground ,cyan :height ,prolusion-height-plus-3))))
+     `(custom-face-tag ((,class (:inherit ,s-variable-pitch :height ,prolusion-height-plus-3 :foreground ,violet :weight bold))))
+     `(custom-variable-tag ((,class (:inherit ,s-variable-pitch :foreground ,cyan :height ,prolusion-height-plus-3))))
      `(custom-comment-tag ((,class (:foreground ,prolusion-comments))))
      `(custom-group-tag ((,class (:inherit ,s-variable-pitch :foreground ,blue :height ,prolusion-height-plus-3))))
      `(custom-group-tag-1 ((,class (:inherit ,s-variable-pitch :foreground ,red :height ,prolusion-height-plus-3))))
@@ -335,8 +291,7 @@ Also affects linum-mode background."
      `(diff-changed ((,class (:foreground ,blue :background ,prolusion-bg))))
      `(diff-removed ((,class (:foreground ,red :background ,prolusion-bg))))
      `(diff-header ((,class (:background ,prolusion-bg))))
-     `(diff-file-header
-       ((,class (:background ,prolusion-bg :foreground ,prolusion-fg :weight bold))))
+     `(diff-file-header ((,class (:background ,prolusion-bg :foreground ,prolusion-fg :weight bold))))
      `(diff-refine-added ((,class :foreground ,prolusion-bg :background ,green)))
      `(diff-refine-change ((,class :foreground ,prolusion-bg :background ,blue)))
      `(diff-refine-removed ((,class (:foreground ,prolusion-bg :background ,red))))
@@ -345,9 +300,7 @@ Also affects linum-mode background."
      `(ediff-fine-diff-A ((,class (:background ,orange-lc))))
      `(ediff-fine-diff-B ((,class (:background ,green-lc))))
      `(ediff-fine-diff-C ((,class (:background ,yellow-lc))))
-
      `(ediff-current-diff-C ((,class (:background ,blue-lc))))
-
      `(ediff-even-diff-A ((,class (:background ,prolusion-comments :foreground ,prolusion-fg-lc ))))
      `(ediff-odd-diff-A ((,class (:background ,prolusion-comments :foreground ,prolusion-fg-hc ))))
      `(ediff-even-diff-B ((,class (:background ,prolusion-comments :foreground ,prolusion-fg-hc ))))
@@ -410,16 +363,13 @@ Also affects linum-mode background."
      `(helm-bookmark-w3m ((,class (:foreground ,yellow))))
      `(helm-bookmarks-su ((,class (:foreground ,orange))))
      `(helm-buffer-not-saved ((,class (:foreground ,orange))))
-     `(helm-buffer-saved-out ((,class (:foreground ,red :background ,prolusion-bg
-                                                   :inverse-video t))))
+     `(helm-buffer-saved-out ((,class (:foreground ,red :background ,prolusion-bg :inverse-video t))))
      `(helm-buffer-size ((,class (:foreground ,prolusion-comments))))
-     `(helm-candidate-number ((,class (:background ,prolusion-hl :foreground ,prolusion-emph
-                                                   :bold t))))
+     `(helm-candidate-number ((,class (:background ,prolusion-hl :foreground ,prolusion-emph :bold t))))
      `(helm-ff-directory ((,class (:background ,prolusion-bg  :foreground ,blue))))
      `(helm-ff-executable ((,class (:foreground ,green))))
      `(helm-ff-file ((,class (:background ,prolusion-bg :foreground ,prolusion-fg))))
-     `(helm-ff-invalid-symlink ((,class (:background ,prolusion-bg :foreground ,orange
-                                                     :slant italic))))
+     `(helm-ff-invalid-symlink ((,class (:background ,prolusion-bg :foreground ,orange :slant italic))))
      `(helm-ff-prefix ((,class (:background ,yellow :foreground ,prolusion-bg))))
      `(helm-ff-symlink ((,class (:foreground ,cyan))))
      `(helm-grep-file ((,class (:foreground ,cyan :underline t))))
@@ -429,17 +379,14 @@ Also affects linum-mode background."
      `(helm-grep-running ((,class (:foreground ,red))))
      `(helm-header ((,class (:inherit header-line))))
      `(helm-lisp-completion-info ((,class (:foreground ,prolusion-fg))))
-     `(helm-lisp-show-completion ((,class (:foreground ,yellow  :background ,prolusion-hl
-                                                       :bold t))))
+     `(helm-lisp-show-completion ((,class (:foreground ,yellow  :background ,prolusion-hl :bold t))))
      `(helm-M-x-key ((,class (:foreground ,orange :underline t))))
      `(helm-moccur-buffer ((,class (:foreground ,cyan :underline t))))
      `(helm-match ((,class (:inherit match))))
      `(helm-selection ((,class (:background ,prolusion-hl :underline t))))
-     `(helm-selection-line ((,class (:background ,prolusion-hl :foreground ,prolusion-emph
-                                                 :underline nil))))
+     `(helm-selection-line ((,class (:background ,prolusion-hl :foreground ,prolusion-emph :underline nil))))
      `(helm-separator ((,class (:foreground ,red))))
-     `(helm-source-header ((,class (:background ,"black" :foreground ,"gainsboro"
-                                                :underline nil :weight normal :height 1.0))))
+     `(helm-source-header ((,class (:background ,"black" :foreground ,"gainsboro" :underline nil :weight normal :height 1.0))))
      `(helm-time-zone-current ((,class (:foreground ,green))))
      `(helm-time-zone-home ((,class (:foreground ,red))))
      `(helm-visible-mark ((,class (:background ,prolusion-bg :foreground ,magenta :bold t))))
@@ -454,8 +401,7 @@ Also affects linum-mode background."
      `(hi-blue-b ((,class (:foreground ,blue-lc :weight bold))))
      `(hi-green-b ((,class (:foreground ,green-lc :weight bold))))
      `(hi-red-b ((,class (:foreground ,red :weight bold))))
-     `(hi-black-hb ((,class (:foreground ,prolusion-emph :background ,prolusion-bg
-                                         :weight bold))))
+     `(hi-black-hb ((,class (:foreground ,prolusion-emph :background ,prolusion-bg :weight bold))))
 
      ;; highlight-changes
      `(highlight-changes ((,class (:foreground ,orange))))
@@ -501,19 +447,13 @@ Also affects linum-mode background."
      `(magit-item-highlight ((,class (:background ,prolusion-hl :weight unspecified))))
      `(magit-log-author ((,class (:foreground ,cyan))))
      `(magit-log-graph ((,class (:foreground ,prolusion-comments))))
-     `(magit-log-head-label-bisect-bad ((,class (:background ,red-hc :foreground ,red-lc
-                                                             :box 1))))
-     `(magit-log-head-label-bisect-good ((,class (:background ,green-hc :foreground ,green-lc
-                                                              :box 1))))
+     `(magit-log-head-label-bisect-bad ((,class (:background ,red-hc :foreground ,red-lc :box 1))))
+     `(magit-log-head-label-bisect-good ((,class (:background ,green-hc :foreground ,green-lc :box 1))))
      `(magit-log-head-label-default ((,class (:background ,prolusion-hl :box 1))))
-     `(magit-log-head-label-local ((,class (:background ,blue-lc :foreground ,blue-hc
-                                                        :box 1))))
-     `(magit-log-head-label-patches ((,class (:background ,red-lc :foreground ,red-hc
-                                                          :box 1))))
-     `(magit-log-head-label-remote ((,class (:background ,green-lc :foreground ,green-hc
-                                                         :box 1))))
-     `(magit-log-head-label-tags ((,class (:background ,yellow-lc :foreground ,yellow-hc
-                                                       :box 1))))
+     `(magit-log-head-label-local ((,class (:background ,blue-lc :foreground ,blue-hc :box 1))))
+     `(magit-log-head-label-patches ((,class (:background ,red-lc :foreground ,red-hc :box 1))))
+     `(magit-log-head-label-remote ((,class (:background ,green-lc :foreground ,green-hc :box 1))))
+     `(magit-log-head-label-tags ((,class (:background ,yellow-lc :foreground ,yellow-hc :box 1))))
      `(magit-log-sha1 ((,class (:foreground ,yellow))))
 
      ;; markdown-mode
@@ -536,10 +476,7 @@ Also affects linum-mode background."
      `(mu4e-flagged-face ((,class (:foreground ,magenta :weight bold))))
      `(mu4e-view-url-number-face ((,class (:foreground ,yellow :weight normal))))
      `(mu4e-warning-face ((,class (:foreground ,red :slant normal :weight bold))))
-     `(mu4e-header-highlight-face
-       ((,class (:inherit unspecified :foreground unspecified :background ,prolusion-hl
-                          :underline ,prolusion-emph  :weight normal))))
-
+     `(mu4e-header-highlight-face ((,class (:inherit unspecified :foreground unspecified :background ,prolusion-hl :underline ,prolusion-emph  :weight normal))))
      `(mu4e-draft-face ((,class (:inherit font-lock-string-face))))
      `(mu4e-footer-face ((,class (:inherit font-lock-comment-face))))
      `(mu4e-forwarded-face ((,class (:inherit font-lock-builtin-face :weight normal))))
@@ -562,31 +499,16 @@ Also affects linum-mode background."
      `(mu4e-view-special-header-value-face ((,class (:foreground ,blue :weight normal :underline nil
                                                                  ))))
      ;; org-mode
-     `(org-agenda-structure
-       ((,class (:foreground ,prolusion-emph :background ,prolusion-hl
-                             :weight bold :slant normal :inverse-video nil :height ,prolusion-height-plus-1
-                             :underline nil
-                             :box (:line-width 2 :color ,prolusion-bg)))))
-     `(org-agenda-calendar-event ((,class (:foreground ,prolusion-emph))))
+     `(org-agenda-structure ((,class (:foreground ,prolusion-emph :background ,prolusion-hl :weight bold :slant normal :inverse-video nil :height ,prolusion-height-plus-1 :underline nil :box (:line-width 2 :color ,prolusion-bg))))) `(org-agenda-calendar-event ((,class (:foreground ,prolusion-emph))))
      `(org-agenda-calendar-sexp ((,class (:foreground ,prolusion-fg :slant italic))))
-     `(org-agenda-date
-       ((,class (:foreground ,prolusion-comments :background ,prolusion-bg :weight normal
-                             :inverse-video nil :overline nil :slant normal :height 1.0
-                             :box (:line-width 2 :color ,prolusion-bg)))) t)
-     `(org-agenda-date-weekend
-       ((,class (:inherit org-agenda-date :inverse-video nil :background unspecified
-                          :foreground ,prolusion-comments :weight unspecified
-                          :underline t :overline nil :box unspecified))) t)
-     `(org-agenda-date-today
-       ((,class (:inherit org-agenda-date :inverse-video t :weight bold
-                          :underline unspecified :overline nil :box unspecified
-                          :foreground ,blue :background ,prolusion-bg))) t)
+     `(org-agenda-date ((,class (:foreground ,prolusion-comments :background ,prolusion-bg :weight normal :inverse-video nil :overline nil :slant normal :height 1.0 :box (:line-width 2 :color ,prolusion-bg)))) t)
+     `(org-agenda-date-weekend ((,class (:inherit org-agenda-date :inverse-video nil :background unspecified :foreground ,prolusion-comments :weight unspecified :underline t :overline nil :box unspecified))) t)
+     `(org-agenda-date-today ((,class (:inherit org-agenda-date :inverse-video t :weight bold :underline unspecified :overline nil :box unspecified :foreground ,blue :background ,prolusion-bg))) t)
      `(org-agenda-done ((,class (:foreground ,prolusion-comments :slant italic))) t)
      `(org-archived ((,class (:foreground ,prolusion-comments :weight normal))))
      `(org-block ((,class (:foreground ,prolusion-comments))))
      `(org-block-begin-line ((,class (:foreground ,prolusion-comments :slant italic))))
-     `(org-checkbox ((,class (:background ,prolusion-bg :foreground ,prolusion-fg
-                                          :box (:line-width 1 :style released-button)))))
+     `(org-checkbox ((,class (:background ,prolusion-bg :foreground ,prolusion-fg :box (:line-width 1 :style released-button)))))
      `(org-code ((,class (:foreground ,prolusion-comments))))
      `(org-date ((,class (:foreground ,blue :underline t))))
      `(org-done ((,class (:weight bold :foreground ,green))))
@@ -594,22 +516,14 @@ Also affects linum-mode background."
      `(org-formula ((,class (:foreground ,yellow))))
      `(org-headline-done ((,class (:foreground ,green))))
      `(org-hide ((,class (:foreground ,prolusion-bg))))
-     `(org-level-1 ((,class (:inherit ,s-variable-pitch :height ,prolusion-height-plus-4
-                                      :foreground ,orange))))
-     `(org-level-2 ((,class (:inherit ,s-variable-pitch :height ,prolusion-height-plus-3
-                                      :foreground ,green))))
-     `(org-level-3 ((,class (:inherit ,s-variable-pitch :height ,prolusion-height-plus-2
-                                      :foreground ,blue))))
-     `(org-level-4 ((,class (:inherit ,s-variable-pitch :height ,prolusion-height-plus-1
-                                      :foreground ,yellow))))
-     `(org-level-5 ((,class (:inherit ,s-variable-pitch
-                                      :foreground ,cyan))))
-     `(org-level-6 ((,class (:inherit ,s-variable-pitch
-                                      :foreground ,green))))
-     `(org-level-7 ((,class (:inherit ,s-variable-pitch
-                                      :foreground ,red))))
-     `(org-level-8 ((,class (:inherit ,s-variable-pitch
-                                      :foreground ,blue))))
+     `(org-level-1 ((,class (:inherit ,s-variable-pitch :height ,prolusion-height-plus-4 :foreground ,orange))))
+     `(org-level-2 ((,class (:inherit ,s-variable-pitch :height ,prolusion-height-plus-3 :foreground ,green))))
+     `(org-level-3 ((,class (:inherit ,s-variable-pitch :height ,prolusion-height-plus-2 :foreground ,blue))))
+     `(org-level-4 ((,class (:inherit ,s-variable-pitch :height ,prolusion-height-plus-1 :foreground ,yellow))))
+     `(org-level-5 ((,class (:inherit ,s-variable-pitch :foreground ,cyan))))
+     `(org-level-6 ((,class (:inherit ,s-variable-pitch :foreground ,green))))
+     `(org-level-7 ((,class (:inherit ,s-variable-pitch :foreground ,red))))
+     `(org-level-8 ((,class (:inherit ,s-variable-pitch :foreground ,blue))))
      `(org-link ((,class (:foreground ,yellow :underline t))))
      `(org-sexp-date ((,class (:foreground ,violet))))
      `(org-scheduled ((,class (:foreground ,green))))
@@ -622,7 +536,6 @@ Also affects linum-mode background."
      `(org-todo ((,class (:foreground ,red :weight bold))))
      `(org-upcoming-deadline ((,class (:foreground ,yellow  :weight normal :underline nil))))
      `(org-warning ((,class (:foreground ,orange :weight normal :underline nil))))
-     ;; org-habit (clear=blue, ready=green, alert=yellow, overdue=red. future=lower contrast)
      `(org-habit-clear-face ((,class (:background ,blue-lc :foreground ,blue-hc))))
      `(org-habit-clear-future-face ((,class (:background ,blue-lc))))
      `(org-habit-ready-face ((,class (:background ,green-lc :foreground ,green))))
@@ -631,12 +544,10 @@ Also affects linum-mode background."
      `(org-habit-alert-future-face ((,class (:background ,yellow-lc))))
      `(org-habit-overdue-face ((,class (:background ,red :foreground ,red-lc))))
      `(org-habit-overdue-future-face ((,class (:background ,red-lc))))
-     ;; latest additions
      `(org-agenda-dimmed-todo-face ((,class (:foreground ,prolusion-comments))))
      `(org-agenda-restriction-lock ((,class (:background ,yellow))))
      `(org-clock-overlay ((,class (:background ,yellow))))
-     `(org-column ((,class (:background ,prolusion-hl :strike-through nil
-                                        :underline nil :slant normal :weight normal :inherit default))))
+     `(org-column ((,class (:background ,prolusion-hl :strike-through nil :underline nil :slant normal :weight normal :inherit default))))
      `(org-column-title ((,class (:background ,prolusion-hl :underline t :weight bold))))
      `(org-date-selected ((,class (:foreground ,red :inverse-video t))))
      `(org-document-info ((,class (:foreground ,prolusion-fg))))
@@ -655,12 +566,6 @@ Also affects linum-mode background."
      `(outline-6 ((,class (:inherit org-level-6))))
      `(outline-7 ((,class (:inherit org-level-7))))
      `(outline-8 ((,class (:inherit org-level-8))))
-
-     ;; parenfaceu
-     `(paren-face  ((,class (:foreground ,prolusion-comments))))
-
-     ;; pretty-mode
-     `(pretty-mode-symbol-face  ((,class (:foreground ,yellow :weight normal))))
 
      ;; popup
      `(popup-face ((,class (:background ,prolusion-hl :foreground ,prolusion-fg))))
@@ -697,64 +602,39 @@ Also affects linum-mode background."
      `(sp-pair-overlay-face ((,class (:background ,prolusion-hl))))
      `(sp-wrap-overlay-face ((,class (:background ,prolusion-hl))))
      `(sp-wrap-tag-overlay-face ((,class (:background ,prolusion-hl))))
-     `(sp-show-pair-enclosing ((,class (:foreground ,yellow :background ,prolusion-bg
-                             :weight bold t))))
-     `(sp-show-pair-match-face
-       ((,class (:foreground ,yellow :background ,prolusion-bg
-                             :weight bold t))))
-     `(sp-show-pair-mismatch-face
-       ((,class (:foreground ,red :background ,prolusion-bg
-                             :weight bold t))))
+     `(sp-show-pair-enclosing ((,class (:foreground ,yellow :background ,prolusion-bg :weight bold t))))
+     `(sp-show-pair-match-face ((,class (:foreground ,yellow :background ,prolusion-bg :weight bold t))))
+     `(sp-show-pair-mismatch-face ((,class (:foreground ,red :background ,prolusion-bg :weight bold t))))
 
      ;; show-paren
-     `(show-paren-match
-       ((,class (:foreground ,yellow :background ,prolusion-bg
-                             :weight bold t))))
-     `(show-paren-mismatch
-       ((,class (:foreground ,red :background ,prolusion-bg
-                             :weight bold t))))
+     `(show-paren-match ((,class (:foreground ,yellow :background ,prolusion-bg :weight bold t))))
+     `(show-paren-mismatch ((,class (:foreground ,red :background ,prolusion-bg :weight bold t))))
 
      ;; mic-paren
-     `(paren-face-match
-       ((,class (:foreground ,yellow :background ,prolusion-bg
-                             :weight normal :inverse-video t))))
-     `(paren-face-mismatch
-       ((,class (:foreground ,red :background ,prolusion-bg
-                             :weight normal :inverse-video t))))
-     `(paren-face-no-match
-       ((,class (:foreground ,red :background ,prolusion-bg
-                             :weight normal :inverse-video t))))
+     `(paren-face-match ((,class (:foreground ,yellow :background ,prolusion-bg :weight normal :inverse-video t))))
+     `(paren-face-mismatch ((,class (:foreground ,red :background ,prolusion-bg :weight normal :inverse-video t))))
+     `(paren-face-no-match ((,class (:foreground ,red :background ,prolusion-bg :weight normal :inverse-video t))))
 
      ;; table
      `(table-cell ((,class (:foreground ,prolusion-fg :background ,prolusion-hl))))
 
      ;; term
-     `(term-color-black ((t (:foreground ,base03
-                                         :background ,base02))))
-     `(term-color-red ((t (:foreground ,red
-                                       :background ,red-d))))
-     `(term-color-green ((t (:foreground ,green
-                                         :background ,green-d))))
-     `(term-color-yellow ((t (:foreground ,yellow
-                                          :background ,yellow-d))))
-     `(term-color-blue ((t (:foreground ,blue
-                                        :background ,blue-d))))
-     `(term-color-magenta ((t (:foreground ,magenta
-                                           :background ,magenta-d))))
-     `(term-color-cyan ((t (:foreground ,cyan
-                                        :background ,cyan-d))))
-     `(term-color-white ((t (:foreground ,base00
-                                         :background ,base0))))
+     `(term-color-black ((t (:foreground ,base03 :background ,base02))))
+     `(term-color-red ((t (:foreground ,red :background ,red-d))))
+     `(term-color-green ((t (:foreground ,green :background ,green-d))))
+     `(term-color-yellow ((t (:foreground ,yellow :background ,yellow-d))))
+     `(term-color-blue ((t (:foreground ,blue :background ,blue-d))))
+     `(term-color-magenta ((t (:foreground ,magenta :background ,magenta-d))))
+     `(term-color-cyan ((t (:foreground ,cyan :background ,cyan-d))))
+     `(term-color-white ((t (:foreground ,base00 :background ,base0))))
      '(term-default-fg-color ((t (:inherit term-color-white))))
      '(term-default-bg-color ((t (:inherit term-color-black))))
 
      ;; undo-tree
-     `(undo-tree-visualizer-default-face
-       ((,class (:foreground ,prolusion-comments :background ,prolusion-bg))))
+     `(undo-tree-visualizer-default-face ((,class (:foreground ,prolusion-comments :background ,prolusion-bg))))
      `(undo-tree-visualizer-unmodified-face ((,class (:foreground ,green))))
      `(undo-tree-visualizer-current-face ((,class (:foreground ,blue :inverse-video t))))
-     `(undo-tree-visualizer-active-branch-face
-       ((,class (:foreground ,prolusion-emph :background ,prolusion-bg :weight bold))))
+     `(undo-tree-visualizer-active-branch-face ((,class (:foreground ,prolusion-emph :background ,prolusion-bg :weight bold))))
      `(undo-tree-visualizer-register-face ((,class (:foreground ,yellow))))
 
      ;; volatile highlights
@@ -764,15 +644,12 @@ Also affects linum-mode background."
      `(web-mode-builtin-face ((,class (:foreground ,red))))
      `(web-mode-comment-face ((,class (:foreground ,prolusion-comments))))
      `(web-mode-constant-face ((,class (:foreground ,blue :weight bold))))
-     `(web-mode-current-element-highlight-face ((,class
-                                                 (:underline nil :weight normal
-                                                             :background ,prolusion-hl))))
+     `(web-mode-current-element-highlight-face ((,class (:underline nil :weight normal :background ,prolusion-hl))))
      `(web-mode-css-at-rule-face ((,class (:foreground ,violet :slant italic))))
      `(web-mode-css-prop-face ((,class (:foreground ,violet))))
      `(web-mode-css-pseudo-class-face ((,class (:foreground ,green :slant italic))))
      `(web-mode-css-rule-face ((,class (:foreground ,blue))))
-     `(web-mode-doctype-face ((,class (:foreground ,prolusion-comments
-                                                   :slant italic :weight bold))))
+     `(web-mode-doctype-face ((,class (:foreground ,prolusion-comments :slant italic :weight bold))))
      `(web-mode-folded-face ((,class (:underline t))))
      `(web-mode-function-name-face ((,class (:foreground ,blue))))
      `(web-mode-html-attr-name-face ((,class (:foreground ,blue :slant normal))))
@@ -790,26 +667,16 @@ Also affects linum-mode background."
      `(web-mode-whitespaces-face ((,class (:background ,red))))
 
      ;; whitespace-mode
-     `(whitespace-space ((,class (:background unspecified :foreground ,prolusion-comments
-                                              :inverse-video unspecified :slant italic))))
-     `(whitespace-hspace ((,class (:background unspecified :foreground ,prolusion-emph
-                                               :inverse-video unspecified))))
-     `(whitespace-tab ((,class (:background unspecified :foreground ,red
-                                            :inverse-video unspecified :weight bold))))
-     `(whitespace-newline ((,class(:background unspecified :foreground ,prolusion-comments
-                                               :inverse-video unspecified))))
-     `(whitespace-trailing ((,class (:background unspecified :foreground ,orange-lc
-                                                 :inverse-video t))))
-     `(whitespace-line ((,class (:background unspecified :foreground ,magenta
-                                             :inverse-video unspecified))))
-     `(whitespace-space-before-tab ((,class (:background ,red-lc :foreground unspecified
-                                                         :inverse-video unspecified))))
-     `(whitespace-indentation ((,class (:background unspecified :foreground ,yellow
-                                                    :inverse-video unspecified :weight bold))))
-     `(whitespace-empty ((,class (:background unspecified :foreground ,red-lc
-                                              :inverse-video t))))
-     `(whitespace-space-after-tab ((,class (:background unspecified :foreground ,orange
-                                                        :inverse-video t :weight bold))))
+     `(whitespace-space ((,class (:background unspecified :foreground ,prolusion-comments :inverse-video unspecified :slant italic))))
+     `(whitespace-hspace ((,class (:background unspecified :foreground ,prolusion-emph :inverse-video unspecified))))
+     `(whitespace-tab ((,class (:background unspecified :foreground ,red :inverse-video unspecified :weight bold))))
+     `(whitespace-newline ((,class(:background unspecified :foreground ,prolusion-comments :inverse-video unspecified))))
+     `(whitespace-trailing ((,class (:background unspecified :foreground ,orange-lc :inverse-video t))))
+     `(whitespace-line ((,class (:background unspecified :foreground ,magenta :inverse-video unspecified))))
+     `(whitespace-space-before-tab ((,class (:background ,red-lc :foreground unspecified :inverse-video unspecified))))
+     `(whitespace-indentation ((,class (:background unspecified :foreground ,yellow :inverse-video unspecified :weight bold))))
+     `(whitespace-empty ((,class (:background unspecified :foreground ,red-lc :inverse-video t))))
+     `(whitespace-space-after-tab ((,class (:background unspecified :foreground ,orange :inverse-video t :weight bold))))
 
      ;; which-func-mode
      `(which-func ((,class (:foreground ,green))))
@@ -818,10 +685,8 @@ Also affects linum-mode background."
      `(window-number-face ((,class (:foreground ,green))))
 
      ;; yascroll
-     `(yascroll:thumb-text-area
-       ((,class (:foreground ,prolusion-comments :background ,prolusion-comments))))
-     `(yascroll:thumb-fringe
-       ((,class (:foreground ,prolusion-comments :background ,prolusion-comments))))
+     `(yascroll:thumb-text-area ((,class (:foreground ,prolusion-comments :background ,prolusion-comments))))
+     `(yascroll:thumb-fringe ((,class (:foreground ,prolusion-comments :background ,prolusion-comments))))
 
      ;; compilation
      `(compilation-message-face 'default)
@@ -836,9 +701,7 @@ Also affects linum-mode background."
      `(highlight-changes-colors '(,magenta ,violet))
 
      ;; highlight-tail
-     `(highlight-tail-colors
-       '((,prolusion-hl . 0)(,green-lc . 20)(,cyan-lc . 30)(,blue-lc . 50)
-         (,yellow-lc . 60)(,orange-lc . 70)(,magenta-lc . 85)(,prolusion-hl . 100)))
+     `(highlight-tail-colors '((,prolusion-hl . 0)(,green-lc . 20)(,cyan-lc . 30)(,blue-lc . 50) (,yellow-lc . 60)(,orange-lc . 70)(,magenta-lc . 85)(,prolusion-hl . 100)))
 
      ;; syslog-mode
      `(syslog-ip-face '((t :background unspecified :foreground ,yellow)))
@@ -847,32 +710,8 @@ Also affects linum-mode background."
      `(syslog-warn-face '((t :background unspecified :foreground ,orange :weight bold)))
      `(syslog-info-face '((t :background unspecified :foreground ,blue :weight bold)))
      `(syslog-debug-face '((t :background unspecified :foreground ,cyan :weight bold)))
-     `(syslog-su-face '((t :background unspecified :foreground ,magenta)))
+     `(syslog-su-face '((t :background unspecified :foreground ,magenta))))
 
-     ;; vc
-     `(vc-annotate-color-map
-       '((20 . ,red)
-         (40 . "#CF4F1F")
-         (60 . "#C26C0F")
-         (80 . ,yellow)
-         (100 . "#AB8C00")
-         (120 . "#A18F00")
-         (140 . "#989200")
-         (160 . "#8E9500")
-         (180 . ,green)
-         (200 . "#729A1E")
-         (220 . "#609C3C")
-         (240 . "#4E9D5B")
-         (260 . "#3C9F79")
-         (280 . ,cyan)
-         (300 . "#299BA6")
-         (320 . "#2896B5")
-         (340 . "#2790C3")
-         (360 . ,blue)))
-     `(vc-annotate-very-old-color nil)
-     `(vc-annotate-background nil))
-
-    ;; call chained theme function
     (when childtheme (funcall childtheme))))
 
 ;;;###autoload
