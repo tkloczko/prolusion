@@ -73,35 +73,33 @@ Also affects linum-mode background."
          (base1     "#d0d0d0")
          (base2     "#e0e0e0")
          (base3     "#f5f5f5")
-
          (yellow    "#b58900")
-         (orange    "#cb4b16")
-         (red       "#dc322f")
-         (magenta   "#d33682")
-         (violet    "#6c71c4")
-         (blue      "#268bd2")
-         (cyan      "#2aa198")
-         (green     "#859900")
-
          (yellow-d  "#7B6000")
          (yellow-l  "#DEB542")
+         (orange    "#cb4b16")
          (orange-d  "#8B2C02")
          (orange-l  "#F2804F")
+         (red       "#dc322f")
          (red-d     "#990A1B")
          (red-l     "#FF6E64")
+         (magenta   "#d33682")
          (magenta-d "#93115C")
          (magenta-l "#F771AC")
+         (violet    "#6c71c4")
          (violet-d  "#3F4D91")
          (violet-l  "#9EA0E5")
+         (blue      "#268bd2")
          (blue-d    "#00629D")
          (blue-l    "#69B7F0")
+         (cyan      "#2aa198")
          (cyan-d    "#00736F")
          (cyan-l    "#69CABF")
+         (green     "#859900")
          (green-d   "#546E00")
          (green-l   "#B4C342")
 
-         (ml-light "#e8e8e8")
-         (ml-dark "#151515")
+         (ml-light  "#e8e8e8")
+         (ml-dark   "#151515")
 
          (prolusion-ml (if (eq variant 'light) ml-light ml-dark))
          (prolusion-fg (if (eq variant 'light) base00 base0))
@@ -377,7 +375,7 @@ Also affects linum-mode background."
      `(helm-grep-lineno ((,class (:foreground ,orange))))
      `(helm-grep-match ((,class (:inherit match))))
      `(helm-grep-running ((,class (:foreground ,red))))
-     `(helm-header ((,class (:inherit header-line))))
+     `(helm-header ((,class (:background "DodgerBlue4"))))
      `(helm-lisp-completion-info ((,class (:foreground ,prolusion-fg))))
      `(helm-lisp-show-completion ((,class (:foreground ,yellow  :background ,prolusion-hl :bold t))))
      `(helm-M-x-key ((,class (:foreground ,orange :underline t))))
@@ -696,7 +694,7 @@ Also affects linum-mode background."
 
      ;; xcscope
      `(cscope-separator-face ((t (:foreground "VioletRed4" :weight bold :underline nil :overline nil))))
-     
+
      ;; magit
      `(magit-diff-use-overlays nil)
 
@@ -713,11 +711,7 @@ Also affects linum-mode background."
   (add-to-list 'custom-theme-load-path
                (file-name-as-directory (file-name-directory load-file-name))))
 
-;; Local Variables:
-;; no-byte-compile: t
-;; eval: (when (fboundp 'rainbow-mode) (rainbow-mode 1))
-;; fill-column: 95
-;; End:
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (provide 'prolusion)
 

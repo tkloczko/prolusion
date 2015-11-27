@@ -20,6 +20,7 @@
 (prolusion-require-package 'saveplace)
 (prolusion-require-package 'recentf)
 (prolusion-require-package 'which-key)
+(prolusion-require-package 'beacon)
 
 ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Behavior setup
@@ -88,12 +89,17 @@
 (setq dired-recursive-deletes 'always)
 (setq dired-recursive-copies  'always)
 
+;; highlight cursor after window moves
+
+(beacon-mode 1)
+
 ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Behavior modeline
 ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-(diminish 'abbrev-mode)
+(diminish    'abbrev-mode)
 (diminish 'which-key-mode)
+(diminish    'beacon-mode)
 
 ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Behavior keybindings
