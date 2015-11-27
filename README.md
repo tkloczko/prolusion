@@ -60,7 +60,7 @@ keybindings.
 **prolusion-builtins**
 
 | Keybinding           | Function           |
-| -------------------- |:------------------:|
+| -------------------- | ------------------:|
 | <kbd>`C-c r c`</kbd> |  `clear-rectangle` |
 | <kbd>`C-c r d`</kbd> | `delete-rectangle` |
 | <kbd>`C-c r k`</kbd> |   `kill-rectangle` |
@@ -116,6 +116,7 @@ keybindings.
 
 | Keybinding           | Function                                      |
 | -------------------- |:--------------------------------------------- |
+| <kbd>C-c p a</kbd>   | `helm-projectile`             |
 | <kbd>C-c p a</kbd>   | `helm-projectile-find-other-file`             |
 | <kbd>C-c p f</kbd>   | `helm-projectile-find-file`                   |
 | <kbd>C-c p F</kbd>   | `helm-projectile-find-file-in-known-projects` |
