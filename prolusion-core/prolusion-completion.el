@@ -43,6 +43,7 @@
 (add-hook       'objc-mode-hook 'company-mode)
 (add-hook 'emacs-lisp-mode-hook 'company-mode)
 (add-hook      'cmake-mode-hook 'company-mode)
+(add-hook       'html-mode-hook 'company-mode)
 
 ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Completion modeline
