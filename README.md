@@ -47,20 +47,31 @@ keybindings.
 
 **prolusion-behavior**
 
+<table style="width:100%">
+  <tr>
+    <td>Keybinding</td>
+    <td>Function</td>
+  </tr>
+  <tr>
+    <td><kbd>`C-x o`</kbd></td>
+    <td>`other-window`</td>
+  </tr>
+</table>
+
 | Keybinding         | Function          |
-| ------------------ | ----------------- |
+| ------------------ |:----------------- |
 | <kbd>`C-x o`</kbd> | `other-window`    |
 | <kbd>`C-x 0`</kbd> | `other-window -1` |
 
 | Keybinding       | Function              |
-| ---------------- | --------------------- |
+| ---------------- |:--------------------- |
 | <kbd>`C-+`</kbd> | `text-scale-increase` |
 | <kbd>`C--`</kbd> | `text-scale-decrease` |
 
 **prolusion-builtins**
 
 | Keybinding           | Function           |
-| -------------------- | ------------------:|
+| -------------------- |:------------------:|
 | <kbd>`C-c r c`</kbd> |  `clear-rectangle` |
 | <kbd>`C-c r d`</kbd> | `delete-rectangle` |
 | <kbd>`C-c r k`</kbd> |   `kill-rectangle` |
@@ -71,7 +82,7 @@ keybindings.
 **prolusion-editor**
 
 | Keybinding           | Function                   |
-| -------------------- | -------------------------- |
+| -------------------- |:-------------------------- |
 | <kbd>`C-c e f`</kbd> | `ff-find-other-file`       |
 | <kbd>`C-c e m`</kbd> | `make-header`              |
 | <kbd>`C-c e c`</kbd> | `make-box-comment`         |
@@ -84,7 +95,7 @@ keybindings.
 **prolusion-snippets**
 
 | Keybinding           | Function                 |
-| -------------------- | ------------------------ |
+| -------------------- |:------------------------ |
 | <kbd>`C-c y n`</kbd> | `yas-new-snippet`        |
 | <kbd>`C-c y s`</kbd> | `yas-insert-snippet`     |
 | <kbd>`C-c y v`</kbd> | `yas-visit-snippet-file` |
@@ -92,7 +103,7 @@ keybindings.
 **prolusion-narrowing**
 
 | Keybinding           | Function            |
-| -------------------- | ------------------- |
+| -------------------- |:------------------- |
 | <kbd>`C-c n a`</kbd> | `helm-ag`           |
 | <kbd>`C-c n d`</kbd> | `helm-dash`         |
 | <kbd>`C-c n m`</kbd> | `helm-mini`         |
@@ -103,8 +114,8 @@ keybindings.
 **prolusion-vc**
 
 | Keybinding           | Function                    |
-| -------------------- | --------------------------- |
-| <kbd>`C-c v m`</kbd> | `magit-status`              |
+| -------------------- |:--------------------------- |
+| <kbd>`C-c v m`</kbd> | `magi-status`               |
 | <kbd>`C-c v g`</kbd> | `git-gutter::toggle`        |
 | <kbd>`C-c v =`</kbd> | `git-gutter::popup-hunk`    |
 | <kbd>`C-c v p`</kbd> | `git-gutter::previous-hunk` |
@@ -115,7 +126,7 @@ keybindings.
 **prolusion-projectile**
 
 | Keybinding           | Function                                      |
-| -------------------- | --------------------------------------------- |
+| -------------------- |:--------------------------------------------- |
 | <kbd>C-c p a</kbd>   | `helm-projectile-find-other-file`             |
 | <kbd>C-c p f</kbd>   | `helm-projectile-find-file`                   |
 | <kbd>C-c p F</kbd>   | `helm-projectile-find-file-in-known-projects` |
