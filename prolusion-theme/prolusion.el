@@ -386,7 +386,7 @@ Also affects linum-mode background."
      `(helm-selection ((,class (:background ,prolusion-hl :underline t))))
      `(helm-selection-line ((,class (:background ,prolusion-hl :foreground ,prolusion-emph :underline nil))))
      `(helm-separator ((,class (:foreground ,red))))
-     `(helm-source-header ((,class (:background "#1e2648" :foreground ,"gainsboro" :underline nil :weight normal :height 1.0))))
+     `(helm-source-header ((,class (:background ,prolusion-bg :foreground ,yellow :underline nil :weight normal :height 1.0))))
      `(helm-time-zone-current ((,class (:foreground ,green))))
      `(helm-time-zone-home ((,class (:foreground ,red))))
      `(helm-visible-mark ((,class (:background ,prolusion-bg :foreground ,magenta :bold t))))
@@ -694,6 +694,9 @@ Also affects linum-mode background."
      ;; fill-column-indicator
      `(fci-rule-color ,prolusion-hl)
 
+     ;; xcscope
+     `(cscope-separator-face ((t (:foreground "VioletRed4" :weight bold :underline nil :overline nil))))
+     
      ;; magit
      `(magit-diff-use-overlays nil)
 
@@ -701,18 +704,9 @@ Also affects linum-mode background."
      `(highlight-changes-colors '(,magenta ,violet))
 
      ;; highlight-tail
-     `(highlight-tail-colors '((,prolusion-hl . 0)(,green-lc . 20)(,cyan-lc . 30)(,blue-lc . 50) (,yellow-lc . 60)(,orange-lc . 70)(,magenta-lc . 85)(,prolusion-hl . 100)))
+     `(highlight-tail-colors '((,prolusion-hl . 0)(,green-lc . 20)(,cyan-lc . 30)(,blue-lc . 50) (,yellow-lc . 60)(,orange-lc . 70)(,magenta-lc . 85)(,prolusion-hl . 100))))
 
-     ;; syslog-mode
-     `(syslog-ip-face '((t :background unspecified :foreground ,yellow)))
-     `(syslog-hour-face '((t :background unspecified :foreground ,green)))
-     `(syslog-error-face '((t :background unspecified :foreground ,red :weight bold)))
-     `(syslog-warn-face '((t :background unspecified :foreground ,orange :weight bold)))
-     `(syslog-info-face '((t :background unspecified :foreground ,blue :weight bold)))
-     `(syslog-debug-face '((t :background unspecified :foreground ,cyan :weight bold)))
-     `(syslog-su-face '((t :background unspecified :foreground ,magenta))))
-
-    (when childtheme (funcall childtheme))))
+     (when childtheme (funcall childtheme))))
 
 ;;;###autoload
 (when (and (boundp 'custom-theme-load-path) load-file-name)
