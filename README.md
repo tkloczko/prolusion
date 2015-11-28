@@ -13,11 +13,11 @@ Prolusion is organized as a set of layers, each of which is organized as
 follows: requirements, setup, functions, hooks, modeline and
 keybindings.
 
-- [Prerequisites](##prerequisites)
-- [Installation](##installation)
-- [Upgrade](##upgrade)
-- [Keybindings](##keybindings)
-- [Caveats](##caveats)
+- [Prerequisites](#prerequisites)
+- [Installation](#installation)
+- [Upgrade](#upgrade)
+- [Keybindings](#keybindings)
+- [Caveats](#caveats)
 
 ## Prerequisites
 
