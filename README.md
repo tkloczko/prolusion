@@ -36,18 +36,18 @@ keybindings.
 
     $ curl -L https://raw.github.com/jwintz/prolusion/master/prolusion-installer/prolusion-installer.sh | sh
 
-### Upgrade
+## Upgrade
 
-**Emacs**
+###Emacs
 
     $ brew   install emacs --use-git-head --cocoa # if emacs is not installed
     $ brew reinstall emacs --use-git-head --cocoa # if emacs is     installed
 
-**Emacs prolusion**
+###Emacs prolusion**
 
     M-x prolusion-upgrade
 
-**Emacs prolusion packages**
+###Emacs prolusion packages**
 
     M-x prolusion-upgrade-packages
 
