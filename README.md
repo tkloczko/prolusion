@@ -13,6 +13,12 @@ Prolusion is organized as a set of layers, each of which is organized as
 follows: requirements, setup, functions, hooks, modeline and
 keybindings.
 
+- [Prerequisites](##prerequisites)
+- [Installation](##installation)
+- [Upgrade](##upgrade)
+- [Keybindings](##keybindings)
+- [Caveats](##caveats)
+
 ## Prerequisites
 
     $ brew install curl
@@ -45,7 +51,7 @@ keybindings.
 
     M-x prolusion-upgrade-packages
 
-## Bindings
+## Keybindings
 
 **prolusion-behavior**
 
@@ -65,6 +71,16 @@ keybindings.
 | <kbd>`C-x )`</kbd> | `end-kbd-macro`       |
 | <kbd>`C-x e`</kbd> | `call-last-kbd-macro` |
 
+| Keybinding                         | Function                               |
+| ---------------------------------- |:-------------------------------------- |
+| `M-x resize-window` <kbd>n</kbd>   | `resize-window--enlarge-down`          |
+| `M-x resize-window` <kbd>p</kbd>   | `resize-window--enlarge-up`            |
+| `M-x resize-window` <kbd>f</kbd>   | `resize-window--enlarge-horizontally`  |
+| `M-x resize-window` <kbd>b</kbd>   | `resize-window--shrink-horizontally`   |
+| `M-x resize-window` <kbd>r</kbd>   | `resize-window--reset-windows`         |
+| `M-x resize-window` <kbd>w</kbd>   | `resize-window--cycle-window-positive` |
+| `M-x resize-window` <kbd>W</kbd>   | `resize-window--cycle-window-negative` |
+
 **prolusion-builtins**
 
 | Keybinding           | Function           |
@@ -78,11 +94,12 @@ keybindings.
 
 **prolusion-eshell**
 
-| Keybinding         | Function               |
-| ------------------ |:---------------------- |
-| <kbd>`C-l l`</kbd> | `mutli-eshell`         |
-| <kbd>`C-l o`</kbd> | `mutli-eshell-switch`  |
-| <kbd>`C-l 0`</kbd> | `mutli-eshell-go-back` |
+| Keybinding           | Function                        |
+| -------------------- |:------------------------------- |
+| <kbd>`C-l l l`</kbd> | `mutli-eshell`                  |
+| <kbd>`C-l l o`</kbd> | `mutli-eshell-switch`           |
+| <kbd>`C-l l 0`</kbd> | `mutli-eshell-go-back`          |
+| <kbd>`C-l l c`</kbd> | `prolusion-eshell-clear-buffer` |
 
 **prolusion-editor**
 

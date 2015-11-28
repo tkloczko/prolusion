@@ -47,8 +47,6 @@
 ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (add-hook 'shell-mode-hook 'ansi-color-for-comint-mode-on)
-(add-hook 'eshell-mode-hook
-          '(lambda() (local-set-key (kbd "C-l") 'prolusion-eshell-clear-buffer)))
 
 ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Eshell keybindings
@@ -57,6 +55,7 @@
 (global-set-key (kbd "C-c l l") 'multi-eshell)
 (global-set-key (kbd "C-c l o") 'multi-eshell-switch)
 (global-set-key (kbd "C-c l O") 'multi-eshell-go-back)
+(global-set-key (kbd "C-c l c") 'prolusion-eshell-clear-buffer)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 

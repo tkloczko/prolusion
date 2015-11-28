@@ -21,6 +21,7 @@
 (prolusion-require-package 'recentf)
 (prolusion-require-package 'which-key)
 (prolusion-require-package 'beacon)
+(prolusion-require-package 'resize-window)
 
 ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Behavior setup
