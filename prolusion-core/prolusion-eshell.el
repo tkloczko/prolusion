@@ -16,6 +16,7 @@
 ;; Eshell requirements
 ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
+(prolusion-require-package         'multi-eshell)
 (prolusion-require-package 'exec-path-from-shell)
 
 ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -27,6 +28,9 @@
 (when (memq window-system '(mac ns))
   (exec-path-from-shell-initialize)
   (exec-path-from-shell-copy-env "CMAKE_PREFIX_PATH"))
+
+(setq multi-eshell-name "*eshell*")
+(setq multi-eshell-shell-function (quote (eshell)))
 
 ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Eshell functions
@@ -45,6 +49,14 @@
 (add-hook 'shell-mode-hook 'ansi-color-for-comint-mode-on)
 (add-hook 'eshell-mode-hook
           '(lambda() (local-set-key (kbd "C-l") 'prolusion-eshell-clear-buffer)))
+
+;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Eshell keybindings
+;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+(global-set-key (kbd "C-c l l") 'multi-eshell)
+(global-set-key (kbd "C-c l o") 'multi-eshell-switch)
+(global-set-key (kbd "C-c l O") 'multi-eshell-go-back)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 

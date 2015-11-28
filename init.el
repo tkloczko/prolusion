@@ -39,7 +39,6 @@
 (add-to-list 'custom-theme-load-path prolusion-theme-dir)
 
 (require 'prolusion-ui)
-(require 'prolusion-www)
 (require 'prolusion-packages)
 (require 'prolusion-behavior)
 (require 'prolusion-eshell)
@@ -51,6 +50,7 @@
 (require 'prolusion-checking)
 (require 'prolusion-scoping)
 (require 'prolusion-narrowing)
+(require 'prolusion-www)
 (require 'prolusion-vc)
 (require 'prolusion-projectile)
 (require 'prolusion-builtins)

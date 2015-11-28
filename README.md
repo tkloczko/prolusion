@@ -23,6 +23,7 @@ keybindings.
     $ brew install ninja
     $ brew install llvm --with-clang
     $ brew install cscope
+    $ brew install ack
     $ brew install the_silver_searcher
 
 ## Installation
@@ -58,6 +59,12 @@ keybindings.
 | <kbd>`C-+`</kbd> | `text-scale-increase` |
 | <kbd>`C--`</kbd> | `text-scale-decrease` |
 
+| Keybinding         | Function              |
+| ------------------ |:--------------------- |
+| <kbd>`C-x (`</kbd> | `start-kbd-macro`     |
+| <kbd>`C-x )`</kbd> | `end-kbd-macro`       |
+| <kbd>`C-x e`</kbd> | `call-last-kbd-macro` |
+
 **prolusion-builtins**
 
 | Keybinding           | Function           |
@@ -68,6 +75,14 @@ keybindings.
 | <kbd>`C-c r o`</kbd> |   `open-rectangle` |
 | <kbd>`C-c r t`</kbd> | `string-rectangle` |
 | <kbd>`C-c r y`</kbd> |   `yank-rectangle` |
+
+**prolusion-eshell**
+
+| Keybinding         | Function               |
+| ------------------ |:---------------------- |
+| <kbd>`C-l l`</kbd> | `mutli-eshell`         |
+| <kbd>`C-l o`</kbd> | `mutli-eshell-switch`  |
+| <kbd>`C-l 0`</kbd> | `mutli-eshell-go-back` |
 
 **prolusion-editor**
 
