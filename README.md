@@ -36,7 +36,7 @@ keybindings.
 
     $ curl -L https://raw.github.com/jwintz/prolusion/master/prolusion-installer/prolusion-installer.sh | sh
 
-## Upgrade
+### Upgrade
 
 **Emacs**
 
@@ -51,7 +51,7 @@ keybindings.
 
     M-x prolusion-upgrade-packages
 
-## Keybindings
+### Keybindings
 
 **prolusion-behavior**
 
