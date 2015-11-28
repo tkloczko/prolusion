@@ -71,15 +71,15 @@ keybindings.
 | <kbd>`C-x )`</kbd> | `end-kbd-macro`       |
 | <kbd>`C-x e`</kbd> | `call-last-kbd-macro` |
 
-| Keybinding                         | Function                               |
-| ---------------------------------- |:-------------------------------------- |
-| `M-x resize-window` <kbd>n</kbd>   | `resize-window--enlarge-down`          |
-| `M-x resize-window` <kbd>p</kbd>   | `resize-window--enlarge-up`            |
-| `M-x resize-window` <kbd>f</kbd>   | `resize-window--enlarge-horizontally`  |
-| `M-x resize-window` <kbd>b</kbd>   | `resize-window--shrink-horizontally`   |
-| `M-x resize-window` <kbd>r</kbd>   | `resize-window--reset-windows`         |
-| `M-x resize-window` <kbd>w</kbd>   | `resize-window--cycle-window-positive` |
-| `M-x resize-window` <kbd>W</kbd>   | `resize-window--cycle-window-negative` |
+| Keybinding                                  | Function                               |
+| ------------------------------------------- |:-------------------------------------- |
+| <kbd>M-x resize-window</kbd> <kbd>n</kbd>   | `resize-window--enlarge-down`          |
+| <kbd>M-x resize-window</kbd> <kbd>p</kbd>   | `resize-window--enlarge-up`            |
+| <kbd>M-x resize-window</kbd> <kbd>f</kbd>   | `resize-window--enlarge-horizontally`  |
+| <kbd>M-x resize-window</kbd> <kbd>b</kbd>   | `resize-window--shrink-horizontally`   |
+| <kbd>M-x resize-window</kbd> <kbd>r</kbd>   | `resize-window--reset-windows`         |
+| <kbd>M-x resize-window</kbd> <kbd>w</kbd>   | `resize-window--cycle-window-positive` |
+| <kbd>M-x resize-window</kbd> <kbd>W</kbd>   | `resize-window--cycle-window-negative` |
 
 **prolusion-builtins**
 
