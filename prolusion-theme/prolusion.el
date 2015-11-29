@@ -250,6 +250,12 @@ Also affects linum-mode background."
       `(company-scrollbar-bg ((t (:background "#000000"))))
       `(company-scrollbar-fg ((t (:background "#202020")))))
 
+     ;; git-gutter
+     (custom-set-faces
+      '(git-gutter:added    ((t (:foreground "green"  :weight bold))))
+      '(git-gutter:deleted  ((t (:foreground "red"    :weight bold))))
+      '(git-gutter:modified ((t (:foreground "orange" :weight bold)))))
+
      ;; auto highlight symbol
      `(ahs-definition-face ((,class (:foreground ,magenta :background unspecified :slant normal))))
      `(ahs-edit-mode-face ((,class (:foreground ,prolusion-bg :background ,magenta))))

@@ -37,7 +37,7 @@
 
 (fset 'yes-or-no-p 'y-or-n-p)
 
-;; custom file inhibition
+;; custom file
 
 (setq custom-file (expand-file-name "custom.el" prolusion-save-dir))
 

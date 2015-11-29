@@ -114,6 +114,11 @@ keybindings.
 | <kbd>`C-c e l`</kbd> | `prolusion-duplicate-line` |
 | <kbd>`C-c e e`</kbd> | `iedit-mode`               |
 
+| Keybinding         | Function           |
+| ------------------ |:------------------ |
+| <kbd>`C-M-f`</kbd> | `sp-forward-sexp`  |
+| <kbd>`C-M-b`</kbd> | `sp-backward-sexp` |
+
 **prolusion-snippets**
 
 | Keybinding           | Function                 |

@@ -24,15 +24,9 @@
 ;; VC setup
 ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-(custom-set-variables
- '(git-gutter:modified-sign "±")
- '(git-gutter:added-sign    "+")
- '(git-gutter:deleted-sign  "-"))
-
-(custom-set-faces
- '(git-gutter:added    ((t (:foreground "green"  :weight bold))))
- '(git-gutter:deleted  ((t (:foreground "red"    :weight bold))))
- '(git-gutter:modified ((t (:foreground "orange" :weight bold)))))
+(setq git-gutter:modified-sign "±")
+(setq git-gutter:added-sign    "+")
+(setq git-gutter:deleted-sign  "-")
 
 (global-git-gutter-mode t)
 

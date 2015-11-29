@@ -22,16 +22,16 @@
 (prolusion-require-package 'header2)
 (prolusion-require-package 'iedit)
 
-(require 'whitespace)
-(require 'smartparens-config)
-
 ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Editor setup
 ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
+(require 'whitespace)
+(require 'smartparens-config)
+
 (setq-default indent-tabs-mode nil)
-(setq-default tab-width 4)
 (setq-default c-basic-offset 4)
+(setq-default tab-width 4)
 
 (setq whitespace-line-column 80)
 (setq whitespace-style '(face tabs empty trailing lines-tail))
@@ -39,18 +39,11 @@
 (when (display-graphic-p)
   (global-hl-line-mode +1))
 
-(setq sp-base-key-bindings 'paredit)
-(setq sp-autoskip-closing-pair 'always)
-(setq sp-hybrid-kill-entire-symbol nil)
-
-(sp-use-paredit-bindings)
-
-(show-smartparens-global-mode +1)
-
 (global-undo-tree-mode)
 
-(setq header-file-name 'buffer-file-name)
+(smartparens-global-mode t)
 
+(setq header-file-name 'buffer-file-name)
 (setq make-header-hook
   '(header-rcs-id
     header-blank
@@ -105,6 +98,9 @@
 (global-set-key (kbd "C-c e g") 'update-file-header)
 (global-set-key (kbd "C-c e l") 'prolusion-duplicate-line)
 (global-set-key (kbd "C-c e e") 'iedit-mode)
+
+(global-set-key (kbd "C-M-f") 'sp-forward-sexp)
+(global-set-key (kbd "C-M-b") 'sp-backward-sexp)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
