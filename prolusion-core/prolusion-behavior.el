@@ -47,7 +47,7 @@
 
 (setq-default save-place t)
 
-;;minimize buffer count
+;; minimize buffer count
 
 (setq-default display-buffer-reuse-frames t)
 
