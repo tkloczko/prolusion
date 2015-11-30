@@ -83,8 +83,9 @@
 ;; Editor modeline
 ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-(diminish 'whitespace-mode)
-(diminish  'undo-tree-mode)
+(diminish 'smartparens-mode)
+(diminish  'whitespace-mode)
+(diminish   'undo-tree-mode)
 
 ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Editor keybindings
