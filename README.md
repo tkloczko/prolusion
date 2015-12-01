@@ -215,8 +215,24 @@ mode.
 * text scaling
 * fringe indicators
 
-<script>
-    window.onload = function() {
-        alert("Hello!");
-    }
-</script>
+
+## Inline HTML test
+
+<table>
+  <thead>
+    <tr>
+      <th>Keybinding</th>
+      <th align="left" style="width: 100% !important">Function</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><kbd><code>C-x o</code></kbd></td>
+      <td align="left"><code>other-window</code></td>
+    </tr>
+    <tr>
+      <td><kbd><code>C-x 0</code></kbd></td>
+      <td align="left"><code>other-window -1</code></td>
+    </tr>
+  </tbody>
+</table>
