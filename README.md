@@ -55,10 +55,10 @@ keybindings.
 
 **prolusion-behavior**
 
-| Keybinding         | Function          |
-| ------------------ |:----------------- |
-| <kbd>`C-x o`</kbd> | `other-window`    |
-| <kbd>`C-x 0`</kbd> | `other-window -1` |
+| Keybinding         | Function                                         |
+| ------------------ |:------------------------------------------------ |
+| <kbd>`C-x o`</kbd> | `other-window`                                   |
+| <kbd>`C-x 0`</kbd> | `other-window -1`                                |
 
 | Keybinding       | Function              |
 | ---------------- |:--------------------- |
@@ -214,25 +214,3 @@ Some functionalities are not available in terminal
 mode.
 * text scaling
 * fringe indicators
-
-
-## Inline HTML test
-
-<table>
-  <thead>
-    <tr>
-      <th>Keybinding</th>
-      <th align="left" style="width: 100% !important">Function</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><kbd><code>C-x o</code></kbd></td>
-      <td align="left"><code>other-window</code></td>
-    </tr>
-    <tr>
-      <td><kbd><code>C-x 0</code></kbd></td>
-      <td align="left"><code>other-window -1</code></td>
-    </tr>
-  </tbody>
-</table>
