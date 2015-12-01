@@ -214,3 +214,9 @@ Some functionalities are not available in terminal
 mode.
 * text scaling
 * fringe indicators
+
+<script>
+  $(document).ready(function(){
+    alert('prout');
+  });
+</script>
