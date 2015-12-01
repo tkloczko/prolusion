@@ -1,5 +1,5 @@
 # -*- mode: snippet; require-final-newline: nil -*-
-# name: CMakeLists.txt root file
+# name: root
 # key: root
 # --
 cmake_minimum_required(VERSION 3.0.0)

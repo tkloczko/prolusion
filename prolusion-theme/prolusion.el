@@ -474,12 +474,12 @@ Also affects linum-mode background."
      `(sh-heredoc ((,class (:foreground ,yellow :weight bold))))
 
      ;; smartparens
-     `(sp-pair-overlay-face ((,class (:background ,prolusion-hl))))
-     `(sp-wrap-overlay-face ((,class (:background ,prolusion-hl))))
-     `(sp-wrap-tag-overlay-face ((,class (:background ,prolusion-hl))))
-     `(sp-show-pair-enclosing ((,class (:foreground ,yellow :background ,prolusion-bg :weight bold t))))
-     `(sp-show-pair-match-face ((,class (:foreground ,yellow :background ,prolusion-bg :weight bold t))))
-     `(sp-show-pair-mismatch-face ((,class (:foreground ,red :background ,prolusion-bg :weight bold t))))
+     ;; `(sp-pair-overlay-face ((,class (:background ,prolusion-hl))))
+     ;; `(sp-wrap-overlay-face ((,class (:background ,prolusion-hl))))
+     ;; `(sp-wrap-tag-overlay-face ((,class (:background ,prolusion-hl))))
+     ;; `(sp-show-pair-enclosing ((,class (:foreground ,yellow :background ,prolusion-bg :weight bold t))))
+     ;; `(sp-show-pair-match-face ((,class (:foreground ,yellow :background ,prolusion-bg :weight bold t))))
+     ;; `(sp-show-pair-mismatch-face ((,class (:foreground ,red :background ,prolusion-bg :weight bold t))))
 
      ;; show-paren
      `(show-paren-match ((,class (:foreground ,yellow :background ,prolusion-bg :weight bold t))))
