@@ -216,7 +216,7 @@ mode.
 * fringe indicators
 
 <script>
-  $(document).ready(function(){
-    alert('prout');
-  });
+    window.onload = function() {
+        alert("Hello!");
+    }
 </script>
