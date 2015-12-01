@@ -1,4 +1,4 @@
-;; Version: $Id$
+; Version: $Id$
 ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;
@@ -219,7 +219,7 @@ Also affects linum-mode background."
      `(region ((,class (:foreground ,prolusion-bg :background ,prolusion-emph))))
      `(secondary-selection ((,class (:background ,prolusion-hl))))
      `(trailing-whitespace ((,class (:background ,red))))
-     `(vertical-border ((,class (:foreground ,prolusion-ml))))
+     `(vertical-border ((,class (:foreground ,prolusion-hl))))
 
      ;; font lock
      `(font-lock-builtin-face ((,class (:foreground ,prolusion-fg :weight bold))))
@@ -474,21 +474,12 @@ Also affects linum-mode background."
      `(sh-heredoc ((,class (:foreground ,yellow :weight bold))))
 
      ;; smartparens
-     ;; `(sp-pair-overlay-face ((,class (:background ,prolusion-hl))))
-     ;; `(sp-wrap-overlay-face ((,class (:background ,prolusion-hl))))
-     ;; `(sp-wrap-tag-overlay-face ((,class (:background ,prolusion-hl))))
-     ;; `(sp-show-pair-enclosing ((,class (:foreground ,yellow :background ,prolusion-bg :weight bold t))))
-     ;; `(sp-show-pair-match-face ((,class (:foreground ,yellow :background ,prolusion-bg :weight bold t))))
-     ;; `(sp-show-pair-mismatch-face ((,class (:foreground ,red :background ,prolusion-bg :weight bold t))))
-
-     ;; show-paren
-     `(show-paren-match ((,class (:foreground ,yellow :background ,prolusion-bg :weight bold t))))
-     `(show-paren-mismatch ((,class (:foreground ,red :background ,prolusion-bg :weight bold t))))
-
-     ;; mic-paren
-     `(paren-face-match ((,class (:foreground ,yellow :background ,prolusion-bg :weight normal :inverse-video t))))
-     `(paren-face-mismatch ((,class (:foreground ,red :background ,prolusion-bg :weight normal :inverse-video t))))
-     `(paren-face-no-match ((,class (:foreground ,red :background ,prolusion-bg :weight normal :inverse-video t))))
+     `(sp-pair-overlay-face ((,class (:foreground ,prolusion-fg :background ,violet-d))))
+     `(sp-wrap-overlay-face ((,class (:foreground ,prolusion-fg :background ,violet-d))))
+     `(sp-wrap-tag-overlay-face ((,class (:foreground ,prolusion-fg :background ,violet-d))))
+     `(sp-show-pair-enclosing ((,class (:foreground ,prolusion-fg :background ,prolusion-bg :weight bold t))))
+     `(sp-show-pair-match-face ((,class (:foreground ,prolusion-fg :background ,prolusion-bg :weight bold t))))
+     `(sp-show-pair-mismatch-face ((,class (:foreground ,prolusion-fg :background ,prolusion-bg :weight bold t))))
 
      ;; table
      `(table-cell ((,class (:foreground ,prolusion-fg :background ,prolusion-hl))))

@@ -36,12 +36,10 @@
 (setq whitespace-line-column 80)
 (setq whitespace-style '(face tabs empty trailing lines-tail))
 
-(when (display-graphic-p)
-  (global-hl-line-mode +1))
-
 (global-undo-tree-mode)
 
-(smartparens-global-mode t)
+     (smartparens-global-mode t)
+(show-smartparens-global-mode t)
 
 (setq header-file-name 'buffer-file-name)
 (setq make-header-hook
@@ -56,6 +54,9 @@
     header-end-line
     header-code
     header-eof))
+
+(when (display-graphic-p)
+  (global-hl-line-mode +1))
 
 ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Editor functions

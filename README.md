@@ -55,10 +55,10 @@ keybindings.
 
 **prolusion-behavior**
 
-| Keybinding         | Function                                         |
-| ------------------ |:------------------------------------------------ |
-| <kbd>`C-x o`</kbd> | `other-window`                                   |
-| <kbd>`C-x 0`</kbd> | `other-window -1`                                |
+| Keybinding         | Function          |
+| ------------------ |:----------------- |
+| <kbd>`C-x o`</kbd> | `other-window`    |
+| <kbd>`C-x 0`</kbd> | `other-window -1` |
 
 | Keybinding       | Function              |
 | ---------------- |:--------------------- |
@@ -70,6 +70,11 @@ keybindings.
 | <kbd>`C-x (`</kbd> | `start-kbd-macro`     |
 | <kbd>`C-x )`</kbd> | `end-kbd-macro`       |
 | <kbd>`C-x e`</kbd> | `call-last-kbd-macro` |
+
+| Keybinding             | Function              |
+| ---------------------- |:--------------------- |
+| <kbd>`C-M-left`</kbd>  | `forward-sexp`        |
+| <kbd>`C-M-right`</kbd> | `backward-sexp`       |
 
 | Keybinding                                  | Function                               |
 | ------------------------------------------- |:-------------------------------------- |
