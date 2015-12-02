@@ -19,7 +19,6 @@
 (prolusion-require-package 'company)
 (prolusion-require-package 'company-irony)
 (prolusion-require-package 'company-irony-c-headers)
-(prolusion-require-package 'company-qml)
 
 ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Completion setup
@@ -41,6 +40,8 @@
       "/Users/jwintz/Development/qt/5.5/clang_64/qml/QtQuick/Window.2/plugins.qmltypes"
       "/Users/jwintz/Development/qt/5.5/clang_64/qml/QtQuick/XmlListModel/plugins.qmltypes"
       "/Users/jwintz/Development/qt/5.5/clang_64/qml/QtQuick.2/plugins.qmltypes"))
+
+(prolusion-require-package 'company-qml)
 
 (eval-after-load 'company '(add-to-list 'company-backends 'company-qml))
 (eval-after-load 'company '(add-to-list 'company-backends 'company-irony))
