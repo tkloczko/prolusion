@@ -26,8 +26,9 @@
 (setq eshell-directory-name prolusion-eshell-dir)
 
 (when (memq window-system '(mac ns))
-  (exec-path-from-shell-initialize)
-  (exec-path-from-shell-copy-env "CMAKE_PREFIX_PATH"))
+  (setq exec-path-from-shell-arguments (quote ("-l")))
+  (setq exec-path-from-shell-variables (quote ("PATH" "MANPATH" "CMAKE_PREFIX_PATH")))
+       (exec-path-from-shell-initialize))
 
 (setq multi-eshell-name "*eshell*")
 (setq multi-eshell-shell-function (quote (eshell)))
