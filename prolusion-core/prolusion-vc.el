@@ -18,7 +18,6 @@
 
 (prolusion-require-package 'magit)
 (prolusion-require-package 'git-gutter)
-(prolusion-require-package 'git-gutter-fringe)
 
 ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; VC setup

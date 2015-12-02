@@ -477,9 +477,9 @@ Also affects linum-mode background."
      `(sp-pair-overlay-face ((,class (:foreground ,prolusion-fg :background ,violet-d))))
      `(sp-wrap-overlay-face ((,class (:foreground ,prolusion-fg :background ,violet-d))))
      `(sp-wrap-tag-overlay-face ((,class (:foreground ,prolusion-fg :background ,violet-d))))
-     `(sp-show-pair-enclosing ((,class (:foreground ,prolusion-fg :background ,prolusion-bg :weight bold t))))
-     `(sp-show-pair-match-face ((,class (:foreground ,prolusion-fg :background ,prolusion-bg :weight bold t))))
-     `(sp-show-pair-mismatch-face ((,class (:foreground ,prolusion-fg :background ,prolusion-bg :weight bold t))))
+     `(sp-show-pair-enclosing ((,class (:foreground ,prolusion-fg :background ,prolusion-bg :weight bold t :underline t))))
+     `(sp-show-pair-match-face ((,class (:foreground ,green :background ,prolusion-bg :weight bold t :underline t))))
+     `(sp-show-pair-mismatch-face ((,class (:foreground ,red :background ,prolusion-bg :weight bold t :underline t))))
 
      ;; table
      `(table-cell ((,class (:foreground ,prolusion-fg :background ,prolusion-hl))))

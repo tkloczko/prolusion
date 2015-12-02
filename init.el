@@ -54,9 +54,9 @@
 (require 'prolusion-completion)
 (require 'prolusion-checking)
 (require 'prolusion-scoping)
-(require 'prolusion-narrowing)
 (require 'prolusion-www)
 (require 'prolusion-vc)
+(require 'prolusion-docs)
 (require 'prolusion-projectile)
 (require 'prolusion-builtins)
 

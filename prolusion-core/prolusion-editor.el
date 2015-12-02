@@ -16,11 +16,11 @@
 ;; Editor requirements
 ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-(prolusion-require-package 'rainbow-delimiters)
 (prolusion-require-package 'smartparens)
 (prolusion-require-package 'undo-tree)
 (prolusion-require-package 'header2)
 (prolusion-require-package 'iedit)
+(prolusion-require-package 'helm)
 
 ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Editor setup
@@ -78,8 +78,6 @@
 (add-hook   'find-file-hook (lambda () (whitespace-mode +1)))
 (add-hook 'before-save-hook (lambda () (whitespace-cleanup)))
 
-(add-hook 'prog-mode-hook 'rainbow-delimiters-mode)
-
 ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Editor modeline
 ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -92,7 +90,7 @@
 ;; Editor keybindings
 ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-(global-set-key (kbd "C-c e f") 'ff-find-other-file)
+(global-set-key (kbd "C-c e s") 'ff-find-other-file)
 (global-set-key (kbd "C-c e m") 'make-header)
 (global-set-key (kbd "C-c e c") 'make-box-comment)
 (global-set-key (kbd "C-c e d") 'make-divider)
@@ -100,6 +98,7 @@
 (global-set-key (kbd "C-c e g") 'update-file-header)
 (global-set-key (kbd "C-c e l") 'prolusion-duplicate-line)
 (global-set-key (kbd "C-c e e") 'iedit-mode)
+(global-set-key (kbd "C-c e f") 'helm-mini)
 
 (global-set-key (kbd "C-M-f") 'sp-forward-sexp)
 (global-set-key (kbd "C-M-b") 'sp-backward-sexp)

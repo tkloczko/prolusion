@@ -88,14 +88,15 @@ keybindings.
 
 **prolusion-builtins**
 
-| Keybinding           | Function           |
-| -------------------- | ------------------:|
-| <kbd>`C-c r c`</kbd> |  `clear-rectangle` |
-| <kbd>`C-c r d`</kbd> | `delete-rectangle` |
-| <kbd>`C-c r k`</kbd> |   `kill-rectangle` |
-| <kbd>`C-c r o`</kbd> |   `open-rectangle` |
-| <kbd>`C-c r t`</kbd> | `string-rectangle` |
-| <kbd>`C-c r y`</kbd> |   `yank-rectangle` |
+| Keybinding           | Function                       |
+| -------------------- | ------------------------------:|
+| <kbd>`C-c b c`</kbd> |              `clear-rectangle` |
+| <kbd>`C-c b d`</kbd> |             `delete-rectangle` |
+| <kbd>`C-c b k`</kbd> |               `kill-rectangle` |
+| <kbd>`C-c b o`</kbd> |               `open-rectangle` |
+| <kbd>`C-c b t`</kbd> |             `string-rectangle` |
+| <kbd>`C-c b y`</kbd> |               `yank-rectangle` |
+| <kbd>`C-c b w`</kbd> | `wdired-change-to-wdired-mode` |
 
 **prolusion-eshell**
 
@@ -110,7 +111,7 @@ keybindings.
 
 | Keybinding           | Function                   |
 | -------------------- |:-------------------------- |
-| <kbd>`C-c e f`</kbd> | `ff-find-other-file`       |
+| <kbd>`C-c e s`</kbd> | `ff-find-other-file`       |
 | <kbd>`C-c e m`</kbd> | `make-header`              |
 | <kbd>`C-c e c`</kbd> | `make-box-comment`         |
 | <kbd>`C-c e d`</kbd> | `make-divider`             |
@@ -118,6 +119,7 @@ keybindings.
 | <kbd>`C-c e g`</kbd> | `update-file-header`       |
 | <kbd>`C-c e l`</kbd> | `prolusion-duplicate-line` |
 | <kbd>`C-c e e`</kbd> | `iedit-mode`               |
+| <kbd>`C-c e p`</kbd> | `helm-mini`                |
 
 **prolusion-snippets**
 
@@ -127,63 +129,60 @@ keybindings.
 | <kbd>`C-c y s`</kbd> | `yas-insert-snippet`     |
 | <kbd>`C-c y v`</kbd> | `yas-visit-snippet-file` |
 
-**prolusion-narrowing**
+**prolusion-docs**
 
-| Keybinding           | Function            |
-| -------------------- |:------------------- |
-| <kbd>`C-c n a`</kbd> | `helm-ag`           |
-| <kbd>`C-c n d`</kbd> | `helm-dash`         |
-| <kbd>`C-c n m`</kbd> | `helm-mini`         |
-| <kbd>`C-c n c`</kbd> | `helm-company`      |
-| <kbd>`C-c n f`</kbd> | `helm-flycheck`     |
-| <kbd>`C-c n y`</kbd> | `helm-yas-complete` |
+| Keybinding           | Function                    |
+| -------------------- | ---------------------------:|
+| <kbd>`C-c d d`</kbd> | `'helm-dash`                |
+| <kbd>`C-c d p`</kbd> | `'helm-dash-at-point`       |
+| <kbd>`C-c d i`</kbd> | `'helm-dash-install-docset` |
 
 **prolusion-scoping**
 
-| Keybinding           | Function                                       |
-| -------------------- |:---------------------------------------------- |
-| <kbd>`C-c s L`</kbd> | `'cscope-create-list-of-files-to-index`        |
-| <kbd>`C-c s I`</kbd> | `'cscope-index-files`                          |
-| <kbd>`C-c s E`</kbd> | `'cscope-edit-list-of-files-to-index`          |
-| <kbd>`C-c s W`</kbd> | `'cscope-tell-user-about-directory`            |
-| <kbd>`C-c s S`</kbd> | `'cscope-tell-user-about-directory`            |
-| <kbd>`C-c s T`</kbd> | `'cscope-tell-user-about-directory`            |
-| <kbd>`C-c s D`</kbd> | `'cscope-dired-directory`                      |
+| Keybinding           | Function                               |
+| -------------------- |:-------------------------------------- |
+| <kbd>`C-c s L`</kbd> | `cscope-create-list-of-files-to-index` |
+| <kbd>`C-c s I`</kbd> | `cscope-index-files`                   |
+| <kbd>`C-c s E`</kbd> | `cscope-edit-list-of-files-to-index`   |
+| <kbd>`C-c s W`</kbd> | `cscope-tell-user-about-directory`     |
+| <kbd>`C-c s S`</kbd> | `cscope-tell-user-about-directory`     |
+| <kbd>`C-c s T`</kbd> | `cscope-tell-user-about-directory`     |
+| <kbd>`C-c s D`</kbd> | `cscope-dired-directory`               |
 
-| Keybinding           | Function                                       |
-| -------------------- |:---------------------------------------------- |
-| <kbd>`C-c s a`</kbd> | `'cscope-set-initial-directory`                |
-| <kbd>`C-c s A`</kbd> | `'cscope-unset-initial-directory`              |
+| Keybinding           | Function                         |
+| -------------------- |:-------------------------------- |
+| <kbd>`C-c s a`</kbd> | `cscope-set-initial-directory`   |
+| <kbd>`C-c s A`</kbd> | `cscope-unset-initial-directory` |
 
-| Keybinding           | Function                                       |
-| -------------------- |:---------------------------------------------- |
-| <kbd>`C-c s s`</kbd> | `'cscope-find-this-symbol`                     |
-| <kbd>`C-c s d`</kbd> | `'cscope-find-global-definition`               |
-| <kbd>`C-c s g`</kbd> | `'cscope-find-global-definition`               |
-| <kbd>`C-c s G`</kbd> | `'cscope-find-global-definition-no-prompting`  |
-| <kbd>`C-c s =`</kbd> | `'cscope-find-assignments-to-this-symbol`      |
-| <kbd>`C-c s c`</kbd> | `'cscope-find-functions-calling-this-function` |
-| <kbd>`C-c s C`</kbd> | `'cscope-find-called-functions`                |
-| <kbd>`C-c s t`</kbd> | `'cscope-find-this-text-string`                |
-| <kbd>`C-c s e`</kbd> | `'cscope-find-egrep-pattern`                   |
-| <kbd>`C-c s f`</kbd> | `'cscope-find-this-file`                       |
-| <kbd>`C-c s i`</kbd> | `'cscope-find-files-including-file`            |
+| Keybinding           | Function                                      |
+| -------------------- |:--------------------------------------------- |
+| <kbd>`C-c s s`</kbd> | `cscope-find-this-symbol`                     |
+| <kbd>`C-c s d`</kbd> | `cscope-find-global-definition`               |
+| <kbd>`C-c s g`</kbd> | `cscope-find-global-definition`               |
+| <kbd>`C-c s G`</kbd> | `cscope-find-global-definition-no-prompting`  |
+| <kbd>`C-c s =`</kbd> | `cscope-find-assignments-to-this-symbol`      |
+| <kbd>`C-c s c`</kbd> | `cscope-find-functions-calling-this-function` |
+| <kbd>`C-c s C`</kbd> | `cscope-find-called-functions`                |
+| <kbd>`C-c s t`</kbd> | `cscope-find-this-text-string`                |
+| <kbd>`C-c s e`</kbd> | `cscope-find-egrep-pattern`                   |
+| <kbd>`C-c s f`</kbd> | `cscope-find-this-file`                       |
+| <kbd>`C-c s i`</kbd> | `cscope-find-files-including-file`            |
 
-| Keybinding           | Function                                       |
-| -------------------- |:---------------------------------------------- |
-| <kbd>`C-c s b`</kbd> | `'cscope-display-buffer`                       |
-| <kbd>`C-c s B`</kbd> | `'cscope-display-buffer-toggle`                |
-| <kbd>`C-c s n`</kbd> | `'cscope-history-forward-line-current-result`  |
-| <kbd>`C-c s N`</kbd> | `'cscope-history-forward-file-current-result`  |
-| <kbd>`C-c s p`</kbd> | `'cscope-history-backward-line-current-result` |
-| <kbd>`C-c s P`</kbd> | `'cscope-history-backward-file-current-result` |
-| <kbd>`C-c s u`</kbd> | `'cscope-pop-mark`                             |
+| Keybinding           | Function                                      |
+| -------------------- |:--------------------------------------------- |
+| <kbd>`C-c s b`</kbd> | `cscope-display-buffer`                       |
+| <kbd>`C-c s B`</kbd> | `cscope-display-buffer-toggle`                |
+| <kbd>`C-c s n`</kbd> | `cscope-history-forward-line-current-result`  |
+| <kbd>`C-c s N`</kbd> | `cscope-history-forward-file-current-result`  |
+| <kbd>`C-c s p`</kbd> | `cscope-history-backward-line-current-result` |
+| <kbd>`C-c s P`</kbd> | `cscope-history-backward-file-current-result` |
+| <kbd>`C-c s u`</kbd> | `cscope-pop-mark`                             |
 
 **prolusion-vc**
 
 | Keybinding           | Function                    |
 | -------------------- |:--------------------------- |
-| <kbd>`C-c v m`</kbd> | `magit-status`               |
+| <kbd>`C-c v m`</kbd> | `magit-status`              |
 | <kbd>`C-c v g`</kbd> | `git-gutter::toggle`        |
 | <kbd>`C-c v =`</kbd> | `git-gutter::popup-hunk`    |
 | <kbd>`C-c v p`</kbd> | `git-gutter::previous-hunk` |

@@ -13,37 +13,28 @@
 ;;; Code:
 
 ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Narrowing requirements
+;; Docs requirements
 ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-(prolusion-require-package 'helm)
-(prolusion-require-package 'helm-ag)
 (prolusion-require-package 'helm-dash)
-(prolusion-require-package 'helm-company)
-(prolusion-require-package 'helm-flycheck)
-(prolusion-require-package 'helm-c-yasnippet)
 
 ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Narrowing setup
+;; Docs setup
 ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (setq helm-dash-docsets-path prolusion-docs-dir)
-(setq helm-dash-common-docsets '("C" "C++" "Qt"))
 
 ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Narrowing bindings
+;; Docs bindings
 ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-(global-set-key (kbd "C-c n a") 'helm-ag)
-(global-set-key (kbd "C-c n d") 'helm-dash)
-(global-set-key (kbd "C-c n m") 'helm-mini)
-(global-set-key (kbd "C-c n c") 'helm-company)
-(global-set-key (kbd "C-c n f") 'helm-flycheck)
-(global-set-key (kbd "C-c n y") 'helm-yas-complete)
+(global-set-key (kbd "C-c d d") 'helm-dash)
+(global-set-key (kbd "C-c d p") 'helm-dash-at-point)
+(global-set-key (kbd "C-c d i") 'helm-dash-install-docset)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-(provide 'prolusion-narrowing)
+(provide 'prolusion-docs)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;; prolusion-narrowing.el ends here
+;;; prolusion-docs.el ends here
