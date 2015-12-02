@@ -101,10 +101,10 @@ keybindings.
 
 | Keybinding           | Function                        |
 | -------------------- |:------------------------------- |
-| <kbd>`C-l l l`</kbd> | `mutli-eshell`                  |
-| <kbd>`C-l l o`</kbd> | `mutli-eshell-switch`           |
-| <kbd>`C-l l 0`</kbd> | `mutli-eshell-go-back`          |
-| <kbd>`C-l l c`</kbd> | `prolusion-eshell-clear-buffer` |
+| <kbd>`C-c l l`</kbd> | `mutli-eshell`                  |
+| <kbd>`C-c l o`</kbd> | `mutli-eshell-switch`           |
+| <kbd>`C-c l 0`</kbd> | `mutli-eshell-go-back`          |
+| <kbd>`C-c l c`</kbd> | `prolusion-eshell-clear-buffer` |
 
 **prolusion-editor**
 
@@ -118,11 +118,6 @@ keybindings.
 | <kbd>`C-c e g`</kbd> | `update-file-header`       |
 | <kbd>`C-c e l`</kbd> | `prolusion-duplicate-line` |
 | <kbd>`C-c e e`</kbd> | `iedit-mode`               |
-
-| Keybinding         | Function           |
-| ------------------ |:------------------ |
-| <kbd>`C-M-f`</kbd> | `sp-forward-sexp`  |
-| <kbd>`C-M-b`</kbd> | `sp-backward-sexp` |
 
 **prolusion-snippets**
 
@@ -188,7 +183,7 @@ keybindings.
 
 | Keybinding           | Function                    |
 | -------------------- |:--------------------------- |
-| <kbd>`C-c v m`</kbd> | `magi-status`               |
+| <kbd>`C-c v m`</kbd> | `magit-status`               |
 | <kbd>`C-c v g`</kbd> | `git-gutter::toggle`        |
 | <kbd>`C-c v =`</kbd> | `git-gutter::popup-hunk`    |
 | <kbd>`C-c v p`</kbd> | `git-gutter::previous-hunk` |
