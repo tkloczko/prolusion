@@ -17,7 +17,6 @@ keybindings.
 - [Installation](#installation)
 - [Upgrade](#upgrade)
 - [Keybindings](#keybindings)
-- [Caveats](#caveats)
 
 ## Prerequisites
 
@@ -131,11 +130,12 @@ keybindings.
 
 **prolusion-docs**
 
-| Keybinding           | Function                    |
-| -------------------- | ---------------------------:|
-| <kbd>`C-c d d`</kbd> | `'helm-dash`                |
-| <kbd>`C-c d p`</kbd> | `'helm-dash-at-point`       |
-| <kbd>`C-c d i`</kbd> | `'helm-dash-install-docset` |
+| Keybinding           | Function                     |
+| -------------------- | ----------------------------:|
+| <kbd>`C-c d d`</kbd> | `helm-dash`                 |
+| <kbd>`C-c d p`</kbd> | `helm-dash-at-point`        |
+| <kbd>`C-c d i`</kbd> | `helm-dash-install-docset`  |
+| <kbd>`C-c d a`</kbd> | `helm-dash-activate-docset` |
 
 **prolusion-scoping**
 
@@ -206,10 +206,3 @@ keybindings.
 | <kbd>C-c p s g</kbd> | `helm-projectile-grep`                        |
 | <kbd>C-c p s a</kbd> | `helm-projectile-ack`                         |
 | <kbd>C-c p s s</kbd> | `helm-projectile-ag`                          |
-
-## Caveats
-
-Some functionalities are not available in terminal
-mode.
-* text scaling
-* fringe indicators

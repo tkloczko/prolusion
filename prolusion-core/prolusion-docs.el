@@ -23,6 +23,7 @@
 ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (setq helm-dash-docsets-path prolusion-docs-dir)
+(setq helm-dash-min-length 1)
 
 ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Docs bindings
@@ -31,6 +32,7 @@
 (global-set-key (kbd "C-c d d") 'helm-dash)
 (global-set-key (kbd "C-c d p") 'helm-dash-at-point)
 (global-set-key (kbd "C-c d i") 'helm-dash-install-docset)
+(global-set-key (kbd "C-c d a") 'helm-dash-activate-docset)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
