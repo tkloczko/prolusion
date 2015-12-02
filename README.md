@@ -70,10 +70,10 @@ keybindings.
 | <kbd>`C-x )`</kbd> | `end-kbd-macro`       |
 | <kbd>`C-x e`</kbd> | `call-last-kbd-macro` |
 
-| Keybinding             | Function              |
-| ---------------------- |:--------------------- |
-| <kbd>`C-M-left`</kbd>  | `forward-sexp`        |
-| <kbd>`C-M-right`</kbd> | `backward-sexp`       |
+| Keybinding             | Function        |
+| ---------------------- |:--------------- |
+| <kbd>`C-M-left`</kbd>  | `forward-sexp`  |
+| <kbd>`C-M-right`</kbd> | `backward-sexp` |
 
 | Keybinding                                  | Function                               |
 | ------------------------------------------- |:-------------------------------------- |
@@ -130,8 +130,8 @@ keybindings.
 
 **prolusion-docs**
 
-| Keybinding           | Function                     |
-| -------------------- | ----------------------------:|
+| Keybinding           | Function                    |
+| -------------------- | ---------------------------:|
 | <kbd>`C-c d d`</kbd> | `helm-dash`                 |
 | <kbd>`C-c d p`</kbd> | `helm-dash-at-point`        |
 | <kbd>`C-c d i`</kbd> | `helm-dash-install-docset`  |
