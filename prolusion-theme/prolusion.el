@@ -544,6 +544,26 @@ Also affects linum-mode background."
      `(whitespace-empty ((,class (:background unspecified :foreground ,red-lc :inverse-video t))))
      `(whitespace-space-after-tab ((,class (:background unspecified :foreground ,orange :inverse-video t :weight bold))))
 
+     ;;;;; auctex
+     `(font-latex-bold-face ((,class (:inherit bold :foreground ,base1))))
+     `(font-latex-doctex-documentation-face ((,class (:background unspecified))))
+     `(font-latex-doctex-preprocessor-face ((,class (:inherit (font-latex-doctex-documentation-face font-lock-builtin-face font-lock-preprocessor-face)))))
+     `(font-latex-italic-face ((,class (:inherit italic :foreground ,base1))))
+     `(font-latex-math-face ((,class (:foreground ,violet))))
+     `(font-latex-sectioning-0-face ((,class (:inherit font-latex-sectioning-1-face :height ,prolusion-height-plus-1))))
+     `(font-latex-sectioning-1-face ((,class (:inherit font-latex-sectioning-2-face :height ,prolusion-height-plus-1))))
+     `(font-latex-sectioning-2-face ((,class (:inherit font-latex-sectioning-3-face :height ,prolusion-height-plus-1))))
+     `(font-latex-sectioning-3-face ((,class (:inherit font-latex-sectioning-4-face :height ,prolusion-height-plus-1))))
+     `(font-latex-sectioning-4-face ((,class (:inherit font-latex-sectioning-5-face :height ,prolusion-height-plus-1))))
+     `(font-latex-sectioning-5-face ((,class (:inherit ,s-variable-pitch :foreground ,yellow :weight bold))))
+     `(font-latex-sedate-face ((,class (:foreground ,base1))))
+     `(font-latex-slide-title-face ((,class (:inherit (,s-variable-pitch font-lock-type-face) :weight bold :height ,prolusion-height-plus-3))))
+     `(font-latex-string-face ((,class (:foreground ,cyan))))
+     `(font-latex-subscript-face ((,class (:height ,prolusion-height-minus-1))))
+     `(font-latex-superscript-face ((,class (:height ,prolusion-height-minus-1))))
+     `(font-latex-verbatim-face ((,class (:inherit fixed-pitch :foreground ,base0 :slant italic))))
+     `(font-latex-warning-face ((,class (:inherit bold :foreground ,orange))))
+
      ;; which-func-mode
      `(which-func ((,class (:foreground ,green))))
 
