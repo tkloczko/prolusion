@@ -103,7 +103,8 @@
 (setq desktop-base-file-name "desktop")
 (setq desktop-base-lock-name "desktop.lock")
 
-(desktop-save-mode 1)
+(when (display-graphic-p)
+  (desktop-save-mode 1))
 
 ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Behavior modeline
