@@ -40,7 +40,7 @@
 
 ;; custom file
 
-(setq custom-file (expand-file-name "custom.el" prolusion-save-dir))
+(setq custom-file (expand-file-name "custom" prolusion-save-dir))
 
 ;; save place
 
@@ -94,6 +94,16 @@
 ;; highlight cursor after window moves
 
 (beacon-mode 1)
+
+;; restore window position and size as well as opened buffers
+
+(setq desktop-path       prolusion-save-dir)
+(setq desktop-dirname    prolusion-save-dir)
+(setq desktop-path (list prolusion-save-dir))
+(setq desktop-base-file-name "desktop")
+(setq desktop-base-lock-name "desktop.lock")
+
+(desktop-save-mode 1)
 
 ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Behavior modeline
