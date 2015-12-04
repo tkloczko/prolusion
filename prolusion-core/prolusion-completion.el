@@ -29,7 +29,6 @@
 (setq company-minimum-prefix-length 1)
 (setq company-tooltip-flip-when-above t)
 
-(eval-after-load 'company '(add-to-list 'company-backends 'company-qml))
 (eval-after-load 'company '(add-to-list 'company-backends 'company-irony))
 (eval-after-load 'company '(add-to-list 'company-backends 'company-irony-c-headers))
 (eval-after-load 'company '(add-to-list 'company-backends 'company-cmake))
@@ -49,7 +48,7 @@
 ;; Completion modeline
 ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-;; (eval-after-load 'company '(diminish 'company-mode))
+(eval-after-load 'company '(diminish 'company-mode))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 

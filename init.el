@@ -23,9 +23,9 @@
 (defvar prolusion-theme-dir    (expand-file-name "prolusion-theme"    prolusion-dir) "")
 (defvar prolusion-snippets-dir (expand-file-name "prolusion-snippets" prolusion-dir) "")
 
-(make-directory prolusion-docs-dir t)
-(make-directory prolusion-elpa-dir t)
-(make-directory prolusion-save-dir t)
+(make-directory prolusion-docs-dir  t)
+(make-directory prolusion-elpa-dir  t)
+(make-directory prolusion-save-dir  t)
 (make-directory prolusion-irony-dir t)
 
 (add-to-list              'load-path prolusion-core-dir)
