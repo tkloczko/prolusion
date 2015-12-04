@@ -65,13 +65,13 @@ keybindings.
 | <kbd>`C--`</kbd> | `text-scale-decrease` |
 
 | Keybinding         | Function              |
-| ------------------ |:--------------------- |
+| ------------------ | ---------------------:|
 | <kbd>`C-x (`</kbd> | `start-kbd-macro`     |
 | <kbd>`C-x )`</kbd> | `end-kbd-macro`       |
 | <kbd>`C-x e`</kbd> | `call-last-kbd-macro` |
 
 | Keybinding             | Function        |
-| ---------------------- |:--------------- |
+| ---------------------- | ---------------:|
 | <kbd>`C-M-left`</kbd>  | `forward-sexp`  |
 | <kbd>`C-M-right`</kbd> | `backward-sexp` |
 
@@ -118,7 +118,7 @@ keybindings.
 | <kbd>`C-c e g`</kbd> | `update-file-header`       |
 | <kbd>`C-c e l`</kbd> | `prolusion-duplicate-line` |
 | <kbd>`C-c e e`</kbd> | `iedit-mode`               |
-| <kbd>`C-c e p`</kbd> | `helm-mini`                |
+| <kbd>`C-c e f`</kbd> | `helm-mini`                |
 
 **prolusion-snippets**
 
@@ -131,7 +131,7 @@ keybindings.
 **prolusion-docs**
 
 | Keybinding           | Function                    |
-| -------------------- | ---------------------------:|
+| -------------------- |:--------------------------- |
 | <kbd>`C-c d d`</kbd> | `helm-dash`                 |
 | <kbd>`C-c d p`</kbd> | `helm-dash-at-point`        |
 | <kbd>`C-c d i`</kbd> | `helm-dash-install-docset`  |
