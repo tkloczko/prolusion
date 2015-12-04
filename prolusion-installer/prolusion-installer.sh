@@ -67,7 +67,7 @@ prolusion_install () {
     fi
 }
 
-prolusion_usage() {
+prolusion_usage () {
     prolusion_clear "Usage: $0 [OPTION]"
     prolusion_clear "  -h, --help \t \t \t Display this help and exit"
     prolusion_clear ""
