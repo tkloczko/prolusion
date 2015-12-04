@@ -33,11 +33,6 @@
 (add-to-list 'custom-theme-load-path prolusion-theme-dir)
 
 (require 'prolusion-packages)
-
-(prolusion-require-package 'benchmark-init)
-
-(benchmark-init/activate)
-
 (require 'prolusion-ui)
 (require 'prolusion-behavior)
 (require 'prolusion-eshell)
@@ -53,9 +48,6 @@
 (require 'prolusion-docs)
 (require 'prolusion-projectile)
 (require 'prolusion-builtins)
-
-(benchmark-init/show-durations-tabulated)
-(benchmark-init/deactivate)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; init.el ends here
