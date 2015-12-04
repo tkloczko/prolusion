@@ -29,25 +29,10 @@
 (setq company-minimum-prefix-length 1)
 (setq company-tooltip-flip-when-above t)
 
-(setq qmltypes-parser-file-list `(
-      "/Users/jwintz/Development/qt/5.5/clang_64/qml/QtQuick/Controls/plugins.qmltypes"
-      "/Users/jwintz/Development/qt/5.5/clang_64/qml/QtQuick/Dialogs/plugins.qmltypes"
-      "/Users/jwintz/Development/qt/5.5/clang_64/qml/QtQuick/Extras/plugins.qmltypes"
-      "/Users/jwintz/Development/qt/5.5/clang_64/qml/QtQuick/Layouts/plugins.qmltypes"
-      "/Users/jwintz/Development/qt/5.5/clang_64/qml/QtQuick/LocalStorage/plugins.qmltypes"
-      "/Users/jwintz/Development/qt/5.5/clang_64/qml/QtQuick/Particles.2/plugins.qmltypes"
-      "/Users/jwintz/Development/qt/5.5/clang_64/qml/QtQuick/PrivateWidgets/plugins.qmltypes"
-      "/Users/jwintz/Development/qt/5.5/clang_64/qml/QtQuick/Window.2/plugins.qmltypes"
-      "/Users/jwintz/Development/qt/5.5/clang_64/qml/QtQuick/XmlListModel/plugins.qmltypes"
-      "/Users/jwintz/Development/qt/5.5/clang_64/qml/QtQuick.2/plugins.qmltypes"))
-
-(prolusion-require-package 'company-qml)
-
 (eval-after-load 'company '(add-to-list 'company-backends 'company-qml))
 (eval-after-load 'company '(add-to-list 'company-backends 'company-irony))
 (eval-after-load 'company '(add-to-list 'company-backends 'company-irony-c-headers))
 (eval-after-load 'company '(add-to-list 'company-backends 'company-cmake))
-(eval-after-load 'company '(add-to-list 'company-backends 'company-qml))
 
 ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Completion hooks
@@ -59,7 +44,6 @@
 (add-hook 'emacs-lisp-mode-hook 'company-mode)
 (add-hook      'cmake-mode-hook 'company-mode)
 (add-hook       'html-mode-hook 'company-mode)
-(add-hook        'qml-mode-hook 'company-mode)
 
 ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Completion modeline

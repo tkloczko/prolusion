@@ -17,6 +17,7 @@
 ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (prolusion-require-package 'smartparens)
+(prolusion-require-package 'whitespace)
 (prolusion-require-package 'undo-tree)
 (prolusion-require-package 'header2)
 (prolusion-require-package 'iedit)
@@ -26,7 +27,6 @@
 ;; Editor setup
 ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-(require 'whitespace)
 (require 'smartparens-config)
 
 (setq-default indent-tabs-mode nil)
