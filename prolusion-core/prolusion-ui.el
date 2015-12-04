@@ -31,8 +31,8 @@
    (load-theme 'prolusion-dark t))
 
 (when (display-graphic-p)
-  (set-frame-parameter (selected-frame) 'alpha '(95 85))
-  (add-to-list 'default-frame-alist '(alpha 95 85)))
+  (set-frame-parameter (selected-frame) 'alpha '(95 90))
+  (add-to-list 'default-frame-alist    '(alpha   95 90)))
 
 (setq inhibit-startup-message t)
 

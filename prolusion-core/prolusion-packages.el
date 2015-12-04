@@ -45,7 +45,7 @@
        (message "Loading package %s" package)
        (unless (package-installed-p package)
          (package-install package))
-       (require 'package))
+       (require package))
 
 (defun prolusion-upgrade () ""
        (interactive)

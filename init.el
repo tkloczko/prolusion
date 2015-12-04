@@ -39,7 +39,6 @@
 (benchmark-init/activate)
 
 (require 'prolusion-ui)
-(require 'prolusion-logging)
 (require 'prolusion-behavior)
 (require 'prolusion-eshell)
 (require 'prolusion-editor)

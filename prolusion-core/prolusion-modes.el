@@ -21,7 +21,6 @@
 (prolusion-require-package 'markdown-mode)
 (prolusion-require-package 'qml-mode)
 (prolusion-require-package 'rbenv)
-(prolusion-require-package 'rainbow-mode)
 (prolusion-require-package 'yaml-mode)
 (prolusion-require-package 'js2-mode)
 (prolusion-require-package 'js2-refactor)
