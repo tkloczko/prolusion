@@ -35,35 +35,41 @@
          (abbreviate-file-name (buffer-file-name)) "%b"))))
 
 ;; yes or no
+;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (fset 'yes-or-no-p 'y-or-n-p)
 
 ;; custom file
+;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-(setq custom-file (expand-file-name "custom" prolusion-save-dir))
+(setq custom-file (expand-file-name "prolusion-behavior-custom" prolusion-save-dir))
 
 ;; save place
+;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-(setq save-place-file (expand-file-name "place" prolusion-save-dir))
+(setq save-place-file (expand-file-name "prolusion-behavior-place" prolusion-save-dir))
 
 (setq-default save-place t)
 
 ;; minimize buffer count
+;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (setq-default display-buffer-reuse-frames t)
 
 ;; save history
+;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (setq savehist-additional-variables
  '(search ring regexp-search-ring)
    savehist-autosave-interval 60
-   savehist-file (expand-file-name "history" prolusion-save-dir))
+   savehist-file (expand-file-name "prolusion-behavior-history" prolusion-save-dir))
 
 (savehist-mode +1)
 
 ;; recent files
+;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-(setq recentf-save-file (expand-file-name "files" prolusion-save-dir))
+(setq recentf-save-file (expand-file-name "prolusion-behavior-files" prolusion-save-dir))
 (setq recentf-keep '(file-remote-p file-readable-p))
 (setq recentf-max-saved-items 500)
 (setq recentf-max-menu-items 15)
@@ -72,6 +78,7 @@
 (recentf-mode +1)
 
 ;; automatic save
+;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (setq auto-save-list-file-prefix prolusion-save-dir)
 
@@ -83,25 +90,29 @@
 (global-auto-revert-mode t)
 
 ;; keybindings helper
+;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (which-key-mode)
 
 ;; dired
+;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (setq dired-recursive-deletes 'always)
 (setq dired-recursive-copies  'always)
 
 ;; highlight cursor after window moves
+;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (beacon-mode 1)
 
 ;; restore window position and size as well as opened buffers
+;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (setq desktop-path       prolusion-save-dir)
 (setq desktop-dirname    prolusion-save-dir)
 (setq desktop-path (list prolusion-save-dir))
-(setq desktop-base-file-name "desktop")
-(setq desktop-base-lock-name "desktop.lock")
+(setq desktop-base-file-name "prolusion-behavior-desktop")
+(setq desktop-base-lock-name "prolusion-behavior-desktop.lock")
 
 (when (display-graphic-p)
   (desktop-save-mode 1))

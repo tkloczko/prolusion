@@ -27,8 +27,8 @@
 
 (setq projectile-enable-caching t)
 (setq projectile-completion-system 'helm)
-(setq projectile-known-projects-file (expand-file-name "known" prolusion-projectile-dir))
-(setq projectile-cache-file          (expand-file-name "cache" prolusion-projectile-dir))
+(setq projectile-known-projects-file (expand-file-name "prolusion-projectile-known" prolusion-save-dir))
+(setq projectile-cache-file          (expand-file-name "prolusion-projectile-cache" prolusion-save-dir))
 
 (helm-projectile-on)
 

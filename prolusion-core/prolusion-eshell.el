@@ -23,7 +23,8 @@
 ;; Eshell setup
 ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-(setq eshell-directory-name prolusion-eshell-dir)
+(setq eshell-directory-name                                                 prolusion-save-dir)
+(setq eshell-history-file-name (expand-file-name "prolusion-eshell-history" prolusion-save-dir))
 
 (when (memq window-system '(mac ns))
   (setq exec-path-from-shell-arguments (quote ("-l")))

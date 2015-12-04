@@ -16,8 +16,8 @@
 ;; WWW setup
 ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-(setq url-cookie-file (expand-file-name "cookies" prolusion-www-dir))
-(setq url-configuration-directory prolusion-www-dir)
+(setq url-cookie-file (expand-file-name "prolusion-www-cookies" prolusion-save-dir))
+(setq url-configuration-directory prolusion-save-dir)
 (setq browse-url-browser-function 'eww-browse-url)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
