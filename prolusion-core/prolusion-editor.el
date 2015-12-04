@@ -62,7 +62,7 @@
 ;; Editor functions
 ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-(defun prolusion-duplicate-line()
+(defun prolusion-duplicate-line ()
   (interactive)
   (move-beginning-of-line 1)
   (kill-line)
