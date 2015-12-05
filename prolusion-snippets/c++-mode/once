@@ -1,0 +1,8 @@
+# -*- mode: snippet; require-final-newline: nil -*-
+# name: once
+# key: once
+# binding: direct-keybinding
+# --
+#pragma once
+
+$0
