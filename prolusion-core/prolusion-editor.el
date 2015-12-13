@@ -16,6 +16,7 @@
 ;; Editor requirements
 ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
+(prolusion-require-package 'rainbow-delimiters)
 (prolusion-require-package 'smartparens)
 (prolusion-require-package 'whitespace)
 (prolusion-require-package 'undo-tree)
@@ -77,6 +78,8 @@
 
 (add-hook   'find-file-hook (lambda () (whitespace-mode +1)))
 (add-hook 'before-save-hook (lambda () (whitespace-cleanup)))
+
+(add-hook 'prog-mode-hook 'rainbow-delimiters-mode)
 
 ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Editor modeline

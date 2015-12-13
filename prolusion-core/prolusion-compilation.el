@@ -13,33 +13,17 @@
 ;;; Code:
 
 ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; UI setup
+;; Compilation hooks
 ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-(set-frame-font "Inconsolata-14" nil t)
+(defun prolusion-after-compilation-hook (buffer message)
+    (pop-to-buffer buffer))
 
-(fringe-mode '(0 . 8))
-(tooltip-mode -1)
-(menu-bar-mode -1)
-(tool-bar-mode -1)
-(scroll-bar-mode -1)
-(blink-cursor-mode -1)
-(line-number-mode t)
-(column-number-mode t)
-(size-indication-mode t)
-
-(when (display-graphic-p)
-   (load-theme 'prolusion-dark t))
-
-(when (display-graphic-p)
-  (set-frame-parameter (selected-frame) 'alpha '(98 95))
-  (add-to-list 'default-frame-alist    '(alpha   98 95)))
-
-(setq inhibit-startup-message t)
+(add-hook 'compilation-finish-functions 'prolusion-after-compilation-hook)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-(provide 'prolusion-ui)
+(provide 'prolusion-compilation)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;; prolusion-ui.el ends here
+;;; prolusion-compilation.el ends here
