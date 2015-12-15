@@ -43,6 +43,8 @@
 (add-hook 'emacs-lisp-mode-hook 'company-mode)
 (add-hook      'cmake-mode-hook 'company-mode)
 (add-hook       'html-mode-hook 'company-mode)
+(add-hook        'qml-mode-hook 'company-mode)
+(add-hook        'js2-mode-hook 'company-mode)
 
 ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Completion modeline

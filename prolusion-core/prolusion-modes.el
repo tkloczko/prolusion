@@ -16,10 +16,11 @@
 ;; Modes requirements
 ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
+(prolusion-require-package 'rbenv)
+(prolusion-require-package 'rainbow-mode)
 (prolusion-require-package 'cmake-mode)
 (prolusion-require-package 'csharp-mode)
 (prolusion-require-package 'markdown-mode)
-(prolusion-require-package 'rbenv)
 (prolusion-require-package 'yaml-mode)
 (prolusion-require-package 'qml-mode)
 (prolusion-require-package 'js2-mode)
@@ -58,7 +59,15 @@
 ;; Modes hooks
 ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
+(add-hook 'qml-mode-hook      'rainbow-mode)
 (add-hook 'js2-mode-hook 'js2-refactor-mode)
+
+;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Modes modeline
+;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+(diminish 'js2-mode "Javascript")
+(diminish 'js2-refactor-mode)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
