@@ -18,6 +18,7 @@
 
 (prolusion-require-package      'projectile)
 (prolusion-require-package 'helm-projectile)
+(prolusion-require-package 'helm-ag)
 
 ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Projectile setup
