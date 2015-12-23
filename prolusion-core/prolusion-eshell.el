@@ -47,7 +47,7 @@
 
 (defun prolusion-eshell-no-highlight ()
   "No highlight in shell windows"
-  (hl-line-mode))
+  (hl-line-mode -1))
 
 ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Eshell hooks
