@@ -21,6 +21,7 @@
 (defvar prolusion-save-dir     (expand-file-name "prolusion-save"     prolusion-dir) "")
 (defvar prolusion-irony-dir    (expand-file-name "prolusion-irony"    prolusion-dir) "")
 (defvar prolusion-theme-dir    (expand-file-name "prolusion-theme"    prolusion-dir) "")
+(defvar prolusion-devel-dir    (expand-file-name "prolusion-devel"    prolusion-dir) "")
 (defvar prolusion-snippets-dir (expand-file-name "prolusion-snippets" prolusion-dir) "")
 (defvar prolusion-3rdparty-dir (expand-file-name "prolusion-3rdparty" prolusion-dir) "")
 
@@ -31,6 +32,7 @@
 
 (add-to-list              'load-path prolusion-core-dir)
 (add-to-list              'load-path prolusion-theme-dir)
+(add-to-list              'load-path prolusion-devel-dir)
 (add-to-list              'load-path prolusion-3rdparty-dir)
 (add-to-list 'custom-theme-load-path prolusion-theme-dir)
 
