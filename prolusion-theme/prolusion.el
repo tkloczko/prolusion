@@ -1,4 +1,4 @@
-; Version: $Id$
+;; Version: $Id$
 ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;
@@ -240,15 +240,15 @@ Also affects linum-mode background."
      `(c-annotation-face ((,class (:inherit font-lock-constant-face))))
 
      ;; company
-     (custom-set-faces
-      '(company-preview ((t (:foreground "darkgray" :underline t))))
-      '(company-preview-common ((t (:inherit company-preview))))
-      '(company-tooltip ((t (:background "black" :foreground "white"))))
-      '(company-tooltip-selection ((t (:background "steelblue" :foreground "white"))))
-      '(company-tooltip-common ((((type x)) (:inherit company-tooltip :weight bold)) (t (:inherit company-tooltip))))
-      '(company-tooltip-common-selection ((((type x)) (:inherit company-tooltip-selection :weight bold)) (t (:inherit company-tooltip-selection))))
-      `(company-scrollbar-bg ((t (:background "#000000"))))
-      `(company-scrollbar-fg ((t (:background "#202020")))))
+     ;; (custom-set-faces
+     ;;  '(company-preview ((t (:foreground "darkgray" :underline t))))
+     ;;  '(company-preview-common ((t (:inherit company-preview))))
+     ;;  '(company-tooltip ((t (:background "black" :foreground "white"))))
+     ;;  '(company-tooltip-selection ((t (:background "steelblue" :foreground "white"))))
+     ;;  '(company-tooltip-common ((((type x)) (:inherit company-tooltip :weight bold)) (t (:inherit company-tooltip))))
+     ;;  '(company-tooltip-common-selection ((((type x)) (:inherit company-tooltip-selection :weight bold)) (t (:inherit company-tooltip-selection))))
+     ;;  `(company-scrollbar-bg ((t (:background "#000000"))))
+     ;;  `(company-scrollbar-fg ((t (:background "#202020")))))
 
      ;; git-gutter
      (custom-set-faces

@@ -22,13 +22,16 @@
 (prolusion-require-package 'csharp-mode)
 (prolusion-require-package 'markdown-mode)
 (prolusion-require-package 'yaml-mode)
-(prolusion-require-package 'qml-mode)
 (prolusion-require-package 'js2-mode)
 (prolusion-require-package 'js2-refactor)
 
 ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Modes setup
 ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+(require 'json-mode)
+(require 'json-reformat)
+(require 'json-snatcher)
 
 (add-to-list 'auto-mode-alist '("\\.h$"          . c++-mode))
 (add-to-list 'auto-mode-alist '("\\.c$"          . c++-mode))
@@ -42,8 +45,9 @@
 (add-to-list 'auto-mode-alist '("\\.qs$"         . javascript-mode))
 (add-to-list 'auto-mode-alist '("\\.yml$"        . yaml-mode))
 (add-to-list 'auto-mode-alist '("\\.js\\'"       . js2-mode))
-(add-to-list 'auto-mode-alist '("\\.qml\\'"      . qml-mode))
+(add-to-list 'auto-mode-alist '("\\.json\\'"     . json-mode))
 (add-to-list 'auto-mode-alist '("\\.info\\'"     . info-mode))
+(add-to-list 'auto-mode-alist '("\\.qmltypes\\'" . json-mode))
 
 ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Modes functions
