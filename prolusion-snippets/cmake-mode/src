@@ -3,7 +3,7 @@
 # key: src
 # binding: direct-keybinding
 # --
-project(S0)
+project($0)
 
 ## #################################################################
 ## Sources
