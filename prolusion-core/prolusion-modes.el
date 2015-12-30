@@ -49,6 +49,11 @@
 (add-to-list 'auto-mode-alist '("\\.info\\'"        . info-mode))
 (add-to-list 'auto-mode-alist '("\\.qmltypes\\'"    . json-mode))
 
+;; Experimental
+;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+(require 'qompany-mode)
+
 ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Modes functions
 ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -63,15 +68,17 @@
 ;; Modes hooks
 ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-(add-hook 'qml-mode-hook      'rainbow-mode)
-(add-hook 'js2-mode-hook 'js2-refactor-mode)
+(add-hook 'qml-mode-hook           'rainbow-mode)
+(add-hook 'js2-mode-hook      'js2-refactor-mode)
+(add-hook 'prog-mode-hook 'prettify-symbols-mode)
 
 ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Modes modeline
 ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-(diminish      'rainbow-mode)
-(diminish 'js2-refactor-mode)
+(diminish          'rainbow-mode)
+(diminish     'js2-refactor-mode)
+(diminisg 'prettify-symbols-mode)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
