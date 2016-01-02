@@ -78,7 +78,7 @@
 
 (diminish          'rainbow-mode)
 (diminish     'js2-refactor-mode)
-(diminisg 'prettify-symbols-mode)
+(diminish 'prettify-symbols-mode)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 

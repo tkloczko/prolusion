@@ -562,35 +562,7 @@ Also affects linum-mode background."
      `(font-latex-subscript-face ((,class (:height ,prolusion-height-minus-1))))
      `(font-latex-superscript-face ((,class (:height ,prolusion-height-minus-1))))
      `(font-latex-verbatim-face ((,class (:inherit fixed-pitch :foreground ,base0 :slant italic))))
-     `(font-latex-warning-face ((,class (:inherit bold :foreground ,orange))))
-
-     ;; which-func-mode
-     `(which-func ((,class (:foreground ,green))))
-
-     ;; window-number-mode
-     `(window-number-face ((,class (:foreground ,green))))
-
-     ;; yascroll
-     `(yascroll:thumb-text-area ((,class (:foreground ,prolusion-comments :background ,prolusion-comments))))
-     `(yascroll:thumb-fringe ((,class (:foreground ,prolusion-comments :background ,prolusion-comments))))
-
-     ;; compilation
-     `(compilation-message-face 'default)
-
-     ;; fill-column-indicator
-     `(fci-rule-color ,prolusion-hl)
-
-     ;; xcscope
-     `(cscope-separator-face ((t (:foreground "VioletRed4" :weight bold :underline nil :overline nil))))
-
-     ;; magit
-     `(magit-diff-use-overlays nil)
-
-     ;; highlight-changes
-     `(highlight-changes-colors '(,magenta ,violet))
-
-     ;; highlight-tail
-     `(highlight-tail-colors '((,prolusion-hl . 0)(,green-lc . 20)(,cyan-lc . 30)(,blue-lc . 50) (,yellow-lc . 60)(,orange-lc . 70)(,magenta-lc . 85)(,prolusion-hl . 100))))
+     `(font-latex-warning-face ((,class (:inherit bold :foreground ,orange)))))
 
      (when childtheme (funcall childtheme))))
 

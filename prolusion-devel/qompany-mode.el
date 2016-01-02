@@ -12,12 +12,19 @@
 ;;
 ;;; Code:
 
-(defvar qompany-mode-hook nil "")
-(defvar qompany-mode-indent-offset 4 "")
-(defvar qompany-mode-indent-tabs nil)
-;; (defvar qompany-mode-keywords  '(%1))
-;; (defvar qompany-mode-types     '(%2))
-;; (defvar qompany-mode-constants '(%3))
+(defvar qompany-mode-hook nil
+  "Qompany mode hooks")
+
+(defvar qompany-mode-indent-offset 4
+  "Qompany mode indent offset")
+
+(defvar qompany-mode-indent-tabs nil
+  "Qompany mode indent tabs")
+
+;; (defvar qompany-mode-keywords  '("import"))
+;; (defvar qompany-mode-types     '())
+;; (defvar qompany-mode-enums     '(%3))
+;; (defvar qompany-mode-constants '(%4))
 
 (defvar qompany-mode-syntax-table
   (let ((table (make-syntax-table)))
