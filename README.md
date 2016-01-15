@@ -37,8 +37,8 @@ keybindings.
 
 **Emacs**
 
-    $ brew   install emacs --use-git-head --cocoa # if emacs is not installed
-    $ brew reinstall emacs --use-git-head --cocoa # if emacs is     installed
+    $ brew   install emacs --use-git-head --cocoa --HEAD # if emacs is not installed
+    $ brew reinstall emacs --use-git-head --cocoa --HEAD # if emacs is     installed
 
 **Emacs prolusion**
 
