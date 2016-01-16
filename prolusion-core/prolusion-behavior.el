@@ -121,9 +121,10 @@
 ;; Behavior modeline
 ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-(diminish    'abbrev-mode)
-(diminish    'beacon-mode)
-(diminish 'which-key-mode)
+(diminish      'abbrev-mode)
+(diminish      'beacon-mode)
+(diminish   'which-key-mode)
+(diminish 'auto-revert-mode)
 
 ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Behavior keybindings
