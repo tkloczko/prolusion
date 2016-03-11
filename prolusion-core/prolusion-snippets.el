@@ -22,7 +22,7 @@
 ;; Snippets setup
 ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-(setq yas-snippet-dirs prolusion-snippets-dir)
+(setq yas-snippet-dirs '(prolusion-snippets-dir))
 (setq yas-prompt-functions '(yas-dropdown-prompt))
 
 (yas-global-mode 1)
