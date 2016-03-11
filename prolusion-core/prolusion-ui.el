@@ -18,15 +18,17 @@
 
 (set-frame-font "Inconsolata-14" nil t)
 
-(fringe-mode '(0 . 8))
 (tooltip-mode -1)
 (menu-bar-mode -1)
 (tool-bar-mode -1)
 (scroll-bar-mode -1)
 (blink-cursor-mode -1)
+
 (line-number-mode t)
 (column-number-mode t)
 (size-indication-mode t)
+
+(fringe-mode '(4 . 0))
 
 (when (display-graphic-p)
    (load-theme 'prolusion-dark t))

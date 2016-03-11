@@ -22,7 +22,6 @@
 (prolusion-require-package 'saveplace)
 (prolusion-require-package 'which-key)
 (prolusion-require-package 'resize-window)
-(prolusion-require-package 'mwe-log-commands)
 
 ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Behavior setup

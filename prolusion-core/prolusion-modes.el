@@ -18,15 +18,16 @@
 
 (prolusion-require-package 'rbenv)
 (prolusion-require-package 'rainbow-mode)
-(prolusion-require-package 'cmake-mode)
-(prolusion-require-package 'csharp-mode)
-(prolusion-require-package 'markdown-mode)
-(prolusion-require-package 'yaml-mode)
-(prolusion-require-package 'js2-mode)
-(prolusion-require-package 'js2-refactor)
-(prolusion-require-package 'json-mode)
-(prolusion-require-package 'json-reformat)
-(prolusion-require-package 'json-snatcher)
+(prolusion-install-package 'cmake-mode)
+(prolusion-install-package 'csharp-mode)
+(prolusion-install-package 'markdown-mode)
+(prolusion-install-package 'yaml-mode)
+(prolusion-install-package 'js2-mode)
+(prolusion-install-package 'js2-refactor)
+(prolusion-install-package 'json-mode)
+(prolusion-install-package 'json-reformat)
+(prolusion-install-package 'json-snatcher)
+(prolusion-install-package 'qml-mode)
 
 ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Modes setup
@@ -37,21 +38,18 @@
 (add-to-list 'auto-mode-alist '("\\.tpp\\'"         . c++-mode))
 (add-to-list 'auto-mode-alist '(".gitignore\\'"     . makefile-mode))
 (add-to-list 'auto-mode-alist '(".gitattributes\\'" . makefile-mode))
-(add-to-list 'auto-mode-alist '("\\.cmake\\'"       . cmake-mode))
 (add-to-list 'auto-mode-alist '("qmldir\\'"         . makefile-mode))
 (add-to-list 'auto-mode-alist '("\\.pr[io]\\'"      . makefile-mode))
 (add-to-list 'auto-mode-alist '("\\.qrc\\'"         . xml-mode))
-(add-to-list 'auto-mode-alist '("\\.qs\\'"          . javascript-mode))
-(add-to-list 'auto-mode-alist '("\\.yml\\'"         . yaml-mode))
-(add-to-list 'auto-mode-alist '("\\.js\\'"          . js2-mode))
-(add-to-list 'auto-mode-alist '("\\.json\\'"        . json-mode))
 (add-to-list 'auto-mode-alist '("\\.info\\'"        . info-mode))
 (add-to-list 'auto-mode-alist '("\\.qmltypes\\'"    . json-mode))
 
-;; Experimental
-;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-
-(require 'qompany-mode)
+(use-package      cmake-mode :mode "\\.cmake\\'" "\\CMakeLists.txt\\'")
+(use-package javascript-mode :mode "\\.qs\\'")
+(use-package       yaml-mode :mode "\\.yml\\'")
+(use-package        js2-mode :mode "\\.js\\'")
+(use-package       json-mode :mode "\\.json\\'")
+(use-package        qml-mode :mode "\\.qml\\'")
 
 ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Modes functions
@@ -67,8 +65,8 @@
 ;; Modes hooks
 ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-(add-hook 'qml-mode-hook           'rainbow-mode)
-(add-hook 'js2-mode-hook      'js2-refactor-mode)
+(add-hook  'qml-mode-hook           'rainbow-mode)
+(add-hook  'js2-mode-hook      'js2-refactor-mode)
 (add-hook 'prog-mode-hook 'prettify-symbols-mode)
 
 ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
