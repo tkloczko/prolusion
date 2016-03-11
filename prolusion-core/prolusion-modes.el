@@ -24,14 +24,13 @@
 (prolusion-require-package 'yaml-mode)
 (prolusion-require-package 'js2-mode)
 (prolusion-require-package 'js2-refactor)
+(prolusion-require-package 'json-mode)
+(prolusion-require-package 'json-reformat)
+(prolusion-require-package 'json-snatcher)
 
 ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Modes setup
 ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-
-(require 'json-mode)
-(require 'json-reformat)
-(require 'json-snatcher)
 
 (add-to-list 'auto-mode-alist '("\\.h\\'"           . c++-mode))
 (add-to-list 'auto-mode-alist '("\\.c\\'"           . c++-mode))
