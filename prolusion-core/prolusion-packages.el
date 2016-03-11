@@ -26,8 +26,8 @@
 
 (setq package-user-dir prolusion-elpa-dir)
 
-(add-to-list 'package-archives '("gnu"              . "https://elpa.gnu.org/packages/"))
-(add-to-list 'package-archives '("melpa"               . "https://melpa.org/packages/"))
+(add-to-list 'package-archives '("gnu" . "https://elpa.gnu.org/packages/"))
+(add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/"))
 (add-to-list 'package-archives '("melpa-stable" . "https://stable.melpa.org/packages/"))
 
 (package-initialize)
@@ -40,27 +40,30 @@
 ;; Package functions
 ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-(defun prolusion-require-package (package) ""
-       (message "Loading package %s" package)
-       (unless (package-installed-p package)
-         (package-install package))
-       (require package))
+(defun prolusion-require-package (package)
+  ""
+  (message "Loading package %s" package)
+  (unless (package-installed-p package)
+    (package-install package))
+  (require package))
 
-(defun prolusion-upgrade () ""
-       (interactive)
-       (cd prolusion-dir)
-       (message "Upgrading prolusion")
-       (shell-command "git pull")
-       (message "Upgrade finished. Restart Emacs to complete the process."))
+(defun prolusion-upgrade ()
+  ""
+  (interactive)
+  (cd prolusion-dir)
+  (message "Upgrading prolusion")
+  (shell-command "git pull")
+  (message "Upgrade finished. Restart Emacs to complete the process."))
 
-(defun prolusion-upgrade-packages () ""
-       (interactive)
-       (message "Upgrading prolusion packages")
-       (package-refresh-contents)
-       (save-window-excursion
-         (package-list-packages t)
-         (package-menu-mark-upgrades)
-         (package-menu-execute t)))
+(defun prolusion-upgrade-packages ()
+  ""
+  (interactive)
+  (message "Upgrading prolusion packages")
+  (package-refresh-contents)
+  (save-window-excursion
+    (package-list-packages t)
+    (package-menu-mark-upgrades)
+    (package-menu-execute t)))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
