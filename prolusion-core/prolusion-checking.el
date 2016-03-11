@@ -23,7 +23,7 @@
 ;; Checking setup
 ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-(setq flycheck-indication-mode 'right-fringe)
+(setq flycheck-indication-mode 'left-fringe)
 
 (when (fboundp 'define-fringe-bitmap)
   (define-fringe-bitmap 'prolusion-flycheck-fringe-indicator

@@ -181,12 +181,6 @@ keybindings.
 | Keybinding           | Function                    |
 | -------------------- |:--------------------------- |
 | <kbd>`C-c v m`</kbd> | `magit-status`              |
-| <kbd>`C-c v g`</kbd> | `git-gutter::toggle`        |
-| <kbd>`C-c v =`</kbd> | `git-gutter::popup-hunk`    |
-| <kbd>`C-c v p`</kbd> | `git-gutter::previous-hunk` |
-| <kbd>`C-c v n`</kbd> | `git-gutter::next-hunk`     |
-| <kbd>`C-c v s`</kbd> | `git-gutter::stage-hunk`    |
-| <kbd>`C-c v r`</kbd> | `git-gutter::revert-hunk`   |
 
 **prolusion-projectile**
 
