@@ -24,8 +24,6 @@
 ;; UI setup
 ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-(require 'window-numbering)
-
 (window-numbering-mode +1)
 
 (set-frame-font "Source Code Pro-13" nil t)
