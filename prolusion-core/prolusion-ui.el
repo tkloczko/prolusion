@@ -18,11 +18,15 @@
 
 (prolusion-require-package 'window-numbering)
 (prolusion-install-package 'spacemacs-theme)
-(prolusion-install-package 'spaceline)
+(prolusion-require-package 'spaceline)
 
 ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; UI setup
 ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+(require 'window-numbering)
+
+(window-numbering-mode +1)
 
 (set-frame-font "Source Code Pro-13" nil t)
 
@@ -44,7 +48,10 @@
   (setq ns-use-srgb-colorspace nil)
   (require 'spaceline-config)
   (setq powerline-default-separator 'wave)
-  (spaceline-spacemacs-theme))
+  (setq spaceline-toggle-window-number-on-p t)
+  (setq spaceline-toggle-workspace-number-on-p nil)
+  (spaceline-spacemacs-theme)
+  (spaceline-helm-mode +1))
 
 (when (display-graphic-p)
   (set-frame-parameter (selected-frame) 'alpha '(98 95))

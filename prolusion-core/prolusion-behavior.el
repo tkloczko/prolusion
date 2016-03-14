@@ -33,6 +33,11 @@
      (if (buffer-file-name)
          (abbreviate-file-name (buffer-file-name)) "%b"))))
 
+;; window numering
+;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+(window-numbering-mode +1)
+
 ;; yes or no
 ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
