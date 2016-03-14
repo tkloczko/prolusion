@@ -20,21 +20,15 @@
 (defvar prolusion-elpa-dir     (expand-file-name "prolusion-elpa"     prolusion-dir) "")
 (defvar prolusion-save-dir     (expand-file-name "prolusion-save"     prolusion-dir) "")
 (defvar prolusion-irony-dir    (expand-file-name "prolusion-irony"    prolusion-dir) "")
-(defvar prolusion-theme-dir    (expand-file-name "prolusion-theme"    prolusion-dir) "")
 (defvar prolusion-devel-dir    (expand-file-name "prolusion-devel"    prolusion-dir) "")
 (defvar prolusion-snippets-dir (expand-file-name "prolusion-snippets" prolusion-dir) "")
-(defvar prolusion-3rdparty-dir (expand-file-name "prolusion-3rdparty" prolusion-dir) "")
 
 (make-directory prolusion-docs-dir  t)
 (make-directory prolusion-elpa-dir  t)
 (make-directory prolusion-save-dir  t)
 (make-directory prolusion-irony-dir t)
 
-(add-to-list              'load-path prolusion-core-dir)
-(add-to-list              'load-path prolusion-theme-dir)
-(add-to-list              'load-path prolusion-devel-dir)
-(add-to-list              'load-path prolusion-3rdparty-dir)
-(add-to-list 'custom-theme-load-path prolusion-theme-dir)
+(add-to-list 'load-path prolusion-core-dir)
 
 (require 'prolusion-packages)
 (require 'prolusion-ui)
