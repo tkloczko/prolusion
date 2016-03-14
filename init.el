@@ -14,8 +14,7 @@
 ;;
 ;; (package-initialize)
 
-;;(defvar prolusion-dir          (file-name-directory load-file-name))
-(defvar prolusion-dir          (file-name-directory "/Users/jwintz/.prolusion.d/init.el"))
+(defvar prolusion-dir          (file-name-directory load-file-name))
 (defvar prolusion-core-dir     (expand-file-name "prolusion-core"     prolusion-dir) "")
 (defvar prolusion-docs-dir     (expand-file-name "prolusion-docs"     prolusion-dir) "")
 (defvar prolusion-elpa-dir     (expand-file-name "prolusion-elpa"     prolusion-dir) "")

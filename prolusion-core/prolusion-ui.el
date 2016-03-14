@@ -13,10 +13,18 @@
 ;;; Code:
 
 ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; UI requirements
+;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+(prolusion-require-package 'window-numbering)
+(prolusion-install-package 'spacemacs-theme)
+(prolusion-install-package 'spaceline)
+
+;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; UI setup
 ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-(set-frame-font "Inconsolata-14" nil t)
+(set-frame-font "Source Code Pro-13" nil t)
 
 (tooltip-mode -1)
 (menu-bar-mode -1)
@@ -31,7 +39,12 @@
 (fringe-mode '(12 . 0))
 
 (when (display-graphic-p)
-   (load-theme 'prolusion-dark t))
+  (load-theme 'spacemacs-dark t)
+  (set-face-attribute 'mode-line nil :box nil)
+  (setq ns-use-srgb-colorspace nil)
+  (require 'spaceline-config)
+  (setq powerline-default-separator 'wave)
+  (spaceline-spacemacs-theme))
 
 (when (display-graphic-p)
   (set-frame-parameter (selected-frame) 'alpha '(98 95))
