@@ -16,6 +16,7 @@
 ;; Behavior requirements
 ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
+(prolusion-require-package 'anzu)
 (prolusion-require-package 'beacon)
 (prolusion-require-package 'recentf)
 (prolusion-require-package 'diminish)
@@ -32,11 +33,6 @@
     (:eval
      (if (buffer-file-name)
          (abbreviate-file-name (buffer-file-name)) "%b"))))
-
-;; window numering
-;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-
-(window-numbering-mode +1)
 
 ;; yes or no
 ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -109,6 +105,11 @@
 
 (beacon-mode 1)
 
+;; highlight cursor after window moves
+;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+(global-anzu-mode 1)
+
 ;; restore window position and size as well as opened buffers
 ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
@@ -125,6 +126,7 @@
 ;; Behavior modeline
 ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
+(diminish        'anzu-mode)
 (diminish      'abbrev-mode)
 (diminish      'beacon-mode)
 (diminish   'which-key-mode)
