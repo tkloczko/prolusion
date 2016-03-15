@@ -105,10 +105,12 @@
 
 (beacon-mode 1)
 
-;; highlight cursor after window moves
+;; show number of candidates for searches
 ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-(global-anzu-mode 1)
+(global-anzu-mode +1)
+
+(setq anzu-cons-mode-line-p nil)
 
 ;; restore window position and size as well as opened buffers
 ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;

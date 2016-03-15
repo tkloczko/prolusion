@@ -42,7 +42,6 @@
 
 (when (display-graphic-p)
   (load-theme 'spacemacs-dark t)
-  (set-face-attribute 'mode-line nil :box nil)
   (setq ns-use-srgb-colorspace nil)
   (require 'spaceline-config)
   (setq powerline-default-separator 'wave)
