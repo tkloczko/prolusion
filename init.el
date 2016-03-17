@@ -40,7 +40,6 @@
 (require 'prolusion-irony)
 (require 'prolusion-completion)
 (require 'prolusion-checking)
-(require 'prolusion-scoping)
 (require 'prolusion-compilation)
 (require 'prolusion-www)
 (require 'prolusion-vc)
