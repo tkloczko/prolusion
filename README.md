@@ -50,6 +50,13 @@ keybindings.
 
 ### Keybindings
 
+**prolusion-packages**
+
+| Keybinding         | Function                     |
+| ------------------ |:---------------------------- |
+| <kbd>`C-u o`</kbd> | `prolusion-upgrade`          |
+| <kbd>`C-u p`</kbd> | `prolusion-upgrade-packages` |
+
 **prolusion-behavior**
 
 | Keybinding         | Function          |
