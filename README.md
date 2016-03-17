@@ -58,7 +58,7 @@ Take care to install all the fonts provided in `.prolusion/porlusion-fonts`.
 
 | Keybinding         | Function                     |
 | ------------------ |:---------------------------- |
-| <kbd>`C-u o`</kbd> | `prolusion-upgrade`          |
+| <kbd>`C-u u`</kbd> | `prolusion-upgrade`          |
 | <kbd>`C-u p`</kbd> | `prolusion-upgrade-packages` |
 
 **prolusion-behavior**
