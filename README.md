@@ -48,11 +48,11 @@ keybindings.
 
     M-x prolusion-upgrade-packages
 
-### Fonts
+## Fonts
 
 Take care to install all the fonts provided in `.prolusion/porlusion-fonts`.
 
-### Keybindings
+## Keybindings
 
 **prolusion-packages**
 
