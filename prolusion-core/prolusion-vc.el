@@ -24,6 +24,10 @@
 
 (use-package magit :defer t)
 
+;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; VC modeline
+;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
 (defadvice vc-mode-line (after strip-backend () activate)
     (when (stringp vc-mode)
       (let ((gitlogo (replace-regexp-in-string "^ Git." "  " vc-mode)))
