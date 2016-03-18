@@ -50,7 +50,7 @@ keybindings.
 
 ## Fonts
 
-Take care to install all the fonts provided in `.prolusion/porlusion-fonts`.
+Take care to install all the fonts provided in `.prolusion/prolusion-fonts`.
 
 ## Keybindings
 
