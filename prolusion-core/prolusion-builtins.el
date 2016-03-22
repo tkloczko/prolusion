@@ -22,8 +22,7 @@
 (global-set-key (kbd "C-c b o")   'open-rectangle)
 (global-set-key (kbd "C-c b t") 'string-rectangle)
 (global-set-key (kbd "C-c b y")   'yank-rectangle)
-
-(global-set-key (kbd "C-c b w")  'wdired-change-to-wdired-mode)
+(global-set-key (kbd "C-c b w") 'wdired-change-to-wdired-mode)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 

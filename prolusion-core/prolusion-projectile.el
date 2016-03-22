@@ -36,6 +36,7 @@
 
 (use-package helm-projectile
   :config
+  (require      `ag)
   (require `helm-ag)
 
   :bind (
