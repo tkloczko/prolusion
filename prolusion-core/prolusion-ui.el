@@ -38,7 +38,7 @@
 (column-number-mode t)
 (size-indication-mode t)
 
-(fringe-mode '(16 . 0))
+(fringe-mode '(8 . 0))
 
 (when (display-graphic-p)
   (load-theme 'spacemacs-dark t)

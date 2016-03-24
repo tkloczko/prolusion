@@ -16,16 +16,19 @@
 ;; Snippets requirements
 ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-(prolusion-require-package 'yasnippet)
+(prolusion-install-package 'yasnippet)
 
 ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Snippets setup
 ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-(setq yas-snippet-dirs '(prolusion-snippets-dir))
-(setq yas-prompt-functions '(yas-dropdown-prompt))
+(use-package yasnippet
+  :defer t
+  :config
+  (setq yas-snippet-dirs '(prolusion-snippets-dir))
+  (setq yas-prompt-functions '(yas-dropdown-prompt))
 
-(yas-global-mode 1)
+  (yas-global-mode 1))
 
 ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Snippets hooks
