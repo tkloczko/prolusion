@@ -168,3 +168,10 @@ Take care to install all the fonts provided in `.prolusion/prolusion-fonts`.
 | <kbd>C-c p s g</kbd> | `helm-projectile-grep`                        |
 | <kbd>C-c p s a</kbd> | `helm-projectile-ack`                         |
 | <kbd>C-c p s s</kbd> | `helm-projectile-ag`                          |
+
+**prolusion-projectile**
+
+| Keybinding           | Function                  |
+| -------------------- |:------------------------- |
+| <kbd>C-c ! n</kbd>   | `flycheck-next-error`     |
+| <kbd>C-c ! p</kbd>   | `flycheck-previous-error` |
