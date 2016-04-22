@@ -45,9 +45,9 @@
   (setq ns-use-srgb-colorspace nil)
   (require 'spaceline-config)
   (setq powerline-default-separator 'wave)
-  (setq spaceline-window-numbers-unicode t)
+  ;; (setq spaceline-window-numbers-unicode t)
   (setq spaceline-toggle-window-number-on-p t)
-  (setq spaceline-toggle-workspace-number-on-p nil)
+  ;; (setq spaceline-toggle-workspace-number-on-p nil)
   (spaceline-spacemacs-theme)
   (spaceline-helm-mode +1))
 

@@ -27,8 +27,8 @@
   :config
   (setq yas-snippet-dirs '(prolusion-snippets-dir))
   (setq yas-prompt-functions '(yas-dropdown-prompt))
-
-  (yas-global-mode 1))
+  (yas-global-mode 1)
+  :diminish yas-minor-mode)
 
 ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Snippets hooks
