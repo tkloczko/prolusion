@@ -169,7 +169,7 @@ Take care to install all the fonts provided in `.prolusion/prolusion-fonts`.
 | <kbd>C-c p s a</kbd> | `helm-projectile-ack`                         |
 | <kbd>C-c p s s</kbd> | `helm-projectile-ag`                          |
 
-**prolusion-projectile**
+**prolusion-checking**
 
 | Keybinding           | Function                  |
 | -------------------- |:------------------------- |
