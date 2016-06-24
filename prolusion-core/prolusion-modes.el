@@ -35,7 +35,14 @@
 
 (add-to-list 'auto-mode-alist '("\\.h\\'"           . c++-mode))
 (add-to-list 'auto-mode-alist '("\\.c\\'"           . c++-mode))
+(add-to-list 'auto-mode-alist '("\\.cc$"            . c++-mode))
+(add-to-list 'auto-mode-alist '("\\.C$"             . c++-mode))
+(add-to-list 'auto-mode-alist '("\\.cpp$"           . c++-mode))
+(add-to-list 'auto-mode-alist '("\\.cxx$"           . c++-mode))
 (add-to-list 'auto-mode-alist '("\\.tpp\\'"         . c++-mode))
+(add-to-list 'auto-mode-alist '("\\.tcc$"           . c++-mode))
+(add-to-list 'auto-mode-alist '("\\.hpp$"           . c++-mode))
+(add-to-list 'auto-mode-alist '("\\.hxx$"           . c++-mode))
 (add-to-list 'auto-mode-alist '("\\.qml\\'"         . qml-mode))
 (add-to-list 'auto-mode-alist '(".gitignore\\'"     . makefile-mode))
 (add-to-list 'auto-mode-alist '(".gitattributes\\'" . makefile-mode))
@@ -51,6 +58,23 @@
 (use-package        js2-mode :mode "\\.js\\'")
 (use-package       json-mode :mode "\\.json\\'")
 (use-package        qml-mode :mode "\\.qml\\'")
+
+;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Toogle between source and header
+;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+(setq cc-other-file-alist
+      '(("\\.c\\'"   (".h"))
+        ("\\.C\\'"   (".h" ".hpp" ".hxx"))
+        ("\\.cc\\'"  (".h" ".hpp" ".hxx"))
+        ("\\.cpp\\'" (".h" ".hpp" ".hxx"))
+        ("\\.cxx\\'" (".h" ".hpp" ".hxx"))
+        ("\\.tpp\\'" (".h" ".hpp" ".hxx"))
+        ("\\.tcc\\'" (".h" ".hpp" ".hxx"))
+        ("\\.h\\'"   (".tpp" ".cpp" ".cxx" ".tcc" ".cc" ".C" ".c" ".hxx" ".hpp"))
+        ("\\.hpp\\'" (".tpp" ".cpp" ".cxx" ".tcc" ".cc" ".C" ".c" ".h"))
+        ("\\.hxx\\'" (".tpp" ".cpp" ".cxx" ".tcc" ".cc" ".C" ".c" ".h"))
+        ))
 
 ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Modes functions
