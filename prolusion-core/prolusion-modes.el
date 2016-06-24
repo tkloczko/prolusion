@@ -43,6 +43,7 @@
 (add-to-list 'auto-mode-alist '("\\.tcc$"           . c++-mode))
 (add-to-list 'auto-mode-alist '("\\.hpp$"           . c++-mode))
 (add-to-list 'auto-mode-alist '("\\.hxx$"           . c++-mode))
+(add-to-list 'auto-mode-alist '("\\.qdoc$"          . c++-mode))
 (add-to-list 'auto-mode-alist '("\\.qml\\'"         . qml-mode))
 (add-to-list 'auto-mode-alist '(".gitignore\\'"     . makefile-mode))
 (add-to-list 'auto-mode-alist '(".gitattributes\\'" . makefile-mode))
