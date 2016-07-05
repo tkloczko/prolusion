@@ -41,7 +41,7 @@
 (fringe-mode '(8 . 0))
 
 (when (display-graphic-p)
-  (load-theme 'spacemacs-dark t)
+  (load-theme 'spacemacs-light t)
   (setq ns-use-srgb-colorspace nil)
   (require 'spaceline-config)
   (setq powerline-default-separator 'wave)
