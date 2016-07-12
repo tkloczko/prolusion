@@ -46,7 +46,7 @@
   (window-numbering-mode +1))
 
 (when (display-graphic-p)
-;;  (setq persp-auto-save-fname (expand-file-name "prolusion-perspective" prolusion-save-dir))
+  (setq persp-auto-save-fname (expand-file-name "prolusion-perspective" prolusion-save-dir))
   (setq persp-save-dir prolusion-save-dir)
   (setq persp-nil-name "Default")
   (custom-set-variables
