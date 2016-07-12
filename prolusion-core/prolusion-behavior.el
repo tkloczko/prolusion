@@ -112,18 +112,6 @@
 
 (setq anzu-cons-mode-line-p nil)
 
-;; restore window position and size as well as opened buffers
-;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-
-(setq desktop-path       prolusion-save-dir)
-(setq desktop-dirname    prolusion-save-dir)
-(setq desktop-path (list prolusion-save-dir))
-(setq desktop-base-file-name "prolusion-behavior-desktop")
-(setq desktop-base-lock-name "prolusion-behavior-desktop.lock")
-
-(when (display-graphic-p)
-  (desktop-save-mode 1))
-
 ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Behavior modeline
 ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;

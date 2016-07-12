@@ -16,15 +16,17 @@
 ;; UI requirements
 ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-(prolusion-require-package 'window-numbering)
-(prolusion-install-package 'spacemacs-theme)
 (prolusion-require-package 'spaceline)
+(prolusion-install-package 'spacemacs-theme)
+
+(prolusion-require-package 'persp-mode)
+(prolusion-require-package 'window-numbering)
 
 ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; UI setup
 ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-(window-numbering-mode +1)
+(setq initial-frame-alist '((width . 75) (height . 40)))
 
 (set-frame-font "Source Code Pro-13" nil t)
 
@@ -41,13 +43,26 @@
 (fringe-mode '(8 . 0))
 
 (when (display-graphic-p)
+  (window-numbering-mode +1))
+
+(when (display-graphic-p)
+;;  (setq persp-auto-save-fname (expand-file-name "prolusion-perspective" prolusion-save-dir))
+  (setq persp-save-dir prolusion-save-dir)
+  (setq persp-nil-name "Default")
+  (custom-set-variables
+   '(persp-auto-save-opt 0)
+   '(persp-keymap-prefix "w"))
+  (persp-mode +1))
+
+(when (display-graphic-p)
   (load-theme 'spacemacs-light t)
   (setq ns-use-srgb-colorspace nil)
   (require 'spaceline-config)
+  (setq spaceline-display-default-perspective t)
   (setq powerline-default-separator 'wave)
-  ;; (setq spaceline-window-numbers-unicode t)
+  (setq spaceline-toggle-persp-mode-on-p t)
   (setq spaceline-toggle-window-number-on-p t)
-  ;; (setq spaceline-toggle-workspace-number-on-p nil)
+  (setq spaceline-toggle-workspace-number-on-p nil)
   (spaceline-spacemacs-theme)
   (spaceline-helm-mode +1))
 
@@ -56,6 +71,12 @@
   (add-to-list 'default-frame-alist    '(alpha   98 95)))
 
 (setq inhibit-startup-message t)
+
+;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; UI modeline
+;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+(diminish 'persp-mode)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
