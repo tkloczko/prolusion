@@ -175,3 +175,21 @@ Take care to install all the fonts provided in `.prolusion/prolusion-fonts`.
 | -------------------- |:------------------------- |
 | <kbd>C-c ! n</kbd>   | `flycheck-next-error`     |
 | <kbd>C-c ! p</kbd>   | `flycheck-previous-error` |
+
+**prolusion-workspaces**
+
+| Keybinding         | Function                           |
+| ------------------ |:---------------------------------- |
+| <kbd>C-c w n</kbd> | `persp-next`                       |
+| <kbd>C-c w p</kbd> | `persp-prev`                       |
+| <kbd>C-c w s</kbd> | `persp-frame-switch`               |
+| <kbd>C-c w S</kbd> | `persp-window-switch`              |
+| <kbd>C-c w r</kbd> | `persp-rename`                     |
+| <kbd>C-c w c</kbd> | `persp-kill`                       |
+| <kbd>C-c w a</kbd> | `persp-add-buffer`                 |
+| <kbd>C-c w t</kbd> | `persp-temporarily-display-buffer` |
+| <kbd>C-c w i</kbd> | `persp-import-buffers`             |
+| <kbd>C-c w k</kbd> | `persp-remove-buffer`              |
+| <kbd>C-c w K</kbd> | `persp-kill-buffer`                |
+| <kbd>C-c w w</kbd> | `persp-save-state-to-file`         |
+| <kbd>C-c w l</kbd> | `persp-load-state-from-file`       |

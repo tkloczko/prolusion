@@ -16,11 +16,10 @@
 ;; UI requirements
 ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-(prolusion-require-package 'spaceline)
-(prolusion-install-package 'spacemacs-theme)
-
 (prolusion-require-package 'persp-mode)
 (prolusion-require-package 'window-numbering)
+(prolusion-require-package 'spaceline)
+(prolusion-install-package 'spacemacs-theme)
 
 ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; UI setup
@@ -48,21 +47,31 @@
 (when (display-graphic-p)
   (setq persp-auto-save-fname (expand-file-name "prolusion-perspective" prolusion-save-dir))
   (setq persp-save-dir prolusion-save-dir)
-  (setq persp-nil-name "Default")
+  (setq persp-nil-name "scratch")
   (custom-set-variables
    '(persp-auto-save-opt 0)
-   '(persp-keymap-prefix "w"))
+   '(persp-keymap-prefix (kbd "C-c w")))
   (persp-mode +1))
 
 (when (display-graphic-p)
-  (load-theme 'spacemacs-light t)
+  (load-theme 'spacemacs-dark t)
   (setq ns-use-srgb-colorspace nil)
   (require 'spaceline-config)
-  (setq spaceline-display-default-perspective t)
+  (spaceline-define-segment persp-name
+    (when (bound-and-true-p persp-mode)
+      (fboundp 'safe-persp-name)
+      (fboundp 'get-frame-persp)
+      (or (not (string= persp-nil-name (safe-persp-name (get-frame-persp))))
+          spaceline-display-default-perspective)
+      (let ((name (safe-persp-name (get-frame-persp))))
+        (propertize
+         (if (file-directory-p name)
+             (file-name-nondirectory (directory-file-name name))
+           name)
+         'face 'bold))))
   (setq powerline-default-separator 'wave)
-  (setq spaceline-toggle-persp-mode-on-p t)
+  (setq spaceline-display-default-perspective t)
   (setq spaceline-toggle-window-number-on-p t)
-  (setq spaceline-toggle-workspace-number-on-p nil)
   (spaceline-spacemacs-theme)
   (spaceline-helm-mode +1))
 
