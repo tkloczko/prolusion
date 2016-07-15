@@ -42,7 +42,7 @@
 (require 'prolusion-compilation)
 (require 'prolusion-www)
 (require 'prolusion-vc)
-(require 'prolusion-docs)
+;; (require 'prolusion-docs)
 (require 'prolusion-projectile)
 (require 'prolusion-builtins)
 
