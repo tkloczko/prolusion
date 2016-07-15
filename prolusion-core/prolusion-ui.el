@@ -49,6 +49,7 @@
   (setq persp-save-dir prolusion-save-dir)
   (setq persp-nil-name "scratch")
   (custom-set-variables
+   '(persp-auto-resume-time -1)
    '(persp-auto-save-opt 0)
    '(persp-keymap-prefix (kbd "C-c w")))
   (persp-mode +1))
