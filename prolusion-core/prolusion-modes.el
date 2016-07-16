@@ -44,7 +44,6 @@
 (add-to-list 'auto-mode-alist '("\\.hpp$"           . c++-mode))
 (add-to-list 'auto-mode-alist '("\\.hxx$"           . c++-mode))
 (add-to-list 'auto-mode-alist '("\\.qdoc$"          . c++-mode))
-(add-to-list 'auto-mode-alist '("\\.qml\\'"         . qml-mode))
 (add-to-list 'auto-mode-alist '(".gitignore\\'"     . makefile-mode))
 (add-to-list 'auto-mode-alist '(".gitattributes\\'" . makefile-mode))
 (add-to-list 'auto-mode-alist '("qmldir\\'"         . makefile-mode))
@@ -74,8 +73,7 @@
         ("\\.tcc\\'" (".h" ".hpp" ".hxx"))
         ("\\.h\\'"   (".tpp" ".cpp" ".cxx" ".tcc" ".cc" ".C" ".c" ".hxx" ".hpp"))
         ("\\.hpp\\'" (".tpp" ".cpp" ".cxx" ".tcc" ".cc" ".C" ".c" ".h"))
-        ("\\.hxx\\'" (".tpp" ".cpp" ".cxx" ".tcc" ".cc" ".C" ".c" ".h"))
-        ))
+        ("\\.hxx\\'" (".tpp" ".cpp" ".cxx" ".tcc" ".cc" ".C" ".c" ".h"))))
 
 ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Modes functions
@@ -91,8 +89,8 @@
 ;; Modes hooks
 ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-(add-hook  'qml-mode-hook           'rainbow-mode)
-(add-hook  'js2-mode-hook      'js2-refactor-mode)
+(add-hook  'qml-mode-hook          'rainbow-mode)
+(add-hook  'js2-mode-hook     'js2-refactor-mode)
 (add-hook 'prog-mode-hook 'prettify-symbols-mode)
 
 ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
