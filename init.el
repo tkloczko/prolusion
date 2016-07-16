@@ -30,7 +30,6 @@
 (add-to-list 'load-path prolusion-core-dir)
 
 (require 'prolusion-packages)
-(require 'prolusion-ui)
 (require 'prolusion-behavior)
 (require 'prolusion-eshell)
 (require 'prolusion-editor)
@@ -38,12 +37,14 @@
 (require 'prolusion-snippets)
 (require 'prolusion-irony)
 (require 'prolusion-completion)
+(require 'prolusion-workspaces)
 (require 'prolusion-checking)
 (require 'prolusion-compilation)
 (require 'prolusion-www)
 (require 'prolusion-vc)
 (require 'prolusion-projectile)
 (require 'prolusion-builtins)
+(require 'prolusion-ui)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; init.el ends here

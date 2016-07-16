@@ -16,8 +16,6 @@
 ;; UI requirements
 ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-(prolusion-require-package 'persp-mode)
-(prolusion-require-package 'window-numbering)
 (prolusion-require-package 'spaceline)
 (prolusion-install-package 'spacemacs-theme)
 
@@ -40,19 +38,6 @@
 (size-indication-mode t)
 
 (fringe-mode '(8 . 0))
-
-(when (display-graphic-p)
-  (window-numbering-mode +1))
-
-(when (display-graphic-p)
-  (setq persp-auto-save-fname (expand-file-name "prolusion-perspective" prolusion-save-dir))
-  (setq persp-save-dir prolusion-save-dir)
-  (setq persp-nil-name "scratch")
-  (custom-set-variables
-   '(persp-auto-resume-time -1)
-   '(persp-auto-save-opt 0)
-   '(persp-keymap-prefix (kbd "C-c w")))
-  (persp-mode +1))
 
 (when (display-graphic-p)
   (load-theme 'spacemacs-dark t)
@@ -81,12 +66,6 @@
   (add-to-list 'default-frame-alist    '(alpha   98 95)))
 
 (setq inhibit-startup-message t)
-
-;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; UI modeline
-;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-
-(diminish 'persp-mode)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
