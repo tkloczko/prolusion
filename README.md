@@ -139,15 +139,6 @@ Take care to install all the fonts provided in `.prolusion/prolusion-fonts`.
 | <kbd>`C-c y s`</kbd> | `yas-insert-snippet`     |
 | <kbd>`C-c y v`</kbd> | `yas-visit-snippet-file` |
 
-**prolusion-docs**
-
-| Keybinding           | Function                    |
-| -------------------- |:--------------------------- |
-| <kbd>`C-c d d`</kbd> | `helm-dash`                 |
-| <kbd>`C-c d p`</kbd> | `helm-dash-at-point`        |
-| <kbd>`C-c d i`</kbd> | `helm-dash-install-docset`  |
-| <kbd>`C-c d a`</kbd> | `helm-dash-activate-docset` |
-
 **prolusion-vc**
 
 | Keybinding           | Function                    |
