@@ -23,27 +23,27 @@ prolusion_colortext () {
 }
 
 prolusion_green () {
-    echo $(prolusion_colortext "$1" "82")
+    echo $2 $(prolusion_colortext "$1" "82")
 }
 
 prolusion_red () {
-    echo $(prolusion_colortext "$1" "196")
+    echo $2 $(prolusion_colortext "$1" "196")
 }
 
 prolusion_blue () {
-    echo $(prolusion_colortext "$1" "27")
+    echo $2 $(prolusion_colortext "$1" "27")
 }
 
 prolusion_purple () {
-    echo $(prolusion_colortext "$1" "141")
+    echo $2 $(prolusion_colortext "$1" "141")
 }
 
 prolusion_yellow () {
-    echo $(prolusion_colortext "$1" "190")
+    echo $2 $(prolusion_colortext "$1" "190")
 }
 
 prolusion_cyan () {
-    echo $(prolusion_colortext "$1" "45")
+    echo $2 $(prolusion_colortext "$1" "45")
 }
 
 prolusion_clear () {
@@ -106,7 +106,7 @@ then
     exit 1;
 fi
 
-prolusion_cyan "Checking to see if gpg is installed..."
+prolusion_cyan "Checking to see if gpg is installed... " -n
 if hash gpg 2>&-
 then
     prolusion_green "found."
@@ -115,7 +115,7 @@ else
     exit 1
 fi;
 
-prolusion_cyan "Checking to see if git is installed..."
+prolusion_cyan "Checking to see if git is installed... " -n
 if hash git 2>&-
 then
     prolusion_green "found."
@@ -124,7 +124,7 @@ else
     exit 1
 fi;
 
-prolusion_cyan "Checking to see if emacs is installed..."
+prolusion_cyan "Checking to see if emacs is installed... " -n
 if hash emacs 2>&-
 then
     prolusion_green "found."
@@ -133,7 +133,7 @@ else
     exit 1
 fi;
 
-prolusion_cyan "Checking to see if cmake is installed..."
+prolusion_cyan "Checking to see if cmake is installed... " -n
 if hash cmake 2>&-
 then
     prolusion_green "found."
@@ -142,7 +142,7 @@ else
     exit 1
 fi;
 
-prolusion_cyan "Checking to see if clang is installed..."
+prolusion_cyan "Checking to see if clang is installed... " -n
 if hash clang 2>&-
 then
     prolusion_green "found."
@@ -151,7 +151,7 @@ else
     exit 1
 fi;
 
-prolusion_cyan "Checking to see if cscope is installed..."
+prolusion_cyan "Checking to see if cscope is installed... " -n
 if hash cscope 2>&-
 then
     prolusion_green "found."
@@ -160,7 +160,7 @@ else
     exit 1
 fi;
 
-prolusion_cyan "Checking to see if ag is installed..."
+prolusion_cyan "Checking to see if ag is installed... " -n
 if hash ag 2>&-
 then
     prolusion_green "found."
