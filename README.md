@@ -1,4 +1,4 @@
-![Prolusion](https://github.com/jwintz/prolusion/raw/master/prolusion-badges/prolusion-emacs-badge.png =399x50)
+![Prolusion](https://github.com/jwintz/prolusion/raw/master/prolusion-badges/prolusion-emacs-badge.png)
 
 # Prolusion
 
