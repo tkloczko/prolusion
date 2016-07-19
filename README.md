@@ -1,3 +1,5 @@
+![Prolusion](https://github.com/jwintz/prolusion/raw/master/prolusion-badges/prolusion-emacs-badge.png = 399x50)
+
 # Prolusion
 
 From Latin prolusio(n- ), from prolus- ‘practised beforehand’, from
