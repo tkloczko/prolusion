@@ -22,6 +22,7 @@
 (prolusion-install-package 'csharp-mode)
 (prolusion-install-package 'markdown-mode)
 (prolusion-install-package 'yaml-mode)
+(prolusion-install-package 'jade)
 (prolusion-install-package 'js2-mode)
 (prolusion-install-package 'js2-refactor)
 (prolusion-install-package 'json-mode)
@@ -51,6 +52,7 @@
 (add-to-list 'auto-mode-alist '("\\.qrc\\'"         . xml-mode))
 (add-to-list 'auto-mode-alist '("\\.info\\'"        . info-mode))
 (add-to-list 'auto-mode-alist '("\\.qmltypes\\'"    . json-mode))
+(add-to-list 'auto-mode-alist '("\\.ejs\\'"         . html-mode))
 
 (use-package      cmake-mode :mode "\\.cmake\\'" "\\CMakeLists.txt\\'")
 (use-package javascript-mode :mode "\\.qs\\'")
@@ -89,9 +91,10 @@
 ;; Modes hooks
 ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-(add-hook  'qml-mode-hook          'rainbow-mode)
-(add-hook  'js2-mode-hook     'js2-refactor-mode)
-(add-hook 'prog-mode-hook 'prettify-symbols-mode)
+(add-hook  'qml-mode-hook           'rainbow-mode)
+(add-hook  'js2-mode-hook      'js2-refactor-mode)
+(add-hook 'prog-mode-hook  'prettify-symbols-mode)
+(add-hook  'js2-mode-hook #'jade-interaction-mode)
 
 ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Modes modeline
