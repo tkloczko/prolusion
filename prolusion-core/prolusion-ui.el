@@ -26,10 +26,10 @@
 
 (window-numbering-mode +1)
 
-(set-frame-font "Source Code Pro-13" nil t)
+(set-frame-font "Source Code Pro-10" nil t)
 
 (tooltip-mode -1)
-(menu-bar-mode -1)
+(menu-bar-mode 1)
 (tool-bar-mode -1)
 (scroll-bar-mode -1)
 (blink-cursor-mode -1)
@@ -52,8 +52,8 @@
   (spaceline-helm-mode +1))
 
 (when (display-graphic-p)
-  (set-frame-parameter (selected-frame) 'alpha '(98 95))
-  (add-to-list 'default-frame-alist    '(alpha   98 95)))
+  (set-frame-parameter (selected-frame) 'alpha '(100 100))
+  (add-to-list 'default-frame-alist    '(alpha   100 100)))
 
 (setq inhibit-startup-message t)
 

@@ -34,7 +34,7 @@
 (setq-default c-basic-offset 4)
 (setq-default tab-width 4)
 
-(setq whitespace-line-column 80)
+(setq whitespace-line-column 250)
 (setq whitespace-style '(face tabs empty trailing lines-tail))
 
 (global-undo-tree-mode)
