@@ -1,3 +1,5 @@
+![Prolusion](https://github.com/jwintz/prolusion/raw/master/prolusion-badges/prolusion-emacs-badge.png)
+
 # Prolusion
 
 From Latin prolusio(n- ), from prolus- ‘practised beforehand’, from
@@ -137,15 +139,6 @@ Take care to install all the fonts provided in `.prolusion/prolusion-fonts`.
 | <kbd>`C-c y s`</kbd> | `yas-insert-snippet`     |
 | <kbd>`C-c y v`</kbd> | `yas-visit-snippet-file` |
 
-**prolusion-docs**
-
-| Keybinding           | Function                    |
-| -------------------- |:--------------------------- |
-| <kbd>`C-c d d`</kbd> | `helm-dash`                 |
-| <kbd>`C-c d p`</kbd> | `helm-dash-at-point`        |
-| <kbd>`C-c d i`</kbd> | `helm-dash-install-docset`  |
-| <kbd>`C-c d a`</kbd> | `helm-dash-activate-docset` |
-
 **prolusion-vc**
 
 | Keybinding           | Function                    |
@@ -175,3 +168,21 @@ Take care to install all the fonts provided in `.prolusion/prolusion-fonts`.
 | -------------------- |:------------------------- |
 | <kbd>C-c ! n</kbd>   | `flycheck-next-error`     |
 | <kbd>C-c ! p</kbd>   | `flycheck-previous-error` |
+
+**prolusion-workspaces**
+
+| Keybinding         | Function                           |
+| ------------------ |:---------------------------------- |
+| <kbd>C-c w n</kbd> | `persp-next`                       |
+| <kbd>C-c w p</kbd> | `persp-prev`                       |
+| <kbd>C-c w s</kbd> | `persp-frame-switch`               |
+| <kbd>C-c w S</kbd> | `persp-window-switch`              |
+| <kbd>C-c w r</kbd> | `persp-rename`                     |
+| <kbd>C-c w c</kbd> | `persp-kill`                       |
+| <kbd>C-c w a</kbd> | `persp-add-buffer`                 |
+| <kbd>C-c w t</kbd> | `persp-temporarily-display-buffer` |
+| <kbd>C-c w i</kbd> | `persp-import-buffers`             |
+| <kbd>C-c w k</kbd> | `persp-remove-buffer`              |
+| <kbd>C-c w K</kbd> | `persp-kill-buffer`                |
+| <kbd>C-c w w</kbd> | `persp-save-state-to-file`         |
+| <kbd>C-c w l</kbd> | `persp-load-state-from-file`       |

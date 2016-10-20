@@ -16,15 +16,14 @@
 ;; UI requirements
 ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-(prolusion-require-package 'window-numbering)
-(prolusion-install-package 'spacemacs-theme)
 (prolusion-require-package 'spaceline)
+(prolusion-install-package 'spacemacs-theme)
 
 ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; UI setup
 ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-(window-numbering-mode +1)
+(setq initial-frame-alist '((width . 75) (height . 40)))
 
 (set-frame-font "Source Code Pro-10" nil t)
 
@@ -41,13 +40,24 @@
 (fringe-mode '(8 . 0))
 
 (when (display-graphic-p)
-  (load-theme 'spacemacs-dark t)
+  (load-theme 'spacemacs-light t)
   (setq ns-use-srgb-colorspace nil)
   (require 'spaceline-config)
+  (spaceline-define-segment persp-name
+    (when (bound-and-true-p persp-mode)
+      (fboundp 'safe-persp-name)
+      (fboundp 'get-frame-persp)
+      (or (not (string= persp-nil-name (safe-persp-name (get-frame-persp))))
+          spaceline-display-default-perspective)
+      (let ((name (safe-persp-name (get-frame-persp))))
+        (propertize
+         (if (file-directory-p name)
+             (file-name-nondirectory (directory-file-name name))
+           name)
+         'face 'bold))))
   (setq powerline-default-separator 'wave)
-  ;; (setq spaceline-window-numbers-unicode t)
+  (setq spaceline-display-default-perspective t)
   (setq spaceline-toggle-window-number-on-p t)
-  ;; (setq spaceline-toggle-workspace-number-on-p nil)
   (spaceline-spacemacs-theme)
   (spaceline-helm-mode +1))
 

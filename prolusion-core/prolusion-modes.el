@@ -22,6 +22,7 @@
 (prolusion-install-package 'csharp-mode)
 (prolusion-install-package 'markdown-mode)
 (prolusion-install-package 'yaml-mode)
+(prolusion-install-package 'jade)
 (prolusion-install-package 'js2-mode)
 (prolusion-install-package 'js2-refactor)
 (prolusion-install-package 'json-mode)
@@ -44,7 +45,6 @@
 (add-to-list 'auto-mode-alist '("\\.hpp$"           . c++-mode))
 (add-to-list 'auto-mode-alist '("\\.hxx$"           . c++-mode))
 (add-to-list 'auto-mode-alist '("\\.qdoc$"          . c++-mode))
-(add-to-list 'auto-mode-alist '("\\.qml\\'"         . qml-mode))
 (add-to-list 'auto-mode-alist '(".gitignore\\'"     . makefile-mode))
 (add-to-list 'auto-mode-alist '(".gitattributes\\'" . makefile-mode))
 (add-to-list 'auto-mode-alist '("qmldir\\'"         . makefile-mode))
@@ -52,6 +52,7 @@
 (add-to-list 'auto-mode-alist '("\\.qrc\\'"         . xml-mode))
 (add-to-list 'auto-mode-alist '("\\.info\\'"        . info-mode))
 (add-to-list 'auto-mode-alist '("\\.qmltypes\\'"    . json-mode))
+(add-to-list 'auto-mode-alist '("\\.ejs\\'"         . html-mode))
 
 (use-package      cmake-mode :mode "\\.cmake\\'" "\\CMakeLists.txt\\'")
 (use-package javascript-mode :mode "\\.qs\\'")
@@ -74,8 +75,7 @@
         ("\\.tcc\\'" (".h" ".hpp" ".hxx"))
         ("\\.h\\'"   (".tpp" ".cpp" ".cxx" ".tcc" ".cc" ".C" ".c" ".hxx" ".hpp"))
         ("\\.hpp\\'" (".tpp" ".cpp" ".cxx" ".tcc" ".cc" ".C" ".c" ".h"))
-        ("\\.hxx\\'" (".tpp" ".cpp" ".cxx" ".tcc" ".cc" ".C" ".c" ".h"))
-        ))
+        ("\\.hxx\\'" (".tpp" ".cpp" ".cxx" ".tcc" ".cc" ".C" ".c" ".h"))))
 
 ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Modes functions
@@ -93,7 +93,8 @@
 
 (add-hook  'qml-mode-hook           'rainbow-mode)
 (add-hook  'js2-mode-hook      'js2-refactor-mode)
-(add-hook 'prog-mode-hook 'prettify-symbols-mode)
+(add-hook 'prog-mode-hook  'prettify-symbols-mode)
+(add-hook  'js2-mode-hook #'jade-interaction-mode)
 
 ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Modes modeline

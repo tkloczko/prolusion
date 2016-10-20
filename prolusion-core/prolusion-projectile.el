@@ -18,8 +18,6 @@
 
 (prolusion-install-package      'projectile)
 (prolusion-install-package 'helm-projectile)
-(prolusion-install-package 'helm-ag)
-(prolusion-install-package      'ag)
 
 ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Projectile setup
@@ -35,10 +33,7 @@
   (setq projectile-cache-file          (expand-file-name "prolusion-projectile-cache" prolusion-save-dir)))
 
 (use-package helm-projectile
-  :config
-  (require      `ag)
-  (require `helm-ag)
-
+  :after helm
   :bind (
   ("C-c p h" . helm-projectile)
   ("C-c p a" . helm-projectile-find-other-file)
@@ -48,6 +43,7 @@
   ("C-c p d" . helm-projectile-find-dir)
   ("C-c p e" . helm-projectile-recentf)
   ("C-c p b" . helm-projectile-switch-to-buffer)
+  ("C-c p p" . helm-projectile-switch-project)
   ("C-c p s g" . helm-projectile-grep)
   ("C-c p s a" . helm-projectile-ack)
   ("C-c p s s" . helm-projectile-ag)))

@@ -23,7 +23,6 @@
 ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (use-package yasnippet
-  :defer t
   :config
   (setq yas-snippet-dirs '(prolusion-snippets-dir))
   (setq yas-prompt-functions '(yas-dropdown-prompt))

@@ -13,30 +13,38 @@
 ;;; Code:
 
 ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Docs requirements
+;; Worspaces requirements
 ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-(prolusion-require-package 'helm-dash)
+(prolusion-require-package 'persp-mode)
+(prolusion-require-package 'window-numbering)
 
 ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Docs setup
+;; Workspaces setup
 ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-(setq helm-dash-docsets-path prolusion-docs-dir)
-(setq helm-dash-min-length 1)
+(when (display-graphic-p)
+  (window-numbering-mode +1))
+
+(when (display-graphic-p)
+  (setq persp-auto-save-fname (expand-file-name "prolusion-perspective" prolusion-save-dir))
+  (setq persp-save-dir prolusion-save-dir)
+  (setq persp-nil-name "scratch")
+  (custom-set-variables
+   '(persp-auto-resume-time -1)
+   '(persp-auto-save-opt 0)
+   '(persp-keymap-prefix (kbd "C-c w")))
+  (persp-mode +1))
 
 ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Docs bindings
+;; Worspaces modeline
 ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-(global-set-key (kbd "C-c d d") 'helm-dash)
-(global-set-key (kbd "C-c d p") 'helm-dash-at-point)
-(global-set-key (kbd "C-c d i") 'helm-dash-install-docset)
-(global-set-key (kbd "C-c d a") 'helm-dash-activate-docset)
+(diminish 'persp-mode)
 
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-(provide 'prolusion-docs)
+(provide 'prolusion-workspaces)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;; prolusion-docs.el ends here
+;;; prolusion-workspaces.el ends here
